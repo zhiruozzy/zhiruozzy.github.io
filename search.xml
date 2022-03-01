@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2048教程详解</title>
+    <url>/2022/02/28/2048%E6%95%99%E7%A8%8B%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<p>先附上我的思维导图<img src="2048教程详解/2048.png" alt="2048" style="zoom:150%;" /></p>
+<p>里面会用到的函数：</p>
+<ol>
+<li><p>更新视图</p>
+<p><img src="/2048%E6%95%99%E7%A8%8B%E8%AF%A6%E8%A7%A3/%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE-16461176195611.png" alt="更新视图"></p>
+</li>
+<li><p>移动一行的函数（以向左移动为例）</p>
+<p><img src="/2048%E6%95%99%E7%A8%8B%E8%AF%A6%E8%A7%A3/%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE(1).png" alt="更新视图(1)"></p>
+</li>
+<li><p>生成随意的位置</p>
+<p><img src="/2048%E6%95%99%E7%A8%8B%E8%AF%A6%E8%A7%A3/%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE(2).png" alt="更新视图(2)"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/02/27/hello-world/</url>
     <content><![CDATA[<p>这里芷若</p>
@@ -10,6 +34,25 @@
 <p>以后不定期的会更新一些生活小记和学习笔记</p>
 <p>欢迎你的到访~</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>一些好用的网站</title>
+    <url>/2022/02/28/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<ul>
+<li>可以提高图片分辨率的网站：<a href="https://bigjpg.com/">https://bigjpg.com/</a></li>
+<li>超喜欢的练习打字网站：<a href="https://www.typing.com/">https://www.typing.com/</a></li>
+<li>网道，简洁舒适的编程教程：<a href="https://wangdoc.com/">https://wangdoc.com/</a></li>
+<li>北大学长整理的CS学习指南：<a href="https://csdiy.wiki/">https://csdiy.wiki/</a></li>
+<li>STL超全工具书，方便查询：<a href="https://blog.csdn.net/weixin_45761327/article/details/107561697">https://blog.csdn.net/weixin_45761327/article/details/107561697</a></li>
+<li>adobe全家桶（2020年的）：<a href="https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78">https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>分享</tag>
+      </tags>
   </entry>
   <entry>
     <title>也茫然 还好有勇敢</title>
@@ -66,6 +109,11 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo的使用</title>
+    <url>/2022/02/28/Hexo%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>不期而遇的温暖</title>
     <url>/2022/02/28/%E6%97%A5%E5%B8%B8%E7%A2%8E%E7%A2%8E%E5%BF%B5/</url>
     <content><![CDATA[<blockquote>
@@ -84,6 +132,48 @@
       </categories>
       <tags>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>质点的运动</title>
+    <url>/2022/03/01/%E8%B4%A8%E7%82%B9%E7%9A%84%E8%BF%90%E5%8A%A8/</url>
+    <content><![CDATA[<h4 id="知识概述"><a href="#知识概述" class="headerlink" title="知识概述"></a>知识概述</h4><h6 id="位矢"><a href="#位矢" class="headerlink" title="位矢"></a>位矢</h6><img src="质点的运动/image-20220301131653920.png" alt="image-20220301131653920" style="zoom:67%;" />
+
+<h6 id="位移"><a href="#位移" class="headerlink" title="位移"></a>位移</h6><p><img src=" 质点的运动/image-20220301131944181.png" alt="image-20220301131944181" style="zoom: 67%;" /><img src="/image-20220301132433348.png" alt="image-20220301132433348" style="zoom:67%;" /></p>
+<h6 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h6><img src="质点的运动/image-20220301133312845.png" alt="image-20220301133312845" style="zoom:67%;" />
+
+<ol>
+<li>矢量：<ul>
+<li>平均速度：这段位移的变化量&#x2F;时间   方向：位移变化的方向</li>
+<li>瞬时速度：位移变化量对时间的导数　方向：运动轨迹的切线方向    *它的大小就是速率（路程&#x2F;时间）</li>
+</ul>
+</li>
+<li>标量：<ul>
+<li>平均速率：这段路程的变化量&#x2F;时间  </li>
+<li>瞬时速率：瞬时速度的大小</li>
+</ul>
+</li>
+</ol>
+<h6 id="位移与路程的关系："><a href="#位移与路程的关系：" class="headerlink" title="位移与路程的关系："></a>位移与路程的关系：</h6><ul>
+<li>位移是矢量，速度是标量</li>
+<li>一般情况下，位移的大小不等于路程 </li>
+<li>两点之间的路程是不唯一的，而位移是唯一的</li>
+<li>在如下情况下，位移的大小等于路程：<ul>
+<li>单方向的直线运动</li>
+<li>当t—&gt;0时，位移的大小趋近于路程</li>
+</ul>
+</li>
+</ul>
+<h4 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h4><img src="质点的运动/image-20220301144451672.png" alt="image-20220301144451672" style="zoom:67%;" />
+
+<p><img src="/%E8%B4%A8%E7%82%B9%E7%9A%84%E8%BF%90%E5%8A%A8/image-20220301144940028.png" alt="image-20220301144940028">：是位移的</p>
+<p><img src="/%E8%B4%A8%E7%82%B9%E7%9A%84%E8%BF%90%E5%8A%A8/image-20220301145004843.png" alt="image-20220301145004843">：</p>
+]]></content>
+      <categories>
+        <category>物理笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
       </tags>
   </entry>
 </search>
