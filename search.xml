@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>自制的2048小游戏</title>
-    <url>/2022/02/27/%E6%88%91%E5%81%9A%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%B8%B8%E6%88%8F%E2%80%942048/</url>
-    <content><![CDATA[<p>这是我制作的第一个小游戏🙆‍♀️</p>
-<p>只能说一个这个有些稚嫩的成果，基本啥都没有，简单的界面和逻辑，唯一的优点是它确实能跑，缺点是“能跑”的补集😅</p>
-<p>下面是我做的时候写的思维导图：</p>
-<p><img src="/../img/%E6%88%91%E5%81%9A%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%B8%B8%E6%88%8F%E2%80%942048/2048-16462039259381.png" alt="2048"></p>
-<p>里面用到的函数：</p>
-<ol>
-<li>更新当前视图</li>
-</ol>
-<p><img src="/../img/%E6%88%91%E5%81%9A%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%B8%B8%E6%88%8F%E2%80%942048/%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE.png" alt="更新视图"></p>
-<ol start="2">
-<li><p>移动本行（这里以向左移动为例）</p>
-<p><img src="/../img/%E6%88%91%E5%81%9A%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%B8%B8%E6%88%8F%E2%80%942048/%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE(1).png" alt="更新视图(1)"></p>
-</li>
-<li><p>生成随机位置</p>
-</li>
-</ol>
-<p><img src="/../img/%E6%88%91%E5%81%9A%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%B8%B8%E6%88%8F%E2%80%942048/%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE(2).png" alt="更新视图(2)"></p>
-<p>链接如下，要不点进去看看，哎喂看看我的配色也行啊！</p>
-<p><a href="https://zhiruozzy.github.io/Web/">2048小游戏</a></p>
-]]></content>
-      <categories>
-        <category>自制</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2022/02/27/hello-world/</url>
     <content><![CDATA[<p>这里芷若</p>
@@ -233,6 +203,36 @@
       </categories>
       <tags>
         <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自制的2048小游戏</title>
+    <url>/2022/02/27/%E6%88%91%E5%81%9A%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%B8%B8%E6%88%8F%E2%80%942048/</url>
+    <content><![CDATA[<p>这是我制作的第一个小游戏🙆‍♀️</p>
+<p>只能说一个这个有些稚嫩的成果，基本啥都没有，简单的界面和逻辑，唯一的优点是它确实能跑，缺点是“能跑”的补集😅</p>
+<p>下面是我做的时候写的思维导图：</p>
+<p><img src="/../img/%E6%88%91%E5%81%9A%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%B8%B8%E6%88%8F%E2%80%942048/2048-16462039259381.png" alt="2048"></p>
+<p>里面用到的函数：</p>
+<ol>
+<li>更新当前视图</li>
+</ol>
+<p><img src="/../img/%E6%88%91%E5%81%9A%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%B8%B8%E6%88%8F%E2%80%942048/%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE.png" alt="更新视图"></p>
+<ol start="2">
+<li><p>移动本行（这里以向左移动为例）</p>
+<p><img src="/../img/%E6%88%91%E5%81%9A%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%B8%B8%E6%88%8F%E2%80%942048/%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE(1).png" alt="更新视图(1)"></p>
+</li>
+<li><p>生成随机位置</p>
+</li>
+</ol>
+<p><img src="/../img/%E6%88%91%E5%81%9A%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%B8%B8%E6%88%8F%E2%80%942048/%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE(2).png" alt="更新视图(2)"></p>
+<p>链接如下，要不点进去看看，哎喂看看我的配色也行啊！</p>
+<p><a href="https://zhiruozzy.github.io/Web/">2048小游戏</a></p>
+]]></content>
+      <categories>
+        <category>自制</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
       </tags>
   </entry>
 </search>
