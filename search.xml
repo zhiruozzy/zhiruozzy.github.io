@@ -105,8 +105,6 @@
     <content><![CDATA[<blockquote>
 <p>人间的温情跨越无数岁月和命运的阴霾，将记忆烘烤得蓬松而馨香</p>
 </blockquote>
-<span id="more"></span>
-
 <h3 id="2022-02-28"><a href="#2022-02-28" class="headerlink" title="2022-02-28"></a>2022-02-28</h3><p>　　今天去健身房骑完动感单车后去洗澡，浴室人很多，已经没有位置了，我这个社恐🙃尴尬的站在一旁等待，与之对比的是阿姨们自来熟的走进来，随便借个有人的位置就开始洗。</p>
 <p>　　这时突然一个带着小女孩洗澡的阿姨向我招了招手，“小姑娘，到这里来先冲着”，哇，心里顿时暖暖的。</p>
 <p>　　“给小姐姐让一下噢，先让她洗”。旁边的小女孩奶声奶气的说好，向我投来一个灿烂的微笑。我也回以灿烂的微笑。</p>
@@ -127,10 +125,7 @@
   <entry>
     <title>离散数学の笔记</title>
     <url>/2022/02/27/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>有用吗</p>
-<span id="more"></span>
-
-<h3 id="命题"><a href="#命题" class="headerlink" title="命题"></a>命题</h3><h5 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h5><ul>
+    <content><![CDATA[<h3 id="命题"><a href="#命题" class="headerlink" title="命题"></a>命题</h3><h5 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h5><ul>
 <li>命题，是指具有唯一真值的陈述句</li>
 <li>疑问句、祈使句、感叹句，因为无法判断真假，所以都不是命题</li>
 <li>真用1或T来表示，假用0或F来表示，因为命题只有这两种真值，所以这种逻辑成为二值逻辑</li>
