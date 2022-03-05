@@ -350,4 +350,152 @@
         <tag>笔记</tag>
       </tags>
   </entry>
+  <entry>
+    <title>JS学习笔记（自用）</title>
+    <url>/2022/03/05/JS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%87%AA%E7%94%A8%EF%BC%89/</url>
+    <content><![CDATA[<p>自己自学的时候做的笔记，估计会有很多表述不准确甚至出错的地方，随着学习的加深会慢慢修正补充的。</p>
+<h2 id="JS的常用书写方式"><a href="#JS的常用书写方式" class="headerlink" title="JS的常用书写方式"></a>JS的常用书写方式</h2><ol>
+<li><h5 id="内嵌式"><a href="#内嵌式" class="headerlink" title="内嵌式"></a>内嵌式</h5><ul>
+<li><p>在HTML的<code>&lt;body&gt;</code>标签中放入<code>&lt;script type=&quot;text/javascipt&quot;&gt; &lt;/script&gt;</code>标签对中，并在<code>&lt;script&gt;</code>标签对里书写代码</p>
+</li>
+<li><p>如果要将JS代码写在<code>&lt;head&gt;</code>中，就需要用window.onload&#x3D;function(){  }包裹起来</p>
+</li>
+</ul>
+</li>
+<li><h5 id="外链式"><a href="#外链式" class="headerlink" title="外链式"></a>外链式</h5><p>在HTML的<code>&lt;body&gt;</code>标签中放入<code>&lt;script src=&quot;相对路径&quot;&gt;&lt;/script&gt;</code></p>
+</li>
+</ol>
+<h2 id="JS输出语句"><a href="#JS输出语句" class="headerlink" title="JS输出语句"></a>JS输出语句</h2><ol>
+<li>弹窗输出 <code>alert();</code> 弹窗处alert中的内容</li>
+<li>弹窗确认 <code>confirm(); </code> 弹窗出confirm中的内容，弹窗上有“确认”和“取消”两个按钮</li>
+<li>网页内容区输出：<code>document.write()</code>  直接输出在网页页面上</li>
+<li>控制台输出：<code>console.log()</code> 输出在控制台</li>
+</ol>
+<h2 id="JS数据类型"><a href="#JS数据类型" class="headerlink" title="JS数据类型"></a>JS数据类型</h2><ul>
+<li>基本数据类型（参数赋值的时候，传数值） ：String字符串，Number数值，Brglnt大型数值，Boolean布尔值，Null空值，Undefined 未定义，Symbol</li>
+<li>引用数据类型（参数赋值的时候，传地址）：Object对象（只有这一种）</li>
+</ul>
+<h2 id="JS的字符串拼接"><a href="#JS的字符串拼接" class="headerlink" title="JS的字符串拼接"></a>JS的字符串拼接</h2><p>JS中字符串可以拼接，用“+”就可以拼接，</p>
+<h5 id="拼接语法："><a href="#拼接语法：" class="headerlink" title="拼接语法："></a>拼接语法：</h5><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">字符串 + 任意数据类型 = 拼接后的新字符串；</span><br></pre></td></tr></table></figure>
+
+<h5 id="拼接规则："><a href="#拼接规则：" class="headerlink" title="拼接规则："></a>拼接规则：</h5><p>拼接前，会把与字符串相加的数据类型转化为字符串，然后再拼接成一个新的字符串。</p>
+<h5 id="代码举例："><a href="#代码举例：" class="headerlink" title="代码举例："></a>代码举例：</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">											   输出结果</span><br><span class="line"><span class="keyword">var</span> str1 = <span class="string">&quot;长安&quot;</span>+<span class="string">&quot;归故里&quot;</span>;  <span class="comment">//字符串+字符串类型    长安归故里</span></span><br><span class="line"><span class="keyword">var</span> str2 = <span class="string">&quot;长安&quot;</span>+<span class="number">666</span>;  <span class="comment">//字符串+数值类型          长安666           </span></span><br><span class="line"><span class="keyword">var</span> str3 = <span class="string">&quot;长安&quot;</span>+<span class="literal">true</span>; <span class="comment">//字符串+布尔类型          长安true</span></span><br><span class="line"><span class="keyword">var</span> str4 = <span class="string">&quot;长安&quot;</span>+<span class="literal">null</span>; <span class="comment">//字符串+空类型            长安null</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>:<span class="string">&#x27;芷若&#x27;</span>,<span class="attr">age</span>:<span class="number">19</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> str5 = <span class="string">&quot;长安&quot;</span>+obj;  <span class="comment">//字符串+object类型     长安[object Object]     </span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>对象是一种复合的数据类型，在对象中可以保存多个不同的数据类型的属性</p>
+<h5 id="对象的分类"><a href="#对象的分类" class="headerlink" title="对象的分类"></a>对象的分类</h5><ol>
+<li><p>内置对象：<br>由ES标准中定义的对象，比如：Object、Math、Date、Function等。</p>
+</li>
+<li><p>宿主对象：</p>
+<p>由JS的运行环境（浏览器）提供的对象，比如：BOM，DOM</p>
+</li>
+<li><p>自定义对象：</p>
+<p>由开发人员自己创建出来的对象</p>
+</li>
+</ol>
+<p>注意：通过new关键字创建出来的对象实例，都是对象类型</p>
+<h5 id="对象的赋值和修改"><a href="#对象的赋值和修改" class="headerlink" title="对象的赋值和修改"></a>对象的赋值和修改</h5><ul>
+<li>这是基本数据类型：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> name1 = <span class="string">&quot;长安&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> name2 = name1;</span><br><span class="line">name2 = <span class="string">&quot;故里&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name1); <span class="comment">//输出结果：长安</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name2); <span class="comment">//输出结果：故里</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>这是object类型（对象）：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">obj1.<span class="property">name</span>=<span class="string">&quot;长安&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1;</span><br><span class="line">obj2.<span class="property">name</span> = <span class="string">&quot;故里&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name1); <span class="comment">//输出结果：故里</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name2); <span class="comment">//输出结果：故里</span></span><br></pre></td></tr></table></figure>
+
+<p>object类型赋值后竟然会改变本体。这里的object就相当于C语言中的一个指针指向的内容，而将obj1赋值给obj2就相当于让obj2也指向了这块内容，所以修改obj2所指向的内容后，自然也就修改了obj1</p>
+<p>JS中的对象和C++中的对象相似之处：</p>
+<ol>
+<li><p>作用都是封装信息，比如一个student类中可以封装学生的姓名，年龄。成绩</p>
+</li>
+<li><p>C++中的对象有成员函数和成员变量。JS中的对象也是如此，不过叫的是特征（属性）和行为（方法）</p>
+</li>
+</ol>
+<h2 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h2><h5 id="三个基本包装类："><a href="#三个基本包装类：" class="headerlink" title="三个基本包装类："></a>三个基本包装类：</h5><ul>
+<li><p>String():将基本数据类型的字符串，转换为String对象</p>
+</li>
+<li><p>Number():将基本数据类型的数字，转化为Number对象</p>
+</li>
+<li><p>Boolean():将基本数据类型的布尔值，转化为Boolean对象</p>
+</li>
+</ul>
+<h5 id="转换方法："><a href="#转换方法：" class="headerlink" title="转换方法："></a>转换方法：</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> str1 = <span class="string">&#x27;qianguyihao&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> str2 = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&#x27;qianguyihao&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> num = <span class="keyword">new</span> <span class="title class_">Number</span>(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> bool = <span class="keyword">new</span> <span class="title class_">Boolean</span>(<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<p>str2，num, bool的类型都是object</p>
+<p>将基本数据类型转化为对象后，就可以绑定属性和方法了</p>
+<h5 id="String-对象常用方法"><a href="#String-对象常用方法" class="headerlink" title="String()对象常用方法"></a>String()对象常用方法</h5><ol>
+<li><p>indexOf()&#x2F;lastIndexOf():获取字符串中指定内容（字符或字符串）的索引</p>
+<ul>
+<li><p>语法一：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">索引值 = str.<span class="title function_">indexOf</span>(查询的字符或者字符串)</span><br></pre></td></tr></table></figure>
+
+<p>indexOf() 是从前向后查找，lastIndexOf()是从后向前查找，如果找到了，返回第一次出现的索引，如果没有找到，返回-1</p>
+</li>
+<li><p>语法二：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">索引值 = str.indexOf(查询的字符串，起始的下标位置)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>charAt(index)获取指定位置的字符</p>
+<p>str.charAt(index)和str[index]等价</p>
+</li>
+</ol>
+<h5 id="Number-对象常用方法"><a href="#Number-对象常用方法" class="headerlink" title="Number()对象常用方法"></a>Number()对象常用方法</h5><ol>
+<li><p>Number.isInteger()判断是否为整数</p>
+<p>语法：<code>布尔值 = Number。isInteger(数字);</code></p>
+</li>
+<li><p>toFixed()小数点后面保留几位</p>
+<p>语法：<code>字符串 = myNum.toFixed(num);</code></p>
+<p>解释：将对象myNum的小数点后面保留num位小数（四舍五入），不会改变原数字，返回的是字符串</p>
+</li>
+</ol>
+<h5 id="Math-对象的方法"><a href="#Math-对象的方法" class="headerlink" title="Math()对象的方法"></a>Math()对象的方法</h5><p><strong>注意：调用Math对象的方法时，不需要创建对象，即不需要通过new来调用，直接使用即可</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> num = -<span class="number">0.6</span>;</span><br><span class="line"></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(num));        <span class="comment">//取绝对值</span></span><br><span class="line"></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(num));      <span class="comment">//向下取整，向小取</span></span><br><span class="line"></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">ceil</span>(num));       <span class="comment">//向上取整，向大取</span></span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(num));      <span class="comment">//四舍五入取整（正数四舍五入，负数五舍六入）</span></span><br><span class="line"></span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>());        <span class="comment">//生成0-1之间的随机数</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="JS和C语言的不同之处："><a href="#JS和C语言的不同之处：" class="headerlink" title="JS和C语言的不同之处："></a>JS和C语言的不同之处：</h3><ol>
+<li><p>JS中声明变量用的是let或者var,它是一种弱类型语言（动态语言），不用声明变量的类型，并且变量的数据类型是可以变化的，比如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> name =<span class="string">&quot;zhiruo&quot;</span>;</span><br><span class="line">name = <span class="number">123</span>; <span class="comment">//这里强制将字符串类型转化为了数值类型</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>JS中变量可以不用声明直接赋值  </p>
+</li>
+<li><p>JS中没有字符类型，只有字符串类型，并且字符串既可以用双引号引起来，也可以用单引号引起来</p>
+</li>
+<li><p>JS中字符串的长度用的是<code>str.length;</code>而C++中字符串的长度用的是<code>str.length()</code></p>
+</li>
+<li><p>+号</p>
+</li>
+</ol>
+<p>在C语言中，+号就是加号，而在JS中”+“有可能是加号（数值相加），也有可能是连字符（字符串拼接），类似C++中的运算符重载。要区分清楚以下几种情况：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我&quot;</span> + <span class="string">&quot;爱&quot;</span> + <span class="string">&quot;你&quot;</span>);	<span class="comment">//连字符，把三个独立的汉字，连接在一起了</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我+爱+你&quot;</span>);			<span class="comment">//原样输出</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>+<span class="number">2</span>+<span class="number">3</span>);				<span class="comment">//输出6</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>+<span class="string">&#x27;3&#x27;</span>);	</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>-<span class="string">&#x27;3&#x27;</span>);	</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">我爱你</span><br><span class="line">我+爱+你</span><br><span class="line">6</span><br><span class="line">53</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<ul>
+<li>如果加号两边都是Number类型，那么就是数字相加，否则，就是连字符相加</li>
+<li>如果符号是减号，除号，乘号，取模运算符，计算机会帮忙进行隐式转换，即5-’3‘的运算结果是2</li>
+</ul>
+<ol start="6">
+<li><p>获取方法与调用方法</p>
+<p>C语言中只能调用方法，不能获取方法，而JS可以，如下例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">obj.<span class="property">sayName</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;smyhvae&#x27;</span>);</span><br><span class="line">&#125;;</span><br><span class="line">   </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="property">sayName</span>);  <span class="comment">//没加括号，就是获取方法</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="title function_">sayName</span>());  <span class="comment">//加了括号，就是调用方法。即：执行函数内容，并执行函数体的内容</span></span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+
+<p><code> console.log(obj.sayName);</code>执行结果：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">ƒ () &#123;</span><br><span class="line"> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;smyhvae&#x27;</span>);     <span class="comment">//直接把方法整s</span></span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>console.log(obj.sayName()); </code>执行结果：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">smyhvae <span class="comment">//首先调用函数，执行函数内容</span></span><br><span class="line"><span class="literal">undefined</span>   <span class="comment">//又因为该方法没有返回值，所以输出undefined</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>计算机笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
 </search>
