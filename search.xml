@@ -132,7 +132,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fun1</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>利用函数表达式（匿名函数）</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> 变量名 = <span class="keyword">function</span>(<span class="params">形参<span class="number">1</span>，形参<span class="number">2</span>,...形参n</span>)&#123;</span><br><span class="line">     语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> 变量名 = <span class="keyword">function</span>(<span class="params">形参<span class="number">1</span>，形参<span class="number">2</span>,...形参n</span>)&#123;</span><br><span class="line">     语句;</span><br><span class="line">&#125;; <span class="comment">//注意这里有个分号，表示赋值语句结束</span></span><br></pre></td></tr></table></figure>
 
 <p>举例：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fun2 = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我是匿名函数中的代码&quot;</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -176,7 +176,12 @@
 <p>给点击这个操作绑定了事件（弹窗）</p>
 </li>
 </ol>
-<h3 id="调用函数和获取函数"><a href="#调用函数和获取函数" class="headerlink" title="调用函数和获取函数"></a>调用函数和获取函数</h3><p>获取方法与调用方法</p>
+<h3 id="函数的传参"><a href="#函数的传参" class="headerlink" title="函数的传参"></a>函数的传参</h3><p>JS允许传入任意个参数而不影响调用，因此，传入的参数比定义的参数多没有问题（即使函数内部不需要这些参数），传入的参数比定义的少也没有问题。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">abs</span>(<span class="number">19</span>,<span class="string">&#x27;nalabala&#x27;</span>); <span class="comment">//返回19</span></span><br><span class="line"><span class="title function_">abs</span>(-<span class="number">9</span>,<span class="string">&#x27;haha&#x27;</span>,<span class="string">&#x27;hehe&#x27;</span>,<span class="literal">null</span>); <span class="comment">//返回9</span></span><br><span class="line"><span class="title function_">abs</span>();  <span class="comment">//返回NaN</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="调用函数和获取函数的区别"><a href="#调用函数和获取函数的区别" class="headerlink" title="调用函数和获取函数的区别"></a>调用函数和获取函数的区别</h3><p>获取方法与调用方法</p>
 <p>C语言中只能调用方法，不能获取方法，而JS可以，如下例：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">obj.<span class="property">sayName</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;smyhvae&#x27;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="property">sayName</span>);  <span class="comment">//没加括号，就是获取方法</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="title function_">sayName</span>());  <span class="comment">//加了括号，就是调用方法。即：执行函数内容，并执行函数体的内容</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -194,7 +199,8 @@
 <h2 id="作用域："><a href="#作用域：" class="headerlink" title="作用域："></a>作用域：</h2><h3 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h3><p>全局作用域和局部作用域</p>
 <h3 id="访问关系："><a href="#访问关系：" class="headerlink" title="访问关系："></a>访问关系：</h3><ul>
 <li>内部作用域可以访问到外部作用域的变量，但在外部作用域无法访问到内部作用域的变量</li>
-<li>如果局部作用域和全局作用域的变量重名的话，在局部修改局部作用域的变量的值并不会改变全局作用域的变量的值</li>
+<li>如果局部作用域和全局作用域的变量重名的话，在局部修改局部作用域的变量的值并不会改变全局作用域的变量的值。</li>
+<li>JS的函数在查找变量时从自身函数定义开始，由”内“向”外“查找。如果内部函数定义了域外部函数重名的变量。则内部函数的变量将”屏蔽“外部函数的变量</li>
 </ul>
 <h2 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h2><p>this的指向会根据函数调用方式的不同而改变。</p>
 <ol>
@@ -253,12 +259,24 @@
     <title>一些好用的网站</title>
     <url>/2022/02/28/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</url>
     <content><![CDATA[<ul>
-<li>可以提高图片分辨率的网站：<a href="https://bigjpg.com/">https://bigjpg.com/</a></li>
-<li>超喜欢的练习打字网站：<a href="https://www.typing.com/">https://www.typing.com/</a></li>
-<li>网道，简洁舒适的编程教程：<a href="https://wangdoc.com/">https://wangdoc.com/</a></li>
-<li>北大学长整理的CS学习指南：<a href="https://csdiy.wiki/">https://csdiy.wiki/</a></li>
-<li>STL超全工具书，方便查询：<a href="https://blog.csdn.net/weixin_45761327/article/details/107561697">https://blog.csdn.net/weixin_45761327/article/details/107561697</a></li>
-<li>adobe全家桶（2020年的）：<a href="https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78">https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78</a></li>
+<li><p>可以提高图片分辨率的网站：</p>
+<p><a href="https://bigjpg.com/">https://bigjpg.com/</a></p>
+</li>
+<li><p>超喜欢的练习打字网站（小白的我从练习打字开始）</p>
+<p><a href="https://www.typing.com/">https://www.typing.com/</a></p>
+</li>
+<li><p>网道，简洁舒适的编程教程：</p>
+<p><a href="https://wangdoc.com/">https://wangdoc.com/</a></p>
+</li>
+<li><p>北大学长整理的CS学习指南：</p>
+<p><a href="https://csdiy.wiki/">https://csdiy.wiki/</a></p>
+</li>
+<li><p>STL超全工具书，方便查询：</p>
+<p><a href="https://blog.csdn.net/weixin_45761327/article/details/107561697">https://blog.csdn.net/weixin_45761327/article/details/107561697</a></p>
+</li>
+<li><p>adobe全家桶（2020年的）：</p>
+<p><a href="https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78">https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78</a></p>
+</li>
 </ul>
 ]]></content>
       <categories>
