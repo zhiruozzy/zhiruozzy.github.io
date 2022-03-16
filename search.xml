@@ -5,6 +5,17 @@
     <url>/2022/03/05/JS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%87%AA%E7%94%A8%EF%BC%89/</url>
     <content><![CDATA[<p>小白自学的时候做的笔记，以供之后回来查阅，估计会有很多表述不准确甚至出错的地方，随着学习的加深会慢慢修正补充知识的。</p>
 <p>​                                                     ——2022.03.05</p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>事件，就是发生的事情，比如点击某个元素，将鼠标移动到某个元素的上方，按下键盘上的某个键</p>
+<h3 id="拖拽box元素"><a href="#拖拽box元素" class="headerlink" title="拖拽box元素"></a>拖拽box元素</h3><p>需要进行三个步骤（其实就是对应了三个事件）</p>
+<ol>
+<li>当鼠标在被拖拽元素上按下（不是点一下）时，开始拖拽 ：onmousedown</li>
+<li>当鼠标移动时，被拖拽元素随鼠标移动 : onmousemove</li>
+<li>当鼠标松开时，被拖拽元素固定在当前位置: onmouseup</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//拖谁给谁绑定响应函数，本题拖拽的时box1，所以给box1绑定</span><br><span class="line">var box1 </span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="JS的常用书写方式"><a href="#JS的常用书写方式" class="headerlink" title="JS的常用书写方式"></a>JS的常用书写方式</h2><ol>
 <li><h3 id="内嵌式"><a href="#内嵌式" class="headerlink" title="内嵌式"></a>内嵌式</h3><ul>
 <li><p>在HTML的<code>&lt;body&gt;</code>标签中放入<code>&lt;script type=&quot;text/javascipt&quot;&gt; &lt;/script&gt;</code>标签对中，并在<code>&lt;script&gt;</code>标签对里书写代码</p>
@@ -308,13 +319,22 @@
 <h3 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h3><p>在上面那个例子中，本来fn1执行完毕后，它里面的变量a会立即销毁，但此时由于产生了闭包，fn1中的变量不会立即销毁，因为fn2函数还要继续调用变量a。</p>
 <p>并且，在全局中通过foo()承接fn1的返回值,达到了在全局作用域中也可以访问局部作用域中的变量a</p>
 <p>可见，<strong>闭包延伸了变量的作用范围</strong></p>
-<h2 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h2><p>this的指向会根据函数调用方式的不同而改变。</p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>解析器在调用函数时每次都会像函数内部传递进一个隐含的参数，这个隐含的参数就是this，this指向的是一个对象</p>
+<p>这个对象我们称为函数执行的上下文对象</p>
+<p>根据函数<strong>调用</strong>方式的不同，this会指向不同的对象</p>
+<p>以函数形式调用，this的对象是window。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">func1</span>(<span class="params"></span>)&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;this.window&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">func1</span>();<span class="comment">//直接调用函数，this指向window全局</span></span><br><span class="line">等价于：<span class="variable language_">window</span>.<span class="title function_">fun1</span>();</span><br><span class="line">输出结果：object <span class="title class_">Window</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>以对象的方式调用，this指向调用方法的对象</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> </span><br><span class="line"> <span class="comment">//把obj的一个属性设置成了函数func1</span></span><br><span class="line"> <span class="keyword">var</span> obj = &#123;</span><br><span class="line">   <span class="attr">sayname</span>:func1</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">sayname</span>();<span class="comment">//以方法的形式调用函数</span></span><br><span class="line"></span><br><span class="line">输出结果：object <span class="title class_">Object</span></span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
 <ol>
 <li><strong>普通函数，立即执行函数</strong>调用时，this的指向时window（全局）</li>
 <li><strong>以方法的形式</strong>调用时，this指向调用方法的那个对象</li>
 <li>以<strong>构造函数</strong>的形式调用时，this指向new出来的对象</li>
 <li>以<strong>事件绑定函数</strong>的形式调用时，this指向绑定事件的对象</li>
-<li>用<strong>call和apply</strong>调用时，this指向指定的那个对象</li>
+<li>用<strong>call和apply</strong>调用时，this指向指定的（括号里面的第一个参数）那个对象</li>
 </ol>
 <h2 id="同步和异步"><a href="#同步和异步" class="headerlink" title="同步和异步"></a>同步和异步</h2><h3 id="JS是单线程"><a href="#JS是单线程" class="headerlink" title="JS是单线程"></a>JS是单线程</h3><p>即同一个时间只能做一件事，比如某个DOM元素进行添加和删除的操作时，不能同时进行，应该先添加，之后再删除。</p>
 <p>单线程意味着，所有任务都需要排队，即前一个任务结束，才会执行后一个任务，这样导致的问题是：JS执行的时间过长，页面渲染加载会有阻塞</p>
@@ -513,7 +533,14 @@
   <entry>
     <title>离散数学の笔记</title>
     <url>/2022/03/02/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h3 id="命题"><a href="#命题" class="headerlink" title="命题"></a>命题</h3><h5 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h5><ul>
+    <content><![CDATA[<h3 id="一些英译中"><a href="#一些英译中" class="headerlink" title="一些英译中"></a>一些英译中</h3><p>compound proposition :复合命题</p>
+<p>negation of statements: 陈述句的否定</p>
+<p>De Morgan’s laws :德摩根定律</p>
+<p>truth tables：真值表</p>
+<p> absorption laws：吸收律</p>
+<p>tautology：重言式，永真式</p>
+<p>logical operator：逻辑运算符</p>
+<h3 id="命题"><a href="#命题" class="headerlink" title="命题"></a>命题</h3><h5 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h5><ul>
 <li>命题，是指具有唯一真值的陈述句</li>
 <li>疑问句、祈使句、感叹句，因为无法判断真假，所以都不是命题</li>
 <li>真用1或T来表示，假用0或F来表示，因为命题只有这两种真值，所以这种逻辑成为二值逻辑</li>
@@ -628,7 +655,9 @@
 </li>
 <li><p>G ∨ ( H ∧ S ) &#x3D; ( G ∨ H ) ∧ ( G ∨ S )<br>G ∧ ( H ∨ S ) &#x3D; ( G ∧ H ) ∨ ( G ∧ S )<br>（分配律）</p>
 </li>
-<li><p>﹁ ( G ∧ H ) &#x3D; ﹁ G ∨ ﹁ H  （去掉括号后合取变析取，析取变合取）<br>（德摩根律）</p>
+<li><p>﹁ ( G ∧ H ) &#x3D; ﹁ G ∨ ﹁ H </p>
+<p>﹁ ( G ∨ H ) &#x3D; ﹁ G ∧ ﹁ H </p>
+<p> （去掉括号后合取变析取，析取变合取）<br>（德摩根律）</p>
 </li>
 <li><p>G ∨ ( G ∧ H ) &#x3D; G</p>
 <p>G ∧ ( G ∨ H ) &#x3D; G<br>（吸收律）</p>
@@ -727,37 +756,5 @@
       <tags>
         <tag>笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>leetcode题解</title>
-    <url>/2021/03/06/leetcode%E9%A2%98%E8%A7%A3/</url>
-    <content><![CDATA[<h3 id="2022-03-06"><a href="#2022-03-06" class="headerlink" title="2022-03-06"></a>2022-03-06</h3><h3 id="26-删除有序数组中的重复项"><a href="#26-删除有序数组中的重复项" class="headerlink" title="26.删除有序数组中的重复项"></a>26.删除有序数组中的重复项</h3><p>给你一个<strong>升序排列</strong>的数组nums，需要你<strong>原地删除</strong>重复出现的元素，使每个元素<strong>只出现一次</strong>，返回删除后数组的新长度，元素的<strong>相对顺序应该保持一致</strong></p>
-<p>题目分析：</p>
-<ol>
-<li><p>升序排列&#x3D;&gt;可以使用双指针</p>
-</li>
-<li><p>必须原地修改原数组&#x3D;&gt;不能使用额外的空间，函数传参的时候是引用的形式，所以在函数中直接修改数组就行</p>
-</li>
-<li><p>返回新长度&#x3D;&gt;程序只会遍历到新长度，所以不用管数组超出新长度后面的元素</p>
-</li>
-</ol>
-<p>题解：</p>
-<p>双指针，一个pre指针用于标志已经处理好的数组的位置，一个cur指针用于标志正在处理中的数组的位置</p>
-<p>一开始两者都指向数组的开始</p>
-<ul>
-<li>如果nums[cur]&#x3D;&#x3D;nums[pre]，cur指针后移一位</li>
-<li>如果nums[cur]!&#x3D;nums[pre]，让nums[pre+1]&#x3D;nums[cur]，然后让pre,cur都后移一位</li>
-</ul>
-<p>注意1：最后返回新长度是pre+1，不是pre。因为返回的是长度，而pre表示的是下标，下标是从0开始的。</p>
-<p>注意2：要特别处理数组为空的情况，如果数组为空，应该返回0。</p>
-<p>第一版代码：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">removeDuplicates</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">            <span class="type">int</span> pre=<span class="number">0</span>,cur=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums.<span class="built_in">size</span>()==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(cur&lt;nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[cur]==nums[pre])</span><br><span class="line">                    cur++;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    nums[pre+<span class="number">1</span>]=nums[cur];</span><br><span class="line">                    cur++,pre++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> pre+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>可以发现，在if..else判断语句中，都有cur++这一条，所以可以精简一下</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">       <span class="keyword">while</span>(cur&lt;nums.<span class="built_in">size</span>())&#123;</span><br><span class="line">           <span class="keyword">if</span>(nums[cur]!=nums[pre])&#123;</span><br><span class="line">               nums[pre+<span class="number">1</span>]=nums[cur];</span><br><span class="line">               pre++;</span><br><span class="line">           &#125;</span><br><span class="line">          cur++;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
   </entry>
 </search>
