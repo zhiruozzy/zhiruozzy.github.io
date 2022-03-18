@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,164 +8,166 @@
     <title>Document</title>
     <style>
         #shuoshuo_content {
-    background-color: rgba(255, 255, 255, 0.897);
-    padding: 10px;
-    min-height: 500px;
-}
-/* shuo */
-.cbp_tmlabel{
-    text-decoration:none;
-}
-body.theme-dark .cbp_tmtimeline::before {
-    background: RGBA(255, 255, 255, 0.06);
-}
-
-ul.cbp_tmtimeline {
-    padding: 0;
-}
-
-div class.cdp_tmlabel > li .cbp_tmlabel {
-    margin-bottom: 0;
-}
-
-.cbp_tmtimeline {
-    margin: 30px 0 0 0;
-    padding: 0;
-    list-style: none;
-    position: relative;
-}
-/* The line */
-
-.cbp_tmtimeline:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: RGBA(0, 0, 0, 0.02);
-    left: 80px;
-    margin-left: 10px;
-}
-/* The date/time */
-
-.cbp_tmtimeline > li .cbp_tmtime {
-    display: block;
-    /* width: 29%; */
-    /* padding-right: 110px; */
-    max-width: 70px;
-    position: absolute;
-}
-
-.cbp_tmtimeline > li .cbp_tmtime span {
-    display: block;
-    text-align: right;
-}
-
-.cbp_tmtimeline > li .cbp_tmtime span:first-child {
-    font-size: 0.9em;
-    color: #bdd0dbc4;
-}
-
-.cbp_tmtimeline > li .cbp_tmtime span:last-child {
-    font-size: 1.2em;
-    color: #d9cfe7b7;
-}
-
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
-    color: RGBA(172,198,109, 0.75);
-}
-
-div.cbp_tmlabel > p {
-    margin-bottom: 0;
-}
-/* Right content */
-
-.cbp_tmtimeline > li .cbp_tmlabel {
-    margin: 0 0 45px 65px;
-    background: #D9CFE7;
-    color: #000;
-    padding: .8em 1.2em .4em 1.2em;
-    /* font-size: 1.2em; */
-    font-weight: 300;
-    line-height: 1.4;
-    position: relative;
-    border-radius: 5px;
-    transition: all 0.3s ease 0s;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    display: block;
-}
-
-.cbp_tmlabel:hover {
-    /* transform:scale(1.05); */
-    transform: translateY(-3px);
-    z-index: 1;
-    box-shadow: 0 15px 32px rgba(0, 0, 0, 0.15) !important
-}
-
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
-    background: RGBA(172,198,109, 0.75);
-}
-/* The triangle */
-
-.cbp_tmtimeline > li .cbp_tmlabel:after {
-    right: 100%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-right-color: #D9CFE7;
-    border-width: 10px;
-    top: 4px;
-}
-
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-    border-right-color: RGBA(172,198,109, 0.75);
-}
-
-p.shuoshuo_time {
-    margin-top: 10px;
-    border-top: 1px dashed rgba(255, 255, 255, 0.822);
-    padding-top: 5px;
-}
-/* Media */
-
-@media screen and (max-width: 65.375em) {
-    .cbp_tmtimeline > li .cbp_tmtime span:last-child {
-        font-size: 1.2em;
-    }
-}
-
-.shuoshuo_author_img img {
-    border: 1px solid #ddd;
-    padding: 2px;
-    float: left;
-    border-radius: 64px;
-    transition: all 1.0s;
-}
-
-.avatar {
-    border-radius: 100% !important;
-    -moz-border-radius: 100% !important;
-    box-shadow: inset 0 -1px 0 3333sf;
-    -webkit-box-shadow: inset 0 -1px 0 3333sf;
-    -webkit-transition: 0.4s;
-    -webkit-transition: -webkit-transform 0.4s ease-out;
-    transition: transform 0.4s ease-out;
-    -moz-transition: -moz-transform 0.4s ease-out;
-}
-
-.zhuan {
-    transform: rotateZ(720deg);
-    -webkit-transform: rotateZ(720deg);
-    -moz-transform: rotateZ(720deg);
-}
-/* end */
-
+            background-color: rgba(255, 255, 255, 0.897);
+            padding: 10px;
+            min-height: 500px;
+        }
+        /* shuo */
+        
+        .cbp_tmlabel {
+            text-decoration: none;
+        }
+        
+        body.theme-dark .cbp_tmtimeline::before {
+            background: RGBA(255, 255, 255, 0.06);
+        }
+        
+        ul.cbp_tmtimeline {
+            padding: 0;
+        }
+        
+        div class.cdp_tmlabel>li .cbp_tmlabel {
+            margin-bottom: 0;
+        }
+        
+        .cbp_tmtimeline {
+            margin: 30px 0 0 0;
+            padding: 0;
+            list-style: none;
+            position: relative;
+        }
+        /* The line */
+        
+        .cbp_tmtimeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: RGBA(0, 0, 0, 0.02);
+            left: 80px;
+            margin-left: 10px;
+        }
+        /* The date/time */
+        
+        .cbp_tmtimeline>li .cbp_tmtime {
+            display: block;
+            /* width: 29%; */
+            /* padding-right: 110px; */
+            max-width: 70px;
+            position: absolute;
+        }
+        
+        .cbp_tmtimeline>li .cbp_tmtime span {
+            display: block;
+            text-align: right;
+        }
+        
+        .cbp_tmtimeline>li .cbp_tmtime span:first-child {
+            font-size: 0.9em;
+            color: #bdd0dbc4;
+        }
+        
+        .cbp_tmtimeline>li .cbp_tmtime span:last-child {
+            font-size: 1.2em;
+            color: #d9cfe7b7;
+        }
+        
+        .cbp_tmtimeline>li:nth-child(odd) .cbp_tmtime span:last-child {
+            color: RGBA(172, 198, 109, 0.75);
+        }
+        
+        div.cbp_tmlabel>p {
+            margin-bottom: 0;
+        }
+        /* Right content */
+        
+        .cbp_tmtimeline>li .cbp_tmlabel {
+            margin: 0 0 45px 65px;
+            background: #D9CFE7;
+            color: #000;
+            padding: .8em 1.2em .4em 1.2em;
+            /* font-size: 1.2em; */
+            font-weight: 300;
+            line-height: 1.4;
+            position: relative;
+            border-radius: 5px;
+            transition: all 0.3s ease 0s;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            display: block;
+        }
+        
+        .cbp_tmlabel:hover {
+            /* transform:scale(1.05); */
+            transform: translateY(-3px);
+            z-index: 1;
+            box-shadow: 0 15px 32px rgba(0, 0, 0, 0.15) !important
+        }
+        
+        .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {
+            background: RGBA(172, 198, 109, 0.75);
+        }
+        /* The triangle */
+        
+        .cbp_tmtimeline>li .cbp_tmlabel:after {
+            right: 100%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-right-color: #D9CFE7;
+            border-width: 10px;
+            top: 4px;
+        }
+        
+        .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
+            border-right-color: RGBA(172, 198, 109, 0.75);
+        }
+        
+        p.shuoshuo_time {
+            margin-top: 10px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.822);
+            padding-top: 5px;
+        }
+        /* Media */
+        
+        @media screen and (max-width: 65.375em) {
+            .cbp_tmtimeline>li .cbp_tmtime span:last-child {
+                font-size: 1.2em;
+            }
+        }
+        
+        .shuoshuo_author_img img {
+            border: 1px solid #ddd;
+            padding: 2px;
+            float: left;
+            border-radius: 64px;
+            transition: all 1.0s;
+        }
+        
+        .avatar {
+            border-radius: 100% !important;
+            -moz-border-radius: 100% !important;
+            box-shadow: inset 0 -1px 0 3333sf;
+            -webkit-box-shadow: inset 0 -1px 0 3333sf;
+            -webkit-transition: 0.4s;
+            -webkit-transition: -webkit-transform 0.4s ease-out;
+            transition: transform 0.4s ease-out;
+            -moz-transition: -moz-transform 0.4s ease-out;
+        }
+        
+        .zhuan {
+            transform: rotateZ(720deg);
+            -webkit-transform: rotateZ(720deg);
+            -moz-transform: rotateZ(720deg);
+        }
+        /* end */
     </style>
 </head>
+
 <body>
     <div id="primary" class="content-area" style="">
         <main id="main" class="site-main" role="main">
@@ -178,7 +181,16 @@ p.shuoshuo_time {
                             <b></b>
                             <p>“人间的温情跨越无数岁月和命运的阴霾，将记忆烘烤得蓬松而馨香”</p>
                             <p class="shuoshuo_time"><i class="fa fa-clock-o"></i>
-                                
+
+                            </p>
+                        </a>
+                    </li>
+                    <li> <span class="shuoshuo_author_img"><img src="https://pic.imgdb.cn/item/6224c3325baa1a80ab7c382c.jpg"
+                                class="avatar avatar-48" width="48" height="48"></span>
+                        <a class="cbp_tmlabel" href="">
+                            <p>希望自己可以多一些耐心，当走到最后的时候，不要骄傲，而是要想想自己还能做的更好吗。切记，戒骄戒躁</p>
+                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i>2022年3月16日
+
                             </p>
                         </a>
                     </li>
@@ -190,8 +202,7 @@ p.shuoshuo_time {
                             <b></b>
                             <p>我飞跑起来，追逐着落日，但它下落的太快了。不过在那一分钟，我的心情似乎也伴随着春的气息发芽了。</p>
                             <p>希望下一次我可以骑着我的单车追逐到落日和晚风</p>
-                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i>
-                    
+                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i>2022年3月7日
                             </p>
                         </a>
                     </li>
@@ -201,8 +212,7 @@ p.shuoshuo_time {
                             <p></p>
                             <p>今天终于搭建完毕网站，一些小美好正井然有序的发生着，不是吗？</p>
                             <p></p>
-                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i>
-                                2022年3月5日
+                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i> 2022年3月5日
                             </p>
                         </a>
                     </li>
@@ -213,8 +223,7 @@ p.shuoshuo_time {
                             <p>最近发现几首很喜欢的韩文歌，浅吟低唱，很好听</p>
                             <p>Leavin' tomorrow | 우리만의 시간 | 우르릉 쾅쾅쾅 </p>
                             <p>今天在读GitHub的一个教程的时候发现一个小错误，给作者交了issue，觉得这么浩大的工程自己能帮一点忙，开心🤞</p>
-                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i>
-                                2022年3月3日
+                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i> 2022年3月3日
                             </p>
                         </a>
                     </li>
@@ -226,8 +235,7 @@ p.shuoshuo_time {
                             <p>时隔两个月，宋浩老师我又来了，为什么你讲课这么有趣，这么搞笑啊，真是倍感亲切。</p>
                             <p>空降成功，感谢指挥部！</p>
                             <p></p>
-                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i>
-                                2022年3月2日
+                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i> 2022年3月2日
                             </p>
                         </a>
                     </li>
@@ -243,8 +251,7 @@ p.shuoshuo_time {
                             <p>《小王子》中写道：”星星发光是为了让每一个人有一天都能找到属于自己的星星。“</p>
                             <p>原来，我也在这个平常的夜晚，不经意的与温暖撞了个满怀啊🙆‍♀️</p>
                             <p></p>
-                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i>
-                                2022年2月28日
+                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i> 2022年2月28日
                             </p>
                         </a>
                     </li>
@@ -255,8 +262,7 @@ p.shuoshuo_time {
                             <p></p>
                             <p>香水小样到家了，是奶香味的，洗完澡轻喷在耳朵后，将自己埋在被窝里，仿佛整个人都被奶香包围吖，第二天起来还依旧有淡淡的香味呢🙆‍♀️</p>
                             <p></p>
-                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i>
-                                2022年2月27日
+                            <p class="shuoshuo_time"><i class="fa fa-clock-o"></i> 2022年2月27日
                             </p>
                         </a>
                     </li>
@@ -265,4 +271,5 @@ p.shuoshuo_time {
     </div>
 
 </body>
+
 </html>
