@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #hh {
+            text-align: center;
+            color: #4dabf7;
+        }
+
+        #score {
+            text-align: center;
+            color: #212529;
+
+        }
+
+        #box {
+            width: 320px;
+            height: 320px;
+            border: 2px solid;
+            border-radius: 25px;
+            margin: 40px auto;
+            background-color: #a5d8ff
+        }
+
+        .cell {
+            width: 76px;
+            height: 76px;
+            border: 2px solid;
+            border-radius: 25px;
+            border-color: #87CEFA;
+            background-color: #b2e1ff;
+            float: left;
+            font-size: 30px;
+            font-weight: 500;
+            /* 文字居中 */
+            text-align: center;
+            line-height: 76px;
+        }
+
+        body {
+            background: url(https://pic.imgdb.cn/item/623878bc27f86abb2a7c43c6.jpg) ;
+            background-size: 100% 100%;
+            background-repeat:no-repeat;
+            width: 100%;
+            height: 100%;
+            background-attachment: fixed;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 id="hh">2048</h1>
+    <span id="score">
+        <h1 id="Score">score:</h1>
+    </span>
+    <div id="box">
+        <div class="cell" id="c00"></div>
+        <div class="cell" id="c01"></div>
+        <div class="cell" id="c02"></div>
+        <div class="cell" id="c03"></div>
+        <div class="cell" id="c10"></div>
+        <div class="cell" id="c11"></div>
+        <div class="cell" id="c12"></div>
+        <div class="cell" id="c13"></div>
+        <div class="cell" id="c20"></div>
+        <div class="cell" id="c21"></div>
+        <div class="cell" id="c22"></div>
+        <div class="cell" id="c23"></div>
+        <div class="cell" id="c30"></div>
+        <div class="cell" id="c31"></div>
+        <div class="cell" id="c32"></div>
+        <div class="cell" id="c33"></div>
+    </div>
+    <script>
+        var score = 0;
+        var i = 0, j = 0;
+        var span = document.getElementById("score");
+        var arr = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
+        creat();
+        creat();
+        update();
+
+        function later() {
+
+            var ret = judge();
+            console.log(ret);
+            if (ret == false) {
+                alert("游戏结束,你的分数是:"+score);
+            }
+            update();
+            console.log(check());
+            //如果有空位才create一个新的
+            if (check()) {
+                creat();
+                update();
+            }
+        }
+
+        function check() {
+            for (var i = 0; i < 4; i++) {
+                for (j = 0; j < 4; j++) {
+                    if (arr[i][j] == 0)
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        function creat() {
+            while (1) {
+                var px = parseInt(Math.random() * 4);
+                var py = parseInt(Math.random() * 4);
+                if (arr[px][py] == 0) {
+                    arr[px][py] = Math.random() < 0.5 ? 2 : 4;
+                    break;
+                }
+            }
+        }
+
+        //两种没有输的情况：1.还有空位 2.相邻的元素相等
+        function judge() {
+            for (var i = 0; i < 4; i++) {
+                for (j = 0; j < 4; j++) {
+                    if (arr[i][j] == 0)
+                        return true;
+                    else if (arr[i][j] && j < 3 && arr[i][j] == arr[i][j + 1])
+                        return true;
+                    else if (arr[i][j] && i < 3 && arr[i][j] == arr[i + 1][j])
+                        return true;
+                }
+            }
+            return false;
+        }
+        function update() {
+            //更新div中的innerHTML
+            for (var i = 0; i < 4; i++) {
+                for (var j = 0; j < 4; j++) {
+                    if (arr[i][j] == 0) {
+                        var cell = document.getElementById("c" + i + j);
+                        cell.innerHTML = "";
+                        cell.style.backgroundColor = "#b2e1ff";
+                    }
+                    else {
+                        var cell = document.getElementById("c" + i + j);
+                        cell.innerHTML = arr[i][j];
+                        if (arr[i][j] == 2) {
+                            cell.style.backgroundColor = "#e7f5ff";
+                        }
+                        else if (arr[i][j] == 4) {
+                            cell.style.backgroundColor = "#d0ebff";
+                        }
+                        else if (arr[i][j] == 8) {
+                            cell.style.backgroundColor = "#82c9ff";
+                        }
+                        else if (arr[i][j] == 16) {
+                            cell.style.backgroundColor = "#74c0fc";
+                        }
+                        else if (arr[i][j] == 32) {
+                            cell.style.backgroundColor = "#4dabf7";
+                        }
+                        else if (arr[i][j] == 64) {
+                            cell.style.backgroundColor = "#339af0";
+                        }
+                        else if (arr[i][j] == 128) {
+                            cell.style.backgroundColor = "#228be6";
+                        }
+                        else if (arr[i][j] == 256) {
+                            cell.style.backgroundColor = "#1c7ed6";
+                        }
+                        else if (arr[i][j] == 512) {
+                            cell.style.backgroundColor = "#fff0f6";
+                        }
+                        else if (arr[i][j] == 1024) {
+                            cell.style.backgroundColor = "#1971c2";
+                        }
+                        else if (arr[i][j] == 2048) {
+                            cell.style.backgroundColor = "#1864ab";
+                        }
+                        else if (arr[i][j] == 4096) {
+                            cell.style.backgroundColor = "#4263eb";
+                        }
+
+
+
+
+                    }
+                }
+            }
+            //更新分数
+            span.innerHTML = "<h1>score:" + score + "</h3>";
+        }
+
+
+
+
+
+        function moveLeft() {
+            for (var i = 0; i < 4; i++) {
+                for (var j = 0; j < 3; j++) {
+                    for (var k = j + 1; k < 4; k++) {
+                        if (arr[i][j] && arr[i][j] == arr[i][k]) {
+                            arr[i][j] *= 2;
+                            arr[i][k] = 0;
+                            score += arr[i][j];
+                        }
+                        else if (!arr[i][j] && arr[i][k]) {
+                            arr[i][j] = arr[i][k];
+                            arr[i][k] = 0;
+                        }
+                    }
+                }
+            }
+        }
+        function moveRight() {
+            for (var i = 0; i < 4; i++) {
+                for (var j = 3; j > 0; j--) {
+                    for (var k = j - 1; k >= 0; k--) {
+                        if (arr[i][j] && arr[i][j] == arr[i][k]) {
+                            arr[i][j] *= 2;
+                            arr[i][k] = 0;
+
+                            score += arr[i][j];
+                        }
+                        else if (!arr[i][j] && arr[i][k]) {
+                            arr[i][j] = arr[i][k];
+                            arr[i][k] = 0;
+                        }
+                    }
+                }
+            }
+        }
+        function moveUp() {
+            for (var j = 0; j < 4; j++) {
+                for (var i = 0; i < 3; i++) {
+                    for (var k = i + 1; k < 4; k++) {
+                        if (arr[i][j] && arr[i][j] == arr[k][j]) {
+                            arr[i][j] *= 2;
+                            arr[k][j] = 0;
+                            score += arr[i][j];
+                        }
+                        else if (!arr[i][j] && arr[k][j]) {
+                            arr[i][j] = arr[k][j];
+                            arr[k][j] = 0;
+                        }
+                    }
+                }
+            }
+        }
+        function moveDown() {
+            for (var j = 0; j < 4; j++) {
+                for (var i = 3; i > 0; i--) {
+                    for (var k = i - 1; k >= 0; k--) {
+                        if (arr[i][j] && arr[i][j] == arr[k][j]) {
+                            arr[i][j] *= 2;
+                            arr[k][j] = 0;
+                            score += arr[i][j];
+                        }
+                        else if (!arr[i][j] && arr[k][j]) {
+                            arr[i][j] = arr[k][j];
+                            arr[k][j] = 0;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        document.onkeydown = function (event) {
+            event = event || window.event;
+            switch (event.keyCode) {
+                //左
+                case 37:
+                    moveLeft();
+                    later();
+                    break;
+                case 38:
+                    moveUp();
+                    later();
+                    break;
+                case 39:
+                    moveRight();
+                    later();
+                    break;
+                case 40:
+                    moveDown();
+                    later();
+                    break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
