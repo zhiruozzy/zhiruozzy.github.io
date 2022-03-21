@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>自制的2048小游戏</title>
+    <title>2048小游戏</title>
     <url>/2022/02/27/2048/</url>
     <content><![CDATA[<p>先移动，将arr数组中的数据进行合并</p>
 <p>再判断游戏是否结束</p>
@@ -127,7 +127,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title>JS学习笔记（自用）</title>
+    <title>JS学习笔记</title>
     <url>/2022/03/05/JS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%87%AA%E7%94%A8%EF%BC%89/</url>
     <content><![CDATA[<p>小白自学的时候做的笔记，以供之后回来查阅，估计会有很多表述不准确甚至出错的地方，随着学习的加深会慢慢修正补充知识的。</p>
 <p>​                                                     ——2022.03.05</p>
@@ -580,7 +580,8 @@
   <entry>
     <title>一些好用的网站</title>
     <url>/2022/02/28/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<ul>
+    <content><![CDATA[<p>下面是自己最近冲浪看到的一些很好的网站，分享给你：</p>
+<ul>
 <li><p>可以提高图片分辨率的网站：</p>
 <p><a href="https://bigjpg.com/">https://bigjpg.com/</a></p>
 </li>
@@ -589,9 +590,6 @@
 </li>
 <li><p>网道，简洁舒适的编程教程（阮一峰前辈yyds)：</p>
 <p><a href="https://wangdoc.com/">https://wangdoc.com/</a></p>
-</li>
-<li><p>北大学长整理的CS学习指南：</p>
-<p><a href="https://csdiy.wiki/">https://csdiy.wiki/</a></p>
 </li>
 <li><p>STL超全工具书，方便查询：</p>
 <p><a href="https://blog.csdn.net/weixin_45761327/article/details/107561697">https://blog.csdn.net/weixin_45761327/article/details/107561697</a></p>
@@ -609,7 +607,7 @@
       </tags>
   </entry>
   <entry>
-    <title>贪吃蛇</title>
+    <title>手把手教你写贪吃蛇👩‍🔧(原生JS)</title>
     <url>/2022/03/16/%E8%B4%AA%E5%90%83%E8%9B%87/</url>
     <content><![CDATA[<h2 id="手把手教你写贪吃蛇👩‍🔧"><a href="#手把手教你写贪吃蛇👩‍🔧" class="headerlink" title="手把手教你写贪吃蛇👩‍🔧"></a>手把手教你写贪吃蛇👩‍🔧</h2><h2 id="①绘制界面"><a href="#①绘制界面" class="headerlink" title="①绘制界面"></a>①绘制界面</h2><h3 id="设置分数和速度"><a href="#设置分数和速度" class="headerlink" title="设置分数和速度"></a>设置分数和速度</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>score:<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>快<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>中<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>慢<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
