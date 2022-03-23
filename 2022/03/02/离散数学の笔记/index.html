@@ -182,26 +182,48 @@ truth tables,"/>
 <p>&#x3D;&gt;（┐P∧ ┐R）→Q   即：我们打篮球的条件必须是天不下雨且班上没有会</p>
 <p>或者：┐R→(┐P→Q）即：如果没有会，并且没有下雨，我们就去打篮球</p>
 </li>
+<li><p>离散数学无用且枯燥无味是不对的</p>
+<p>P：离散数学是有用的<br>Q：离散数学是枯燥无味的</p>
+<p>¬ ( ¬ P ∧ Q ) </p>
+</li>
+<li><p>如果校长和小王都不去，则小李去</p>
+<p>P：小张去<br>Q：小王去<br>R：小李去</p>
+<p>( ¬ P ∧ ¬ Q ) → R </p>
+</li>
+<li><p>p，q不能同时取,即只能取一个</p>
+<p>(P∧ ┐Q)∨(┐P∧ Q) </p>
+</li>
+<li><p>若P去, 则Q不能去</p>
+<p>P →  ┐Q</p>
+</li>
+<li><p>C和D要么都有，要么都没有</p>
+</li>
+</ol>
+<p>   (C∧D)∨(┐C∧ ┐D)</p>
+<ol start="11">
+<li><p>股票P和Q中必然有一种或两种要抛出</p>
+<p>P∨Q</p>
+</li>
 </ol>
 <h3 id="真值表"><a href="#真值表" class="headerlink" title="真值表"></a>真值表</h3><p>含有n个原子命题的命题公式所对应的真值共有2^n中情况</p>
 <h3 id="等价"><a href="#等价" class="headerlink" title="等价"></a>等价</h3><h5 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h5><p>给定两个命题公式，若对于其中任意一组指派而言，A和B的真值都相同，则称A和B是等价的</p>
 <h5 id="等价关系"><a href="#等价关系" class="headerlink" title="等价关系"></a>等价关系</h5><ol>
 <li><p>﹁ ( ﹁ G ) &#x3D; G<br>（双重否定律）</p>
 </li>
-<li><p>G ∧ G &#x3D; G   G ∨ G &#x3D; G<br>（幂等律）</p>
+<li><p>G ∧ G &#x3D; G   G ∨ G &#x3D; G  <strong>(a*a&#x3D;a  a+a&#x3D;a)</strong><br>（幂等律）</p>
 </li>
-<li><p>G ∨ H &#x3D; H ∨ G<br>G ∧ H &#x3D; H ∧ G<br>（交换律）</p>
+<li><p>G ∨ H &#x3D; H ∨ G   <strong>a+b&#x3D;b+a</strong><br>G ∧ H &#x3D; H ∧ G  ab&#x3D;ba<br>（交换律）</p>
 </li>
-<li><p>G ∨ ( H ∨ S ) &#x3D; ( G ∨ H ) ∨ S<br>G ∧ ( H ∧ S ) &#x3D; ( G ∧ H ) ∧ S<br>（结合律）</p>
+<li><p>G ∨ ( H ∨ S ) &#x3D; ( G ∨ H ) ∨ S  <strong>a+(b+c)&#x3D;(a+b)+c</strong><br>G ∧ ( H ∧ S ) &#x3D; ( G ∧ H ) ∧ S  *<em>a</em>(b <em>c)&#x3D;(a * b)<em>c</em></em><br>（结合律）</p>
 </li>
-<li><p>G ∨ ( H ∧ S ) &#x3D; ( G ∨ H ) ∧ ( G ∨ S )<br>G ∧ ( H ∨ S ) &#x3D; ( G ∧ H ) ∨ ( G ∧ S )<br>（分配律）</p>
+<li><p>G ∨ ( H ∧ S ) &#x3D; ( G ∨ H ) ∧ ( G ∨ S )   a+bc&#x3D;(a+b)(a+c)<br>G ∧ ( H ∨ S ) &#x3D; ( G ∧ H ) ∨ ( G ∧ S )  <strong>a(b+c)&#x3D;ab+ac</strong><br>（分配律）</p>
 </li>
 <li><p>﹁ ( G ∧ H ) &#x3D; ﹁ G ∨ ﹁ H </p>
 <p>﹁ ( G ∨ H ) &#x3D; ﹁ G ∧ ﹁ H </p>
 <p> （去掉括号后合取变析取，析取变合取）<br>（德摩根律）</p>
 </li>
-<li><p>G ∨ ( G ∧ H ) &#x3D; G</p>
-<p>G ∧ ( G ∨ H ) &#x3D; G<br>（吸收律）</p>
+<li><p>G ∨ ( G ∧ H ) &#x3D; G  <strong>a+ab&#x3D;a</strong></p>
+<p>G ∧ ( G ∨ H ) &#x3D; G  <em><em>a</em>(a+b)&#x3D;a</em>*<br>（吸收律）</p>
 </li>
 <li><p>G ∨ 1 &#x3D; 1<br>G ∧ 0 &#x3D; 0<br>（零律）</p>
 </li>
@@ -222,23 +244,27 @@ truth tables,"/>
 </ol>
 <h5 id="等价置换定理"><a href="#等价置换定理" class="headerlink" title="等价置换定理"></a>等价置换定理</h5><p>如果X是合式公式A的一部分，且X本身也是一个合式公式，则称X为合式公式A的子公式</p>
 <p>设X是合式公式A的子公式，若X&#x3D;Y。如果将A中用的X用Y来置换，所得到的公式B与公式A等价。即A&#x3D;B</p>
-<h3 id="重言式与蕴含式"><a href="#重言式与蕴含式" class="headerlink" title="重言式与蕴含式"></a>重言式与蕴含式</h3><h5 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h5><p>对于某个命题公式，如果其在分量的任何指派的指派下的真值均为T，则称该命题公式为<strong>重言式</strong>或<strong>永真式</strong>。</p>
+<h3 id="重言式-永真式-与蕴含式-永假式"><a href="#重言式-永真式-与蕴含式-永假式" class="headerlink" title="重言式(永真式)与蕴含式(永假式)"></a>重言式(永真式)与蕴含式(永假式)</h3><h5 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h5><p>对于某个命题公式，如果其在分量的任何指派的指派下的真值均为T，则称该命题公式为<strong>重言式</strong>或<strong>永真式</strong>。</p>
 <p>对于某个命题公式，如果其在分量的任何指派的指派下的真值均为F，则称该命题公式为<strong>矛盾式</strong>或<strong>永假式</strong>。</p>
 <p>如果某个命题不是矛盾式，则称该命题为<strong>可满足式</strong></p>
 <p><strong>蕴含式</strong>：当且仅当P→Q是重言式时，我们称“P蕴含Q“，并记作P&#x3D;&gt;Q</p>
 <p>要证明P&#x3D;&gt;Q,只需证明P→Q,或者证明﹁Q→﹁P</p>
-<h3 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h3><h5 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h5><ul>
+<h3 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h3><p>范式是析取范式与合取范式的总称。</p>
+<h5 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h5><ul>
 <li>命题变元或命题变元的否定称为<strong>文字</strong>。 P，﹁P，Q，﹁Q</li>
-<li><em>有限个</em>文字的析取称为<strong>简单析取式</strong>（或<strong>子句</strong>）。</li>
-<li><em>有限个</em>文字的合取称为<strong>简单合取式</strong>（或<strong>短语</strong>）。</li>
+<li><em>有限个</em>文字的析取称为<strong>简单析取式</strong>（或<strong>子句</strong>）。 P(退化的析取式，只有一个文字），﹁P（退化的析取式）， P ∨ ﹁Q（2个文字）</li>
+<li><em>有限个</em>文字的合取称为<strong>简单合取式</strong>（或<strong>短语</strong>）。 P，﹁P，P ∧ ﹁Q </li>
+<li>单个的文字既是简单析取式，也是简单合取式</li>
 <li>P与﹁P称为<strong>互补对</strong></li>
-<li><em>有限个</em>简单合取式（短语）的析取式称为<strong>析取范式</strong>  如  ( G ∧ H ) ∨ ( G ∧ S )，又如 P ∧ ﹁Q ,P ,﹁P</li>
-<li><em>有限个</em>简单析取式（短语）的合取式称为<strong>合取范式</strong>，如（P∨ H ) ∧ ( ﹁H ∨Q）,又如 P ∧ ﹁Q ,P ,﹁P</li>
+<li><em>有限个</em>简单合取式（短语）的析取式称为<strong>析取范式</strong>  如  ( G ∧ H ) ∨ ( G ∧ S )，又如 P ∨ ﹁Q ,P ,﹁P。<strong>内部合取，外部析取</strong></li>
+<li><em>有限个</em>简单析取式（短语）的合取式称为<strong>合取范式</strong>，如（P∨ H ) ∧ ( ﹁H ∨Q）,又如 P ∧ ﹁Q ,P ,﹁P 。<strong>内部析取，外部合取</strong></li>
 </ul>
-<h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><p>析取范式、合取范式仅含联结词集{﹁，∧，∨}，且否定联结词仅出现在命题变元之前</p>
+<p><strong>注意1：p∧q∧r既是析取范式，也是合取范式</strong>。</p>
+<p><strong>原因</strong>：因为这个式子是有限个文字的合取，所以他是合取范式，也是简单合取式。而根据析取范式的定义是有限个简单合取式的析取式，这个有限个可以取1个，即一个简单合取式也是析取式</p>
+<h5 id="注意2："><a href="#注意2：" class="headerlink" title="注意2："></a>注意2：</h5><p>析取范式、合取范式仅含联结词集{﹁，∧，∨}，且否定联结词仅出现在命题变元之前</p>
 <h5 id="范式存在定理"><a href="#范式存在定理" class="headerlink" title="范式存在定理"></a>范式存在定理</h5><p>对于任意公式，都存在与其等价的析取范式和合取范式，且范式不唯一</p>
 <h5 id="转化方法："><a href="#转化方法：" class="headerlink" title="转化方法："></a>转化方法：</h5><ol>
-<li><p>将公式中的↔，→ 用联结词﹁，∧，∨来取代</p>
+<li><p>将公式中的↔，→ 用联结词﹁，∧，∨来取代（<strong>否定也是联结词</strong>）</p>
 <ul>
 <li><p>蕴含式：G → H &#x3D; ﹁ G ∨ H</p>
 </li>
@@ -247,7 +273,7 @@ truth tables,"/>
 </ul>
 <p>利用蕴含式再次转化： &#x3D; ( ﹁ G ∨ H ) ∧ ( ﹁ H ∨ G )</p>
 </li>
-<li><p>将否定联结词移到各个命题变元的前端，并消去多余的否定号</p>
+<li><p>将否定联结词内移(德摩根律)到各个命题变元的前端，并消去否定号（双重否定律）</p>
 <ul>
 <li><p>双重否定律：﹁(﹁ G)&#x3D;G</p>
 </li>
@@ -259,37 +285,66 @@ truth tables,"/>
 </li>
 <li><p>利用分配律，将公式化成一些合取式的析取，或化成一些析取式的合取：</p>
 <ul>
-<li>分配律：G ∨ ( H ∧ S ) &#x3D; ( G ∨ H ) ∧ ( G ∨ S )<br>          G ∧ ( H ∨ S ) &#x3D; ( G ∧ H ) ∨ ( G ∧ S )</li>
+<li>分配律：G ∨ ( H ∧ S ) &#x3D; ( G ∨ H ) ∧ ( G ∨ S ) （合取范式）<br>          G ∧ ( H ∨ S ) &#x3D; ( G ∧ H ) ∨ ( G ∧ S ) （析取范式）</li>
 </ul>
 </li>
 </ol>
+<h5 id="例题：-1"><a href="#例题：-1" class="headerlink" title="例题："></a>例题：</h5><p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323084335490.png" alt="image-20220323084335490"></p>
 <h5 id="主范式"><a href="#主范式" class="headerlink" title="主范式"></a>主范式</h5><p>因为范式的不唯一，为了规范化，形成唯一的主析取范式和主合取范式</p>
-<h5 id="极小项和极大项"><a href="#极小项和极大项" class="headerlink" title="极小项和极大项"></a>极小项和极大项</h5><ol>
-<li>极小项（<strong>析取</strong>）：</li>
+<h5 id="极小项和极大项"><a href="#极小项和极大项" class="headerlink" title="极小项和极大项"></a>极小项和极大项</h5><p><strong>定义：</strong></p>
+<p>在含有n个命题变项的<strong>简单合取式</strong>中，若每个命题变元均以文字的形式出现且仅出现一次，成这样的简单合取式为<strong>极小项</strong>。</p>
+<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323171729779.png" alt="image-20220323171729779"></p>
+<p>要使其为真，只需要其中任何一项为真即可。</p>
+<p>要使其为假，需要所有项都为假</p>
+<p>在含有n个命题变项的<strong>简单析取式</strong>中，若每个命题变元均以文字的形式出现且仅出现一次，成这样的<strong>简单析取式</strong>为<strong>极大项</strong>。</p>
+<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323171721234.png" alt="image-20220323171721234"></p>
+<p>若使其为真，则需每个式子都为真</p>
+<p>若使其为假，则只需其中的一个式子为假即可</p>
+<p><strong>解释</strong>：①文字的形式：p,﹁p,q,﹁q这类的。②仅出现一次：p和﹁p只能有一个出现，即命题变元和其否定只能有一个出现。</p>
+<p><strong>说明：</strong></p>
+<ul>
+<li>n个命题变元可以产生2^n个极小项和2^n个极大项</li>
+</ul>
+<ol>
+<li>极小项（<strong>合取</strong>）：</li>
 </ol>
 <p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220302221948240.png" alt="image-20220302221948240"></p>
 <ul>
-<li>没有两个极小项是等价的</li>
-<li>，每个极小项只有一组<strong>真</strong>值，因此可用于给极小项编码，规律为：命题变元与1对应，命题变元的否定与0对应</li>
+<li>没有两个极小项是等价的（即互不等值）</li>
+<li>每个极小项只有一组<strong>真</strong>值，因此可用于给极小项编码，<strong>规律</strong>为：命题变元与1对应，其否定与0对应</li>
 </ul>
 <ol start="2">
-<li><p>极大项（<strong>合取</strong>）：</p>
+<li><p>极大项（<strong>析取</strong>）：</p>
 <p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220302222040684.png" alt="image-20220302222040684"></p>
 <ul>
 <li>没有两个极大项是相同的 </li>
 <li>每个极大项只有一组<strong>假</strong>值，因此可用于给极大项编码，规律为：命题变元与0对应，命题变元的否定与1对应</li>
 </ul>
-<ol start="3">
-<li>例题：</li>
-</ol>
-<img src="../img/离散数学の笔记/image-20220302222555770.png" alt="image-20220302222555770" style="zoom:67%;" />
-
+<p>3.例题：</p>
+<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323170530019.png" alt="image-20220323170530019"></p>
 <ol start="4">
-<li><p>极大项与极小项的性质</p>
-<img src="../img/离散数学の笔记/image-20220302222904977.png" alt="image-20220302222904977" style="zoom: 80%;" /></li>
+<li>利用配凑法求主析取范式和主合取范式<img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323164044620.png" alt="image-20220323164044620"></li>
 </ol>
 </li>
 </ol>
+<p>5.将析取范式转为主析取范式</p>
+<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323164327707.png" alt="image-20220323164327707"></p>
+<p>6.将合取范式转化为主合取范式</p>
+<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323164434009.png" alt="image-20220323164434009"></p>
+<p>7.将析取范式转化为合取范式</p>
+<p>例题一：</p>
+<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323164512564.png" alt="image-20220323164512564"></p>
+<p><strong>实质</strong>：如果将析取看成加法，合取看成乘法，非p用p’表示，则可化为：</p>
+<p>(pq’)+(qr)   利用A+BC&#x3D;(A+B)(A+C)</p>
+<p>&#x3D;(pq’+q)(pq’+r)</p>
+<p>&#x3D;(q+p)(q+q’)(p+r)(q’+r)</p>
+<p>例题二：</p>
+<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323165235740.png" alt="image-20220323165235740"></p>
+<p>实质：如果将析取看成加法，合取看成乘法，非p用p’表示，则可化为：</p>
+<p>cd+c’d’</p>
+<p>&#x3D;(cd+c’)(cd+d’)</p>
+<p>&#x3D;(c+c’)(d+c’)(c+d’)(d+d’)</p>
+<p>&#x3D;(d+c’)(c+d’)</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -317,7 +372,7 @@ truth tables,"/>
     </div>
     
         <div class="side">
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%8B%B1%E8%AF%91%E4%B8%AD"><span class="toc-number">1.</span> <span class="toc-text">一些英译中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">命题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-number">2.0.1.</span> <span class="toc-text">概念：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%EF%BC%9A"><span class="toc-number">2.0.2.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">2.0.3.</span> <span class="toc-text">分类：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E8%81%94%E7%BB%93%E8%AF%8D"><span class="toc-number">3.</span> <span class="toc-text">命题联结词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E5%85%AC%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">命题公式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">4.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BA%A6%E5%AE%9A%EF%BC%9A"><span class="toc-number">4.0.2.</span> <span class="toc-text">约定：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E7%9A%84%E7%BF%BB%E8%AF%91%E5%92%8C%E7%AC%A6%E5%8F%B7%E5%8C%96"><span class="toc-number">5.</span> <span class="toc-text">命题的翻译和符号化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E7%AC%A6%E5%8F%B7%E5%8C%96"><span class="toc-number">5.0.1.</span> <span class="toc-text">将自然语言符号化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">6.</span> <span class="toc-text">真值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7"><span class="toc-number">7.</span> <span class="toc-text">等价</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">7.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7%E5%85%B3%E7%B3%BB"><span class="toc-number">7.0.2.</span> <span class="toc-text">等价关系</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7%E7%BD%AE%E6%8D%A2%E5%AE%9A%E7%90%86"><span class="toc-number">7.0.3.</span> <span class="toc-text">等价置换定理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A8%80%E5%BC%8F%E4%B8%8E%E8%95%B4%E5%90%AB%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">重言式与蕴含式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-number">8.0.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F"><span class="toc-number">9.</span> <span class="toc-text">范式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="toc-number">9.0.1.</span> <span class="toc-text">定义：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A"><span class="toc-number">9.0.2.</span> <span class="toc-text">注意：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F%E5%AD%98%E5%9C%A8%E5%AE%9A%E7%90%86"><span class="toc-number">9.0.3.</span> <span class="toc-text">范式存在定理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E5%8C%96%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">9.0.4.</span> <span class="toc-text">转化方法：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BB%E8%8C%83%E5%BC%8F"><span class="toc-number">9.0.5.</span> <span class="toc-text">主范式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%81%E5%B0%8F%E9%A1%B9%E5%92%8C%E6%9E%81%E5%A4%A7%E9%A1%B9"><span class="toc-number">9.0.6.</span> <span class="toc-text">极小项和极大项</span></a></li></ol></li></ol></li></ol>	
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%8B%B1%E8%AF%91%E4%B8%AD"><span class="toc-number">1.</span> <span class="toc-text">一些英译中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">命题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-number">2.0.1.</span> <span class="toc-text">概念：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%EF%BC%9A"><span class="toc-number">2.0.2.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">2.0.3.</span> <span class="toc-text">分类：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E8%81%94%E7%BB%93%E8%AF%8D"><span class="toc-number">3.</span> <span class="toc-text">命题联结词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E5%85%AC%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">命题公式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">4.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BA%A6%E5%AE%9A%EF%BC%9A"><span class="toc-number">4.0.2.</span> <span class="toc-text">约定：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E7%9A%84%E7%BF%BB%E8%AF%91%E5%92%8C%E7%AC%A6%E5%8F%B7%E5%8C%96"><span class="toc-number">5.</span> <span class="toc-text">命题的翻译和符号化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E7%AC%A6%E5%8F%B7%E5%8C%96"><span class="toc-number">5.0.1.</span> <span class="toc-text">将自然语言符号化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">6.</span> <span class="toc-text">真值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7"><span class="toc-number">7.</span> <span class="toc-text">等价</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">7.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7%E5%85%B3%E7%B3%BB"><span class="toc-number">7.0.2.</span> <span class="toc-text">等价关系</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7%E7%BD%AE%E6%8D%A2%E5%AE%9A%E7%90%86"><span class="toc-number">7.0.3.</span> <span class="toc-text">等价置换定理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A8%80%E5%BC%8F-%E6%B0%B8%E7%9C%9F%E5%BC%8F-%E4%B8%8E%E8%95%B4%E5%90%AB%E5%BC%8F-%E6%B0%B8%E5%81%87%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">重言式(永真式)与蕴含式(永假式)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-number">8.0.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F"><span class="toc-number">9.</span> <span class="toc-text">范式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="toc-number">9.0.1.</span> <span class="toc-text">定义：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F2%EF%BC%9A"><span class="toc-number">9.0.2.</span> <span class="toc-text">注意2：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F%E5%AD%98%E5%9C%A8%E5%AE%9A%E7%90%86"><span class="toc-number">9.0.3.</span> <span class="toc-text">范式存在定理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E5%8C%96%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">9.0.4.</span> <span class="toc-text">转化方法：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%EF%BC%9A-1"><span class="toc-number">9.0.5.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BB%E8%8C%83%E5%BC%8F"><span class="toc-number">9.0.6.</span> <span class="toc-text">主范式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%81%E5%B0%8F%E9%A1%B9%E5%92%8C%E6%9E%81%E5%A4%A7%E9%A1%B9"><span class="toc-number">9.0.7.</span> <span class="toc-text">极小项和极大项</span></a></li></ol></li></ol></li></ol>	
         </div>
     
 </div>
