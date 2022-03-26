@@ -207,7 +207,8 @@ truth tables,"/>
 </ol>
 <h3 id="真值表"><a href="#真值表" class="headerlink" title="真值表"></a>真值表</h3><p>含有n个原子命题的命题公式所对应的真值共有2^n中情况</p>
 <h3 id="等价"><a href="#等价" class="headerlink" title="等价"></a>等价</h3><h5 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h5><p>给定两个命题公式，若对于其中任意一组指派而言，A和B的真值都相同，则称A和B是等价的</p>
-<h5 id="等价关系"><a href="#等价关系" class="headerlink" title="等价关系"></a>等价关系</h5><ol>
+<p>可以通过等值关系进行化简得到两个式子等值，也可以通过真值表来判断等值</p>
+<h5 id="基本等值式"><a href="#基本等值式" class="headerlink" title="基本等值式"></a>基本等值式</h5><ol>
 <li><p>﹁ ( ﹁ G ) &#x3D; G<br>（双重否定律）</p>
 </li>
 <li><p>G ∧ G &#x3D; G   G ∨ G &#x3D; G  <strong>(a*a&#x3D;a  a+a&#x3D;a)</strong><br>（幂等律）</p>
@@ -290,7 +291,15 @@ truth tables,"/>
 </li>
 </ol>
 <h5 id="例题：-1"><a href="#例题：-1" class="headerlink" title="例题："></a>例题：</h5><p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323084335490.png" alt="image-20220323084335490"></p>
-<h5 id="主范式"><a href="#主范式" class="headerlink" title="主范式"></a>主范式</h5><p>因为范式的不唯一，为了规范化，形成唯一的主析取范式和主合取范式</p>
+<h3 id="主范式"><a href="#主范式" class="headerlink" title="主范式"></a>主范式</h3><p>因为范式的不唯一，为了规范化，形成唯一的主析取范式和主合取范式</p>
+<h5 id="化成主范式的步骤："><a href="#化成主范式的步骤：" class="headerlink" title="化成主范式的步骤："></a>化成主范式的步骤：</h5><ul>
+<li><p>先求出析取范式（合取范式）</p>
+</li>
+<li><p>将不是极小项（极大项）的简单合取式进一步化</p>
+</li>
+<li><p>极大项（极小项）用名称mi（Mi)表示，并用角标从小到大排序</p>
+</li>
+</ul>
 <h5 id="极小项和极大项"><a href="#极小项和极大项" class="headerlink" title="极小项和极大项"></a>极小项和极大项</h5><p><strong>定义：</strong></p>
 <p>在含有n个命题变项的<strong>简单合取式</strong>中，若每个命题变元均以文字的形式出现且仅出现一次，成这样的简单合取式为<strong>极小项</strong>。</p>
 <p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323171729779.png" alt="image-20220323171729779"></p>
@@ -314,24 +323,37 @@ truth tables,"/>
 <li>每个极小项只有一组<strong>真</strong>值，因此可用于给极小项编码，<strong>规律</strong>为：命题变元与1对应，其否定与0对应</li>
 </ul>
 <ol start="2">
-<li><p>极大项（<strong>析取</strong>）：</p>
+<li>极大项（<strong>析取</strong>）：</li>
+</ol>
 <p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220302222040684.png" alt="image-20220302222040684"></p>
 <ul>
 <li>没有两个极大项是相同的 </li>
 <li>每个极大项只有一组<strong>假</strong>值，因此可用于给极大项编码，规律为：命题变元与0对应，命题变元的否定与1对应</li>
 </ul>
-<p>3.例题：</p>
-<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323170530019.png" alt="image-20220323170530019"></p>
-<ol start="4">
-<li>利用配凑法求主析取范式和主合取范式<img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323164044620.png" alt="image-20220323164044620"></li>
-</ol>
+<p>3.配凑法求主析取范式和主合取范式</p>
+<ul>
+<li><p>将析取换成加法，将合取换成乘法，如(p∧q)∨(┐p∧r)代换后变成pq+p’r</p>
 </li>
-</ol>
-<p>5.将析取范式转为主析取范式</p>
-<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323164327707.png" alt="image-20220323164327707"></p>
-<p>6.将合取范式转化为主合取范式</p>
+<li><p>求主析取范式&#x3D;&gt;缺少的变元用**乘以x+x’**的形式补充</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pq = pq(r + r&#x27;) = pqr+pqr&#x27; (乘以缺失的变元)</span><br><span class="line">p&#x27;r = p&#x27;(q + q&#x27;)r = p&#x27;qr + p&#x27;q&#x27;r</span><br><span class="line">原式 = pqr + pqr&#x27; + p&#x27;qr + p&#x27;q&#x27;r  </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>换成离散语言<img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323164327707.png" alt="image-20220323164327707"></p>
+</li>
+<li><p>求主合取范式&#x3D;&gt;将缺少的变元用**加上xx’**的形式补充</p>
+<p>里面用到的公式：A+BC&#x3D;(A+B)(A+C)</p>
+</li>
+<li><pre><code>    pq + p&#39;r                       
+ = (p+p&#39;r)(q+p&#39;r)
+ = (p+p&#39;)(p+r)(q+r)(q+p&#39;)
+ =(p+r)(q+r)(q+p&#39;)
+ = (p&#39;+q +rr&#39;)(p+qq&#39;+r)(pp&#39;+q+r)     (补缺的变元)
+ = (p&#39;+q+r)(p&#39;+q+r&#39;)(p+q+r)(p+q&#39;+r) (p+q+r)(p&#39;+q +r)   
+</code></pre>
+<p>换成离散语言：</p>
 <p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323164434009.png" alt="image-20220323164434009"></p>
-<p>7.将析取范式转化为合取范式</p>
+</li>
+</ul>
+<p>4.将析取范式转化为合取范式</p>
 <p>例题一：</p>
 <p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323164512564.png" alt="image-20220323164512564"></p>
 <p><strong>实质</strong>：如果将析取看成加法，合取看成乘法，非p用p’表示，则可化为：</p>
@@ -339,12 +361,81 @@ truth tables,"/>
 <p>&#x3D;(pq’+q)(pq’+r)</p>
 <p>&#x3D;(q+p)(q+q’)(p+r)(q’+r)</p>
 <p>例题二：</p>
-<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323165235740.png" alt="image-20220323165235740"></p>
-<p>实质：如果将析取看成加法，合取看成乘法，非p用p’表示，则可化为：</p>
+<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220326172328979.png" alt="image-20220326172328979"></p>
+<p><strong>实质</strong>：如果将析取看成加法，合取看成乘法，非p用p’表示，则可化为：</p>
 <p>cd+c’d’</p>
 <p>&#x3D;(cd+c’)(cd+d’)</p>
 <p>&#x3D;(c+c’)(d+c’)(c+d’)(d+d’)</p>
 <p>&#x3D;(d+c’)(c+d’)</p>
+<h3 id="主范式的用途"><a href="#主范式的用途" class="headerlink" title="主范式的用途"></a>主范式的用途</h3><h4 id="1-求公式的成真赋值和成假赋值"><a href="#1-求公式的成真赋值和成假赋值" class="headerlink" title="1.求公式的成真赋值和成假赋值"></a>1.求公式的成真赋值和成假赋值</h4><p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220326173308683.png" alt="image-20220326173308683"></p>
+<h4 id="2-判断公式的类型"><a href="#2-判断公式的类型" class="headerlink" title="2.判断公式的类型"></a>2.判断公式的类型</h4><p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220326173448446.png" alt="image-20220326173448446"></p>
+<p>A为非重言式：A的主析取范式中不含有全部的极小项</p>
+<p>A为可满足式：A的主合取范式中不含有全部的极大项</p>
+<h4 id="3-判断两个公式是否等值"><a href="#3-判断两个公式是否等值" class="headerlink" title="3.判断两个公式是否等值"></a>3.判断两个公式是否等值</h4><p>若两者的主析取范式或者主合取范式相同，则证明两者等值。</p>
+<h4 id="4-解决实际问题"><a href="#4-解决实际问题" class="headerlink" title="4.解决实际问题"></a>4.解决实际问题</h4><p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220326173842476.png" alt="image-20220326173842476"></p>
+<p>❗解法：</p>
+<p>1.将简单命题符号化</p>
+<p>2.写出每句话的复合命题</p>
+<p>3.写出由②中的复合命题组成的合取式</p>
+<p>4.求出③中所得式子的主析取范式</p>
+<p>5.找出主析取范式的成真赋值，即为解决方案</p>
+<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220326174225108.png" alt="image-20220326174225108"><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220326180354192.png" alt="image-20220326180354192">       极小项的成真赋值就是运算的结果</p>
+<h3 id="联结词的全功能集"><a href="#联结词的全功能集" class="headerlink" title="联结词的全功能集"></a>联结词的全功能集</h3><h4 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h4><p>任何命题公式都可以由仅含S中的联结词来表示，则S是联结词全功能集</p>
+<p>说明：</p>
+<p>若S1是全功能集，则S1中加入其他联结词后构成的S2也是全功能集</p>
+<p>若S1不是全功能集，则S1中去掉一些联结词之后构成的S2也不是全功能集</p>
+<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220326180948677.png" alt="image-20220326180948677"></p>
+<h4 id="复合联结词："><a href="#复合联结词：" class="headerlink" title="复合联结词："></a>复合联结词：</h4><p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220326181140453.png" alt="image-20220326181140453"></p>
+<p>由此可见，非，或，且联结词都可以用{↑}或者{↓}来表示，说明{↑}，{↓}都是联结词全功能集</p>
+<p>注意：</p>
+<p>{∨ ， ∧}不是全功能集，因此{∨ }，{∧ }也不是全功能集</p>
+<h3 id="组合电路"><a href="#组合电路" class="headerlink" title="组合电路"></a>组合电路</h3><h4 id="逻辑门：与门，非门，或门"><a href="#逻辑门：与门，非门，或门" class="headerlink" title="逻辑门：与门，非门，或门"></a>逻辑门：与门，非门，或门</h4><p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220326181608529.png" alt="image-20220326181608529">例题：楼梯的灯由两个开关控制，x,y为开关的状态，F为灯的状态，打开为1，关闭为0，请设计这样一个电路。</p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>y</th>
+<th>F(x,y)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>由此可见，F的极小项是m0和m3（成真赋值），故根据真值表可以写出其主析取范式，进行化简之后，画出电路图</p>
+<p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220326182456376.png" alt="image-20220326182456376"></p>
+<h3 id="推理理论"><a href="#推理理论" class="headerlink" title="推理理论"></a>推理理论</h3><h4 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h4><p>对于每组赋值，若满足下列两种情况：①条件为假 ②条件为真，结果为真。则称条件→结论的推理正确，否则推理不正确（即条件为真，结论为假）</p>
+<h4 id="判断推理是否正确的方法"><a href="#判断推理是否正确的方法" class="headerlink" title="判断推理是否正确的方法"></a>判断推理是否正确的方法</h4><ul>
+<li><p>真值表法</p>
+<p>将所有变元可能的取值情况列成真值表，若对于每组赋值，都满足A→B为真，则证明推理正确</p>
+</li>
+<li><p>等值演算法</p>
+<p>将A→B经过等值验算，如果其结果为1，则证明推理正确</p>
+</li>
+<li><p>主析取范式法</p>
+<p>将A→B转化为主析取范式，若其包括了所有的极小项（2^n个），则说名推理正确</p>
+</li>
+<li><p>构造证明法</p>
+</li>
+</ul>
+<h4 id="推理定律"><a href="#推理定律" class="headerlink" title="推理定律"></a>推理定律</h4><p><img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220326183553084.png" alt="image-20220326183553084"></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -372,7 +463,7 @@ truth tables,"/>
     </div>
     
         <div class="side">
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%8B%B1%E8%AF%91%E4%B8%AD"><span class="toc-number">1.</span> <span class="toc-text">一些英译中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">命题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-number">2.0.1.</span> <span class="toc-text">概念：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%EF%BC%9A"><span class="toc-number">2.0.2.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">2.0.3.</span> <span class="toc-text">分类：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E8%81%94%E7%BB%93%E8%AF%8D"><span class="toc-number">3.</span> <span class="toc-text">命题联结词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E5%85%AC%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">命题公式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">4.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BA%A6%E5%AE%9A%EF%BC%9A"><span class="toc-number">4.0.2.</span> <span class="toc-text">约定：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E7%9A%84%E7%BF%BB%E8%AF%91%E5%92%8C%E7%AC%A6%E5%8F%B7%E5%8C%96"><span class="toc-number">5.</span> <span class="toc-text">命题的翻译和符号化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E7%AC%A6%E5%8F%B7%E5%8C%96"><span class="toc-number">5.0.1.</span> <span class="toc-text">将自然语言符号化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">6.</span> <span class="toc-text">真值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7"><span class="toc-number">7.</span> <span class="toc-text">等价</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">7.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7%E5%85%B3%E7%B3%BB"><span class="toc-number">7.0.2.</span> <span class="toc-text">等价关系</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7%E7%BD%AE%E6%8D%A2%E5%AE%9A%E7%90%86"><span class="toc-number">7.0.3.</span> <span class="toc-text">等价置换定理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A8%80%E5%BC%8F-%E6%B0%B8%E7%9C%9F%E5%BC%8F-%E4%B8%8E%E8%95%B4%E5%90%AB%E5%BC%8F-%E6%B0%B8%E5%81%87%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">重言式(永真式)与蕴含式(永假式)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-number">8.0.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F"><span class="toc-number">9.</span> <span class="toc-text">范式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="toc-number">9.0.1.</span> <span class="toc-text">定义：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F2%EF%BC%9A"><span class="toc-number">9.0.2.</span> <span class="toc-text">注意2：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F%E5%AD%98%E5%9C%A8%E5%AE%9A%E7%90%86"><span class="toc-number">9.0.3.</span> <span class="toc-text">范式存在定理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E5%8C%96%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">9.0.4.</span> <span class="toc-text">转化方法：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%EF%BC%9A-1"><span class="toc-number">9.0.5.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BB%E8%8C%83%E5%BC%8F"><span class="toc-number">9.0.6.</span> <span class="toc-text">主范式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%81%E5%B0%8F%E9%A1%B9%E5%92%8C%E6%9E%81%E5%A4%A7%E9%A1%B9"><span class="toc-number">9.0.7.</span> <span class="toc-text">极小项和极大项</span></a></li></ol></li></ol></li></ol>	
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%8B%B1%E8%AF%91%E4%B8%AD"><span class="toc-number">1.</span> <span class="toc-text">一些英译中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">命题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-number">2.0.1.</span> <span class="toc-text">概念：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%EF%BC%9A"><span class="toc-number">2.0.2.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">2.0.3.</span> <span class="toc-text">分类：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E8%81%94%E7%BB%93%E8%AF%8D"><span class="toc-number">3.</span> <span class="toc-text">命题联结词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E5%85%AC%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">命题公式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">4.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BA%A6%E5%AE%9A%EF%BC%9A"><span class="toc-number">4.0.2.</span> <span class="toc-text">约定：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E9%A2%98%E7%9A%84%E7%BF%BB%E8%AF%91%E5%92%8C%E7%AC%A6%E5%8F%B7%E5%8C%96"><span class="toc-number">5.</span> <span class="toc-text">命题的翻译和符号化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%86%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E7%AC%A6%E5%8F%B7%E5%8C%96"><span class="toc-number">5.0.1.</span> <span class="toc-text">将自然语言符号化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">6.</span> <span class="toc-text">真值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7"><span class="toc-number">7.</span> <span class="toc-text">等价</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">7.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%AD%89%E5%80%BC%E5%BC%8F"><span class="toc-number">7.0.2.</span> <span class="toc-text">基本等值式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7%E7%BD%AE%E6%8D%A2%E5%AE%9A%E7%90%86"><span class="toc-number">7.0.3.</span> <span class="toc-text">等价置换定理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A8%80%E5%BC%8F-%E6%B0%B8%E7%9C%9F%E5%BC%8F-%E4%B8%8E%E8%95%B4%E5%90%AB%E5%BC%8F-%E6%B0%B8%E5%81%87%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">重言式(永真式)与蕴含式(永假式)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-number">8.0.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F"><span class="toc-number">9.</span> <span class="toc-text">范式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="toc-number">9.0.1.</span> <span class="toc-text">定义：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F2%EF%BC%9A"><span class="toc-number">9.0.2.</span> <span class="toc-text">注意2：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F%E5%AD%98%E5%9C%A8%E5%AE%9A%E7%90%86"><span class="toc-number">9.0.3.</span> <span class="toc-text">范式存在定理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E5%8C%96%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">9.0.4.</span> <span class="toc-text">转化方法：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%EF%BC%9A-1"><span class="toc-number">9.0.5.</span> <span class="toc-text">例题：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%8C%83%E5%BC%8F"><span class="toc-number">10.</span> <span class="toc-text">主范式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%96%E6%88%90%E4%B8%BB%E8%8C%83%E5%BC%8F%E7%9A%84%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">10.0.1.</span> <span class="toc-text">化成主范式的步骤：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%81%E5%B0%8F%E9%A1%B9%E5%92%8C%E6%9E%81%E5%A4%A7%E9%A1%B9"><span class="toc-number">10.0.2.</span> <span class="toc-text">极小项和极大项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%8C%83%E5%BC%8F%E7%9A%84%E7%94%A8%E9%80%94"><span class="toc-number">11.</span> <span class="toc-text">主范式的用途</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%B1%82%E5%85%AC%E5%BC%8F%E7%9A%84%E6%88%90%E7%9C%9F%E8%B5%8B%E5%80%BC%E5%92%8C%E6%88%90%E5%81%87%E8%B5%8B%E5%80%BC"><span class="toc-number">11.1.</span> <span class="toc-text">1.求公式的成真赋值和成假赋值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%88%A4%E6%96%AD%E5%85%AC%E5%BC%8F%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">11.2.</span> <span class="toc-text">2.判断公式的类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E5%85%AC%E5%BC%8F%E6%98%AF%E5%90%A6%E7%AD%89%E5%80%BC"><span class="toc-number">11.3.</span> <span class="toc-text">3.判断两个公式是否等值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E8%A7%A3%E5%86%B3%E5%AE%9E%E9%99%85%E9%97%AE%E9%A2%98"><span class="toc-number">11.4.</span> <span class="toc-text">4.解决实际问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E7%BB%93%E8%AF%8D%E7%9A%84%E5%85%A8%E5%8A%9F%E8%83%BD%E9%9B%86"><span class="toc-number">12.</span> <span class="toc-text">联结词的全功能集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-3"><span class="toc-number">12.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E8%81%94%E7%BB%93%E8%AF%8D%EF%BC%9A"><span class="toc-number">12.2.</span> <span class="toc-text">复合联结词：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E7%94%B5%E8%B7%AF"><span class="toc-number">13.</span> <span class="toc-text">组合电路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E9%97%A8%EF%BC%9A%E4%B8%8E%E9%97%A8%EF%BC%8C%E9%9D%9E%E9%97%A8%EF%BC%8C%E6%88%96%E9%97%A8"><span class="toc-number">13.1.</span> <span class="toc-text">逻辑门：与门，非门，或门</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E7%90%86%E7%90%86%E8%AE%BA"><span class="toc-number">14.</span> <span class="toc-text">推理理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-4"><span class="toc-number">14.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%8E%A8%E7%90%86%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">14.2.</span> <span class="toc-text">判断推理是否正确的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A8%E7%90%86%E5%AE%9A%E5%BE%8B"><span class="toc-number">14.3.</span> <span class="toc-text">推理定律</span></a></li></ol></li></ol>	
         </div>
     
 </div>
