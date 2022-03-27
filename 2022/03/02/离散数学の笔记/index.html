@@ -40,7 +40,8 @@ truth tables,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
-<meta name="generator" content="Hexo 6.0.0"></head>
+<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-vs.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body class="loading">
     <span id="config-title" style="display:none">芷若</span>
@@ -335,7 +336,10 @@ truth tables,"/>
 <li><p>将析取换成加法，将合取换成乘法，如(p∧q)∨(┐p∧r)代换后变成pq+p’r</p>
 </li>
 <li><p>求主析取范式&#x3D;&gt;缺少的变元用**乘以x+x’**的形式补充</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pq = pq(r + r&#x27;) = pqr+pqr&#x27; (乘以缺失的变元)</span><br><span class="line">p&#x27;r = p&#x27;(q + q&#x27;)r = p&#x27;qr + p&#x27;q&#x27;r</span><br><span class="line">原式 = pqr + pqr&#x27; + p&#x27;qr + p&#x27;q&#x27;r  </span><br></pre></td></tr></table></figure>
+<pre><code>pq = pq(r + r&#39;) = pqr+pqr&#39; (乘以缺失的变元)
+p&#39;r = p&#39;(q + q&#39;)r = p&#39;qr + p&#39;q&#39;r
+原式 = pqr + pqr&#39; + p&#39;qr + p&#39;q&#39;r  
+</code></pre>
 </li>
 <li><p>换成离散语言<img src="/../img/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/image-20220323164327707.png" alt="image-20220323164327707"></p>
 </li>
