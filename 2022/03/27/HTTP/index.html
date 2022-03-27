@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HTTP - 芷若</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,;"> 
+    <meta name="description" content="HTTP协议协议规定了两部分的内容，分别是请求报文和响应报文
+HTTP报文请求报文请求报文的的格式为：请求行  － 请求头 －空行 - 请求数据
+请求行由请求方法字段，URL字段和HTTP协议版本字,"> 
+    <meta name="author" content="芷若"> 
+    <link rel="alternative" href="atom.xml" title="芷若" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="HTTP - 芷若"/>
+    <meta name="twitter:description" content="HTTP协议协议规定了两部分的内容，分别是请求报文和响应报文
+HTTP报文请求报文请求报文的的格式为：请求行  － 请求头 －空行 - 请求数据
+请求行由请求方法字段，URL字段和HTTP协议版本字,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="芷若"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="HTTP - 芷若"/>
+    <meta property="og:description" content="HTTP协议协议规定了两部分的内容，分别是请求报文和响应报文
+HTTP报文请求报文请求报文的的格式为：请求行  － 请求头 －空行 - 请求数据
+请求行由请求方法字段，URL字段和HTTP协议版本字,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">芷若</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://zhiruozzy.cn"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">HTTP</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">HTTP</h1>
+        <div class="stuff">
+            <span>三月 27, 2022</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><p>协议规定了两部分的内容，分别是请求报文和响应报文</p>
+<h2 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h2><h3 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h3><p>请求报文的的格式为：<strong>请求行  － 请求头 －空行 - 请求数据</strong></p>
+<h4 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a>请求行</h4><p>由<strong>请求方法字段</strong>，<strong>URL字段</strong>和<strong>HTTP协议版本字段</strong>  三个字段构成</p>
+<ul>
+<li>请求方法：常见的有GET(请求指定的页面，服务器返回具体的内容数据）、POST（提交数据，如提交表单）、PUT（更新和修改数据）等，浏览器在向服务器发送请求的时候必须指明请求类型</li>
+<li>URL：表示请求所针对的资源</li>
+<li>协议版本：让发送方指示消息的格式和理解后续HTTP通信的能力</li>
+</ul>
+<p>示例：<code>GET http://www/w3/org/pub.html HTTP/1.1</code></p>
+<h4 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h4><table>
+<thead>
+<tr>
+<th>请求头字段</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Accept</td>
+<td>客户端可接受的MIME类型</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>数据属于什么类型，如js,c++,html,text格式</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>发出请求的用户信息，如用户使用的什么客户端</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>客户端保存服务器返回的数据，如保存用户身份信息</td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>表示处理完这次请求后是否断开链接</td>
+</tr>
+</tbody></table>
+<h4 id="请求数据"><a href="#请求数据" class="headerlink" title="请求数据"></a>请求数据</h4><p>若方法字段是GET，则此项为空，没有数据。若方法字段是POST，则放的是提交的数据。</p>
+<p>示例：<code>user=admin&amp;password=123456</code></p>
+<p>请求行 － 通用信息头 － 请求头 － 实体头 － 报文主体</p>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><p><strong>1. GET</strong></p>
+<pre><code>//请求行
+
+GET /hello/index.jsp HTTP/1.1
+
+//请求头部
+
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Accept-Charset: GB2312,utf-8;q=0.7,*;q=0.7
+Connection: keep-alive
+Cookie: JSESSIONID=369766FDF6220F7803433C0B2DE36D98
+
+//空行
+
+//因为GET没有正文，所以下面为空
+</code></pre>
+<p><strong>2.POST</strong></p>
+<pre><code>// 请求行
+
+POST /hello/index.jsp HTTP/1.1
+
+//请求头
+
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Accept-Charset: GB2312,utf-8;q=0.7,*;q=0.7
+Connection: keep-alive
+Referer: http://localhost/hello/index.jsp
+Cookie: JSESSIONID=369766FDF6220F7803433C0B2DE36D98
+Content-Type: application/x-www-form-urlencoded 
+Content-Length: 14 
+
+// 这里是空行
+
+//POST有请求正文
+
+username=hello
+</code></pre>
+<h3 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h3><p>响应报文的的格式为:状态行 －  响应头 － 空行  -  响应正文</p>
+<h4 id="状态行"><a href="#状态行" class="headerlink" title="状态行"></a>状态行</h4><p>状态行由协议版本。状态码，原因短语构成，每个元素由空格分隔</p>
+<p>示例：<code>HTTP/1.1 200 OK</code></p>
+<ul>
+<li><p>协议版本：让发送方指示消息的格式和理解后续HTTP通信的能力</p>
+</li>
+<li><p>状态码：一个3位整数结果码，用于向用户返回操作结果</p>
+<p>常见状态码</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>状态码说明</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1XX</td>
+<td>请求被接收</td>
+<td>100 Continue</td>
+<td>请求被接收，继续执行</td>
+</tr>
+<tr>
+<td>2XX</td>
+<td>请求成功</td>
+<td>200 OK</td>
+<td>成功，有响应消息体</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>201 Created</td>
+<td>资源创建成功</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>204 No Content</td>
+<td>成功，没有响应的消息体</td>
+</tr>
+<tr>
+<td>3XX</td>
+<td>进一步操作需要被执行</td>
+<td>301 Moved Permanently</td>
+<td>目标资源被分配进新的URL</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>请求错误</td>
+<td>400 Bad Request</td>
+<td>请求消息体错误，消息体中有错误描述</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>401 Unauthorized</td>
+<td>授权失败，如证书不匹配</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>403 Forbidden</td>
+<td>禁止访问</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>404 Not Found</td>
+<td>找不到请求的梓员</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>服务端错误</td>
+<td>500 Internal Server Error</td>
+<td>服务器内部错误</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>501 Not Implement</td>
+<td>功能未实现</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h4 id="响应头"><a href="#响应头" class="headerlink" title="响应头"></a>响应头</h4><table>
+<thead>
+<tr>
+<th>响应头字段</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content-Encoding</td>
+<td>文档的编码（Encode）方法</td>
+</tr>
+<tr>
+<td>Allow</td>
+<td>服务器支持哪些请求方法（如GET、POST等）。</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>表示内容长度</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>表示后面的文档属于什么MIME类型</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>当前的GMT时间</td>
+</tr>
+<tr>
+<td>Last-Modified</td>
+<td>文档的最后改动时间</td>
+</tr>
+</tbody></table>
+<h2 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h2><p>端口</p>
+<p>端口分为物理端口和软件端口</p>
+<p><strong>物理端口</strong>：如交换机和路由器上面插网线的口就叫做物理端口</p>
+<p><img src="/../img/HTTP/image-20220327104852899.png" alt="image-20220327104852899"></p>
+<p><strong>软件端口</strong>：指软件与服务器的接口，是操作系统模拟出来的。端口相当于身份证，保证了信息不会发错。分为了服务器端口和用户端的端口</p>
+<p><strong>查看端口号</strong>：</p>
+<p>在检查-网络中可以查看</p>
+<p><img src="/../img/HTTP/image-20220327105318272.png" alt="image-20220327105318272"></p>
+<p>HTTP服务器，默认的端口号为80</p>
+<p>HTTPS服务器，默认的端口号为443</p>
+<p>HTTP是应用层协议，是建立在传输层TCP协议之上的</p>
+<p><img src="/../img/HTTP/image-20220327140133597.png" alt="image-20220327140133597"></p>
+<h2 id="请求方法"><a href="#请求方法" class="headerlink" title="请求方法"></a>请求方法</h2><p>请求方法一共有9种</p>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">GET</td>
+<td align="left">请求指定的页面信息，并返回实体主体。</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">HEAD</td>
+<td align="left">类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">POST</td>
+<td align="left">向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">PUT</td>
+<td align="left">从客户端向服务器传送的数据取代指定的文档的内容。</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">DELETE</td>
+<td align="left">请求服务器删除指定的页面。</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">CONNECT</td>
+<td align="left">HTTP&#x2F;1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">OPTIONS</td>
+<td align="left">允许客户端查看服务器的性能。</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">TRACE</td>
+<td align="left">回显服务器收到的请求，主要用于测试或诊断。</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">PATCH</td>
+<td align="left">是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
+</tr>
+</tbody></table>
+<p>直接在浏览器的地址栏中输入网址，默认属于get请求</p>
+<p>一般使用表单提交请求，默认属于post请求</p>
+<p>GET和POST的区别：</p>
+<ol>
+<li><p>get是用来从服务器上获得数据的，而post是向服务器上传递数据的</p>
+</li>
+<li><p>get会将请求的数据会附在URL之后，即把数据放在HTTP协议头中，用？来分割URL和传输数据，用&amp;来分隔各个参数。如下面这个链接：</p>
+<p><a target="_blank" rel="noopener" href="https://search.bilibili.com/all?keyword=http%EF%BF%BD&amp;from_source=webtop_search&amp;spm_id_from=333.788&amp;page=3">https://search.bilibili.com/all?keyword=http%E5%8D&amp;from_source=webtop_search&amp;spm_id_from=333.788&amp;page=3</a></p>
+<p>如果数据是英文或者英文字母，则原样显示，如果是空格，则以+显示，如果是中文或其他字符，则将字符串用BASE64编码。即如果用GET提交数据，用户名和密码将会以明文出现在URL中。</p>
+<p>post将表单中的数据放在form的数据体中，按照变量和值的对应方式，传递到action所指向的URL中</p>
+</li>
+<li><p>get的请求可被缓存，可被保留在浏览器的历史记录中，可被收藏为书签，而post不会，所以get的安全性差，因为发送的数据是URL的一部分</p>
+</li>
+<li><p>因为get是向URL中添加数据，而URL的长度是有限的（最大2048个字符），多以get的数据长度是有限的，而post的数据不限长度</p>
+</li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class="side">
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.</span> <span class="toc-text">HTTP协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E6%8A%A5%E6%96%87"><span class="toc-number">2.</span> <span class="toc-text">HTTP报文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87"><span class="toc-number">2.1.</span> <span class="toc-text">请求报文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E8%A1%8C"><span class="toc-number">2.1.1.</span> <span class="toc-text">请求行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="toc-number">2.1.2.</span> <span class="toc-text">请求头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE"><span class="toc-number">2.1.3.</span> <span class="toc-text">请求数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="toc-number">2.1.4.</span> <span class="toc-text">示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87"><span class="toc-number">2.2.</span> <span class="toc-text">响应报文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E8%A1%8C"><span class="toc-number">2.2.1.</span> <span class="toc-text">状态行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%A4%B4"><span class="toc-number">2.2.2.</span> <span class="toc-text">响应头</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="toc-number">3.</span> <span class="toc-text">端口号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">请求方法</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script type="text/javascript" src="../source/js/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="../source/js/codeBlock/codeBLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="../source/js/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="../source/js/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="../source/js/codeBlock/codeShrink.js"></script>
+<!-- 代码块折行 -->
+<style type="text/css">
+    code[class*="language-"],
+    pre[class*="language-"] {
+        white-space: pre !important;
+    }
+
+</style>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
