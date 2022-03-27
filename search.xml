@@ -1272,4 +1272,56 @@
 <p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323220132789.png" alt="image-20220323220132789"></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>深拷贝与浅拷贝</title>
+    <url>/2022/03/26/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
+    <content><![CDATA[<h2 id="两种数据类型："><a href="#两种数据类型：" class="headerlink" title="两种数据类型："></a>两种数据类型：</h2><h3 id="基础类型：数值、字符串、布尔、null、undefined"><a href="#基础类型：数值、字符串、布尔、null、undefined" class="headerlink" title="基础类型：数值、字符串、布尔、null、undefined"></a>基础类型：数值、字符串、布尔、null、undefined</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = =<span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line">a = <span class="number">50</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b);<span class="comment">//100</span></span><br></pre></td></tr></table></figure></div>
+
+<p>基础类型，遇到 &#x3D; 时，就是值的复制，存储地方在栈中</p>
+<p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326185934901.png" alt="image-20220326185934901"></p>
+<h3 id="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"><a href="#引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。" class="headerlink" title="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"></a>引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="code"><pre><span class="line">var obj1=&#123;</span><br><span class="line">   a:1;</span><br><span class="line">&#125;</span><br><span class="line">var obj2 = obj1;</span><br><span class="line">obj2.a=2;</span><br><span class="line">console.log(obj1.a)</span><br></pre></td></tr></table></figure></div>
+
+<p>对象类型，遇到 &#x3D; 时，是内存地址的复制，所以改变obj2的值，obj1也会跟着该表</p>
+<p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326203505155.png" alt="image-20220326203505155"></p>
+<h2 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h2><p><strong>浅拷贝</strong>：复制了地址，原来的变量和新建的变量指向了堆区的同一处地方，彼此会相互影响</p>
+<p><strong>深拷贝</strong>：在堆区中重新分配内存，原来的变量和新的变量指向不同的地址，虽然值现在相同，但是互不影响</p>
+<h4 id="浅拷贝的实现方法："><a href="#浅拷贝的实现方法：" class="headerlink" title="浅拷贝的实现方法："></a>浅拷贝的实现方法：</h4><ol>
+<li><p>对象之间直接用等号赋值</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1=&#123;</span><br><span class="line">   <span class="attr">a</span>:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1;</span><br></pre></td></tr></table></figure></div>
+
+
+</li>
+<li><p>以下方法可以处理一层的深拷贝，但是如果对象里又嵌套了对象，则内层的对象依旧只复制了地址（浅拷贝）</p>
+<ul>
+<li>Object.assign()</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> hd = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;小周&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>:<span class="number">19</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;,hd);</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>展开表达式</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> hd = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;小周&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>:<span class="number">19</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;...hd&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>用for循环进行复制</li>
+</ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> hd =&#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&quot;小周&quot;</span>,</span><br><span class="line">        <span class="attr">age</span>: <span class="number">19</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> hd) &#123;</span><br><span class="line">    obj[key] = hd[key];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<h4 id="深拷贝的实现方法："><a href="#深拷贝的实现方法：" class="headerlink" title="深拷贝的实现方法："></a>深拷贝的实现方法：</h4><ol>
+<li><p>手动进行复制。</p>
+</li>
+<li><p>将js对象先转化成json中的字符串，然后再转成js，就可以实现深拷贝</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> json = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj1);</span><br><span class="line"><span class="keyword">var</span> js = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(json);</span><br></pre></td></tr></table></figure></div>
+
+<p>可也将两行代码合并成一行：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj2 = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj));</span><br></pre></td></tr></table></figure></div>
+
+<p>优点：简单方便</p>
+<p>缺点：对象中的函数和正则表达式无法拷贝</p>
+</li>
+<li><p>递归</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="code"><pre><span class="line">function deepClone(newObj, obj) &#123;</span><br><span class="line">    //遍历obj的每一个成员，赋值给newObj</span><br><span class="line">    for (var keys in obj) &#123;</span><br><span class="line">        if (obj[key] instanceof Array) &#123;</span><br><span class="line">            //数组，引用类型</span><br><span class="line">            newObj[key] = [];</span><br><span class="line">            deepClone(newObj[key], obj[key]);</span><br><span class="line">        &#125;</span><br><span class="line">        else if (obj[key] instanceof Object) &#123;</span><br><span class="line">            //对象：引用类型</span><br><span class="line">            newObj[key] = [];</span><br><span class="line">            deepClone(newObj[key], obj[key]);</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            //值类型</span><br><span class="line">            newObj[key] = obj[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div></li>
+</ol>
+]]></content>
+  </entry>
 </search>
