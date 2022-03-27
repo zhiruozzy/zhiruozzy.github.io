@@ -86,13 +86,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>基础类型，遇到 &#x3D; 时，就是值的复制，存储地方在栈中</p>
 <p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326185934901.png" alt="image-20220326185934901"></p>
-<h3 id="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"><a href="#引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。" class="headerlink" title="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"></a>引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。</h3><pre><code>var obj1=&#123;
-   a:1;
-&#125;
-var obj2 = obj1;
-obj2.a=2;
-console.log(obj1.a)
-</code></pre>
+<h3 id="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"><a href="#引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。" class="headerlink" title="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"></a>引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> obj1<span class="token operator">=</span><span class="token punctuation">{</span>
+   a<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> obj1<span class="token punctuation">;</span>
+obj2<span class="token punctuation">.</span>a<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>a<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>对象类型，遇到 &#x3D; 时，是内存地址的复制，所以改变obj2的值，obj1也会跟着该表</p>
 <p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326203505155.png" alt="image-20220326203505155"></p>
 <h2 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h2><p><strong>浅拷贝</strong>：复制了地址，原来的变量和新建的变量指向了堆区的同一处地方，彼此会相互影响</p>
@@ -152,26 +152,26 @@ console.log(obj1.a)
 <p>缺点：对象中的函数和正则表达式无法拷贝</p>
 </li>
 <li><p>递归</p>
-<pre><code>function deepClone(newObj, obj) &#123;
-    //遍历obj的每一个成员，赋值给newObj
-    for (var keys in obj) &#123;
-        if (obj[key] instanceof Array) &#123;
-            //数组，引用类型
-            newObj[key] = [];
-            deepClone(newObj[key], obj[key]);
-        &#125;
-        else if (obj[key] instanceof Object) &#123;
-            //对象：引用类型
-            newObj[key] = [];
-            deepClone(newObj[key], obj[key]);
-        &#125;
-        else &#123;
-            //值类型
-            newObj[key] = obj[key];
-        &#125;
-    &#125;
-&#125;
-</code></pre>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span>newObj<span class="token punctuation">,</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//遍历obj的每一个成员，赋值给newObj</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> keys <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//数组，引用类型</span>
+            newObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token function">deepClone</span><span class="token punctuation">(</span>newObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//对象：引用类型</span>
+            newObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token function">deepClone</span><span class="token punctuation">(</span>newObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//值类型</span>
+            newObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
 

@@ -694,24 +694,10 @@ fn1<span class="token punctuation">.</span><span class="token function">call</sp
 <span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>width<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>即调用这个函数的死后，会弹出this指向的对象的宽度</p>
+<p>即调用这个函数后，会弹出this指向的对象的宽度</p>
 </li>
 </ul>
-<p>之前Ajax在进行数据交换的时候所使用的数据格式就是XML，现在使用的格式是JSON。</p>
-<p>Ajax的优点：</p>
-<ul>
-<li><p>无需刷新页面就可以与服务器通信（搜索时的提示词）</p>
-</li>
-<li><p>允许根据用户的事件来更新部分页面的内容（淘宝中用户将鼠标放在侧面的表单上便会出现整个分类栏）</p>
-</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>没有浏览历史，不能回退</li>
-<li>存在跨域问题</li>
-<li>Ajax向服务端发送请求，服务端返回结果，用js动态创建的页面，无法用爬虫来获取数据的</li>
-</ul>
-<h3 id="全局刷新和局部刷新"><a href="#全局刷新和局部刷新" class="headerlink" title="全局刷新和局部刷新"></a>全局刷新和局部刷新</h3><ol>
+<h2 id="全局刷新和局部刷新"><a href="#全局刷新和局部刷新" class="headerlink" title="全局刷新和局部刷新"></a>全局刷新和局部刷新</h2><ol>
 <li><p>全局刷新</p>
 <ul>
 <li><p>用表单form、herf等发起的请求是全局刷新，用户发起请求，视图发生了改变，页面发生跳转。</p>
@@ -724,6 +710,8 @@ fn1<span class="token punctuation">.</span><span class="token function">call</sp
 <ul>
 <li><p>在当前页面中发送请求，获取数据，更新当前页面的dom对象，对视图部分刷新。</p>
 </li>
+<li><p>比如访问微博的时候，点击底部的加载更多，会自动帮我们加载更多的微博，同时页面并不会整体刷新。</p>
+</li>
 <li><p>优点：①只获取少量数据，速度传输更快。</p>
 <p>​            ②部分更新页面，速度很快。</p>
 <p>​            ③在一个页面中，可以做多个局部刷新</p>
@@ -731,10 +719,7 @@ fn1<span class="token punctuation">.</span><span class="token function">call</sp
 </ul>
 </li>
 </ol>
-<h3 id="异步请求对象"><a href="#异步请求对象" class="headerlink" title="异步请求对象"></a>异步请求对象</h3><p>在局部刷新中，使用异步请求对象，在浏览器的内部发送请求来获取数据。</p>
-<p>异步对象是在浏览器内存中的JavaScript对象。</p>
-<p>可以创建多个，相互独立。每个对象都可以独立的发起请求，传递参数，接收数据。效率更高。</p>
-<h3 id="异步对象"><a href="#异步对象" class="headerlink" title="异步对象"></a>异步对象</h3><p>创建方法：<br><code>var xhr = new XMLHttpRequest();</code></p>
+<h2 id="异步对象"><a href="#异步对象" class="headerlink" title="异步对象"></a>异步对象</h2><p>创建方法：<br><code>var xhr = new XMLHttpRequest();</code></p>
 <p>使用异步对象主要负责发起请求，传递请求的参数，并从服务器接收数据</p>
 <p> 局部刷新需要使用的技术：</p>
 <ol>
@@ -761,32 +746,38 @@ fn1<span class="token punctuation">.</span><span class="token function">call</sp
 </li>
 <li><p>异步对象的属性</p>
 <ul>
-<li><p>readyState：表示请求的状态</p>
+<li><p><strong>readyState</strong>：表示请求的状态</p>
 <p>0：创建异步对象时（new对象）</p>
 <p>1：建立请求时（执行open方法）</p>
 <p>2：使用send方法发送请求时</p>
 <p>3：使用异步对象从服务端接收了数据</p>
 <p>4：异步对象接受并处理完数据</p>
 </li>
-<li><p>status：表示网络的状态，和http的状态码对应</p>
+<li><p><strong>status</strong>：表示网络的状态，和http的状态码对应</p>
 <p>如：200 请求成功| 404服务器资源没有找到</p>
 </li>
-<li><p>responseText:  表示服务器返回的数据</p>
+<li><p><strong>responseText</strong>: 获得字符串形式的响应数据</p>
 <p>如：<code>var data = xhr.responseText</code></p>
+</li>
+<li><p><strong>responseXML</strong>：获得XML形式的响应数据</p>
 </li>
 </ul>
 </li>
 </ol>
 <h2 id="异步对象的使用步骤"><a href="#异步对象的使用步骤" class="headerlink" title="异步对象的使用步骤"></a>异步对象的使用步骤</h2><ol>
-<li><p>使用JS创建异步对象</p>
+<li><p>使用JS创建异步对象，即XMLHttpRequest对象</p>
 <p>var xhr &#x3D; new XMLHttpRequest();</p>
 </li>
-<li><p>给异步对象绑定事件，事件名称onreadystatechange</p>
+<li><p>使用open()方法设置请求参数。open(method,url,true&#x2F;false);</p>
+</li>
+<li><p>发送请求，执行send()函数</p>
+</li>
+<li><p>给异步对象绑定事件，事件名称onreadystatechange，状态改变时就会调用</p>
 <pre class="line-numbers language-js"><code class="language-js">xhr<span class="token punctuation">.</span><span class="token function">onreadystatechange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     当状态改变时执行的代码
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>例：</p>
+<p>如果在数据完整并且请求回来的时候才调用的话，需要在绑定的函数中用if语句来加以判断，例子如下：</p>
 <pre class="line-numbers language-js"><code class="language-js">xhr<span class="token punctuation">.</span><span class="token function">onreadystatechange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
    <span class="token comment" spellcheck="true">//从服务器中获取了数据</span>
    <span class="token keyword">if</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>readyState<span class="token operator">==</span><span class="token number">4</span> <span class="token operator">&amp;&amp;</span> xhr<span class="token punctuation">.</span>status<span class="token operator">==</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -797,11 +788,49 @@ fn1<span class="token punctuation">.</span><span class="token function">call</sp
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>初始请求的参数，执行open()函数</p>
-</li>
-<li><p>发送请求，执行send()函数</p>
+<li><p>服务端响应，获取返回的数据</p>
 </li>
 </ol>
+<h2 id="发送请求的方式是POST"><a href="#发送请求的方式是POST" class="headerlink" title="发送请求的方式是POST"></a>发送请求的方式是POST</h2><p>方法：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">open</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span>url<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token operator">/</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>当method时POST请求时要注意，如果想像form表单提交数据那样使用POST请求，需要使用<strong>XMLHttpRequest</strong> 对象的**setRequestHeader()**来添加HTTP头，并在send（）方法中添加想要发送的数据。</p>
+<p>例如：</p>
+<pre class="line-numbers language-js"><code class="language-js">xmlhttp<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'POST'</span><span class="token punctuation">,</span> <span class="token string">'ajax_test.php'</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+xmlhttp<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">'Content-type'</span><span class="token punctuation">,</span> <span class="token string">'application/x-www-form-urlencoded'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//请求头是数据的类型，application/x-www-form-urlencoded：表单发送默认格式</span>
+
+xmlhttp<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'name=smyhvae&amp;age=27'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>setRequestHeader(header, value)    header字符串:http请求头   value 字符串:值。</p>
+<h4 id="常见请求头"><a href="#常见请求头" class="headerlink" title="常见请求头"></a>常见请求头</h4><table>
+<thead>
+<tr>
+<th>请求头字段</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Accept</td>
+<td>客户端可接受的MIME类型</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>数据属于什么类型，如js,c++,html,text格式</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>发出请求的用户信息，如用户使用的什么客户端</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>客户端保存服务器返回的数据，如保存用户身份信息</td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>表示处理完这次请求后是否断开链接</td>
+</tr>
+</tbody></table>
 ]]></content>
   </entry>
   <entry>
@@ -1909,35 +1938,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 ]]></content>
   </entry>
   <entry>
-    <title>一些好用的网站</title>
-    <url>/2022/02/28/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p>下面是自己最近冲浪看到的一些很好的网站，分享给你：</p>
-<ul>
-<li><p>可以提高图片分辨率的网站：</p>
-<p><a href="https://bigjpg.com/">https://bigjpg.com/</a></p>
-</li>
-<li><p>超喜欢的练习打字网站（小白的我从练习打字开始）</p>
-<p><a href="https://www.typing.com/">https://www.typing.com/</a></p>
-</li>
-<li><p>网道，简洁舒适的编程教程（阮一峰前辈yyds)：</p>
-<p><a href="https://wangdoc.com/">https://wangdoc.com/</a></p>
-</li>
-<li><p>STL超全工具书，方便查询：</p>
-<p><a href="https://blog.csdn.net/weixin_45761327/article/details/107561697">https://blog.csdn.net/weixin_45761327/article/details/107561697</a></p>
-</li>
-<li><p>adobe全家桶（2020年的）：</p>
-<p><a href="https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78">https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>分享</category>
-      </categories>
-      <tags>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>也茫然 还好有勇敢</title>
     <url>/2022/02/26/%E4%B9%9F%E8%8C%AB%E7%84%B6-%E8%BF%98%E5%A5%BD%E6%9C%89%E5%8B%87%E6%95%A2/</url>
     <content><![CDATA[<h3 id="壹"><a href="#壹" class="headerlink" title="壹"></a>壹</h3><p>　　一直都是一个只有三分钟热度的人</p>
@@ -1975,6 +1975,135 @@ console<span class="token punctuation">.</span><span class="token function">log<
       <tags>
         <tag>随笔</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>一些好用的网站</title>
+    <url>/2022/02/28/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p>下面是自己最近冲浪看到的一些很好的网站，分享给你：</p>
+<ul>
+<li><p>可以提高图片分辨率的网站：</p>
+<p><a href="https://bigjpg.com/">https://bigjpg.com/</a></p>
+</li>
+<li><p>超喜欢的练习打字网站（小白的我从练习打字开始）</p>
+<p><a href="https://www.typing.com/">https://www.typing.com/</a></p>
+</li>
+<li><p>网道，简洁舒适的编程教程（阮一峰前辈yyds)：</p>
+<p><a href="https://wangdoc.com/">https://wangdoc.com/</a></p>
+</li>
+<li><p>STL超全工具书，方便查询：</p>
+<p><a href="https://blog.csdn.net/weixin_45761327/article/details/107561697">https://blog.csdn.net/weixin_45761327/article/details/107561697</a></p>
+</li>
+<li><p>adobe全家桶（2020年的）：</p>
+<p><a href="https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78">https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深拷贝与浅拷贝</title>
+    <url>/2022/03/26/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
+    <content><![CDATA[<h2 id="两种数据类型："><a href="#两种数据类型：" class="headerlink" title="两种数据类型："></a>两种数据类型：</h2><h3 id="基础类型：数值、字符串、布尔、null、undefined"><a href="#基础类型：数值、字符串、布尔、null、undefined" class="headerlink" title="基础类型：数值、字符串、布尔、null、undefined"></a>基础类型：数值、字符串、布尔、null、undefined</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+a <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//100</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>基础类型，遇到 &#x3D; 时，就是值的复制，存储地方在栈中</p>
+<p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326185934901.png" alt="image-20220326185934901"></p>
+<h3 id="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"><a href="#引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。" class="headerlink" title="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"></a>引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> obj1<span class="token operator">=</span><span class="token punctuation">{</span>
+   a<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> obj1<span class="token punctuation">;</span>
+obj2<span class="token punctuation">.</span>a<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>a<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对象类型，遇到 &#x3D; 时，是内存地址的复制，所以改变obj2的值，obj1也会跟着该表</p>
+<p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326203505155.png" alt="image-20220326203505155"></p>
+<h2 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h2><p><strong>浅拷贝</strong>：复制了地址，原来的变量和新建的变量指向了堆区的同一处地方，彼此会相互影响</p>
+<p><strong>深拷贝</strong>：在堆区中重新分配内存，原来的变量和新的变量指向不同的地址，虽然值现在相同，但是互不影响</p>
+<h4 id="浅拷贝的实现方法："><a href="#浅拷贝的实现方法：" class="headerlink" title="浅拷贝的实现方法："></a>浅拷贝的实现方法：</h4><ol>
+<li><p>对象之间直接用等号赋值</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> obj1<span class="token operator">=</span><span class="token punctuation">{</span>
+   a<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> obj1<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>以下方法可以处理一层的深拷贝，但是如果对象里又嵌套了对象，则内层的对象依旧只复制了地址（浅拷贝）</p>
+<ul>
+<li>Object.assign()</li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span><span class="token number">19</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>hd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>展开表达式</li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span><span class="token number">19</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>hd<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>用for循环进行复制</li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span><span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
+        age<span class="token punctuation">:</span> <span class="token number">19</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> hd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> hd<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h4 id="深拷贝的实现方法："><a href="#深拷贝的实现方法：" class="headerlink" title="深拷贝的实现方法："></a>深拷贝的实现方法：</h4><ol>
+<li><p>手动进行复制。</p>
+</li>
+<li><p>将js对象先转化成json中的字符串，然后再转成js，就可以实现深拷贝</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> json <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> js <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>可也将两行代码合并成一行：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> obj2 <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>优点：简单方便</p>
+<p>缺点：对象中的函数和正则表达式无法拷贝</p>
+</li>
+<li><p>递归</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span>newObj<span class="token punctuation">,</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//遍历obj的每一个成员，赋值给newObj</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> keys <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//数组，引用类型</span>
+            newObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token function">deepClone</span><span class="token punctuation">(</span>newObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//对象：引用类型</span>
+            newObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token function">deepClone</span><span class="token punctuation">(</span>newObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//值类型</span>
+            newObj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title>离散数学の笔记</title>
@@ -2351,106 +2480,6 @@ p&#39;r = p&#39;(q + q&#39;)r = p&#39;qr + p&#39;q&#39;r
       <tags>
         <tag>笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>深拷贝与浅拷贝</title>
-    <url>/2022/03/26/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
-    <content><![CDATA[<h2 id="两种数据类型："><a href="#两种数据类型：" class="headerlink" title="两种数据类型："></a>两种数据类型：</h2><h3 id="基础类型：数值、字符串、布尔、null、undefined"><a href="#基础类型：数值、字符串、布尔、null、undefined" class="headerlink" title="基础类型：数值、字符串、布尔、null、undefined"></a>基础类型：数值、字符串、布尔、null、undefined</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
-a <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//100</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>基础类型，遇到 &#x3D; 时，就是值的复制，存储地方在栈中</p>
-<p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326185934901.png" alt="image-20220326185934901"></p>
-<h3 id="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"><a href="#引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。" class="headerlink" title="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"></a>引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。</h3><pre><code>var obj1=&#123;
-   a:1;
-&#125;
-var obj2 = obj1;
-obj2.a=2;
-console.log(obj1.a)
-</code></pre>
-<p>对象类型，遇到 &#x3D; 时，是内存地址的复制，所以改变obj2的值，obj1也会跟着该表</p>
-<p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326203505155.png" alt="image-20220326203505155"></p>
-<h2 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h2><p><strong>浅拷贝</strong>：复制了地址，原来的变量和新建的变量指向了堆区的同一处地方，彼此会相互影响</p>
-<p><strong>深拷贝</strong>：在堆区中重新分配内存，原来的变量和新的变量指向不同的地址，虽然值现在相同，但是互不影响</p>
-<h4 id="浅拷贝的实现方法："><a href="#浅拷贝的实现方法：" class="headerlink" title="浅拷贝的实现方法："></a>浅拷贝的实现方法：</h4><ol>
-<li><p>对象之间直接用等号赋值</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> obj1<span class="token operator">=</span><span class="token punctuation">{</span>
-   a<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">var</span> obj2 <span class="token operator">=</span> obj1<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>以下方法可以处理一层的深拷贝，但是如果对象里又嵌套了对象，则内层的对象依旧只复制了地址（浅拷贝）</p>
-<ul>
-<li>Object.assign()</li>
-</ul>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span> <span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
-  age<span class="token punctuation">:</span><span class="token number">19</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>hd<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>展开表达式</li>
-</ul>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span> <span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
-  age<span class="token punctuation">:</span><span class="token number">19</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>hd<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>用for循环进行复制</li>
-</ul>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span><span class="token punctuation">{</span>
-    name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
-        age<span class="token punctuation">:</span> <span class="token number">19</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> hd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> hd<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-<h4 id="深拷贝的实现方法："><a href="#深拷贝的实现方法：" class="headerlink" title="深拷贝的实现方法："></a>深拷贝的实现方法：</h4><ol>
-<li><p>手动进行复制。</p>
-</li>
-<li><p>将js对象先转化成json中的字符串，然后再转成js，就可以实现深拷贝</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> json <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> js <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>可也将两行代码合并成一行：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> obj2 <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>优点：简单方便</p>
-<p>缺点：对象中的函数和正则表达式无法拷贝</p>
-</li>
-<li><p>递归</p>
-<pre><code>function deepClone(newObj, obj) &#123;
-    //遍历obj的每一个成员，赋值给newObj
-    for (var keys in obj) &#123;
-        if (obj[key] instanceof Array) &#123;
-            //数组，引用类型
-            newObj[key] = [];
-            deepClone(newObj[key], obj[key]);
-        &#125;
-        else if (obj[key] instanceof Object) &#123;
-            //对象：引用类型
-            newObj[key] = [];
-            deepClone(newObj[key], obj[key]);
-        &#125;
-        else &#123;
-            //值类型
-            newObj[key] = obj[key];
-        &#125;
-    &#125;
-&#125;
-</code></pre>
-</li>
-</ol>
-]]></content>
   </entry>
   <entry>
     <title>手把手教你写贪吃蛇👩‍🔧(原生JS)</title>
