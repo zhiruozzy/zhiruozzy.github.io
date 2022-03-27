@@ -1909,6 +1909,35 @@ console<span class="token punctuation">.</span><span class="token function">log<
 ]]></content>
   </entry>
   <entry>
+    <title>一些好用的网站</title>
+    <url>/2022/02/28/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p>下面是自己最近冲浪看到的一些很好的网站，分享给你：</p>
+<ul>
+<li><p>可以提高图片分辨率的网站：</p>
+<p><a href="https://bigjpg.com/">https://bigjpg.com/</a></p>
+</li>
+<li><p>超喜欢的练习打字网站（小白的我从练习打字开始）</p>
+<p><a href="https://www.typing.com/">https://www.typing.com/</a></p>
+</li>
+<li><p>网道，简洁舒适的编程教程（阮一峰前辈yyds)：</p>
+<p><a href="https://wangdoc.com/">https://wangdoc.com/</a></p>
+</li>
+<li><p>STL超全工具书，方便查询：</p>
+<p><a href="https://blog.csdn.net/weixin_45761327/article/details/107561697">https://blog.csdn.net/weixin_45761327/article/details/107561697</a></p>
+</li>
+<li><p>adobe全家桶（2020年的）：</p>
+<p><a href="https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78">https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>也茫然 还好有勇敢</title>
     <url>/2022/02/26/%E4%B9%9F%E8%8C%AB%E7%84%B6-%E8%BF%98%E5%A5%BD%E6%9C%89%E5%8B%87%E6%95%A2/</url>
     <content><![CDATA[<h3 id="壹"><a href="#壹" class="headerlink" title="壹"></a>壹</h3><p>　　一直都是一个只有三分钟热度的人</p>
@@ -1946,135 +1975,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
       <tags>
         <tag>随笔</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>一些好用的网站</title>
-    <url>/2022/02/28/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p>下面是自己最近冲浪看到的一些很好的网站，分享给你：</p>
-<ul>
-<li><p>可以提高图片分辨率的网站：</p>
-<p><a href="https://bigjpg.com/">https://bigjpg.com/</a></p>
-</li>
-<li><p>超喜欢的练习打字网站（小白的我从练习打字开始）</p>
-<p><a href="https://www.typing.com/">https://www.typing.com/</a></p>
-</li>
-<li><p>网道，简洁舒适的编程教程（阮一峰前辈yyds)：</p>
-<p><a href="https://wangdoc.com/">https://wangdoc.com/</a></p>
-</li>
-<li><p>STL超全工具书，方便查询：</p>
-<p><a href="https://blog.csdn.net/weixin_45761327/article/details/107561697">https://blog.csdn.net/weixin_45761327/article/details/107561697</a></p>
-</li>
-<li><p>adobe全家桶（2020年的）：</p>
-<p><a href="https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78">https://www.yuque.com/books/share/205ec53c-5013-4bdb-ad02-ac96cc761203/nnun78</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>分享</category>
-      </categories>
-      <tags>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深拷贝与浅拷贝</title>
-    <url>/2022/03/26/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
-    <content><![CDATA[<h2 id="两种数据类型："><a href="#两种数据类型：" class="headerlink" title="两种数据类型："></a>两种数据类型：</h2><h3 id="基础类型：数值、字符串、布尔、null、undefined"><a href="#基础类型：数值、字符串、布尔、null、undefined" class="headerlink" title="基础类型：数值、字符串、布尔、null、undefined"></a>基础类型：数值、字符串、布尔、null、undefined</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
-a <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//100</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>基础类型，遇到 &#x3D; 时，就是值的复制，存储地方在栈中</p>
-<p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326185934901.png" alt="image-20220326185934901"></p>
-<h3 id="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"><a href="#引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。" class="headerlink" title="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"></a>引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。</h3><pre><code>var obj1=&#123;
-   a:1;
-&#125;
-var obj2 = obj1;
-obj2.a=2;
-console.log(obj1.a)
-</code></pre>
-<p>对象类型，遇到 &#x3D; 时，是内存地址的复制，所以改变obj2的值，obj1也会跟着该表</p>
-<p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326203505155.png" alt="image-20220326203505155"></p>
-<h2 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h2><p><strong>浅拷贝</strong>：复制了地址，原来的变量和新建的变量指向了堆区的同一处地方，彼此会相互影响</p>
-<p><strong>深拷贝</strong>：在堆区中重新分配内存，原来的变量和新的变量指向不同的地址，虽然值现在相同，但是互不影响</p>
-<h4 id="浅拷贝的实现方法："><a href="#浅拷贝的实现方法：" class="headerlink" title="浅拷贝的实现方法："></a>浅拷贝的实现方法：</h4><ol>
-<li><p>对象之间直接用等号赋值</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> obj1<span class="token operator">=</span><span class="token punctuation">{</span>
-   a<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">var</span> obj2 <span class="token operator">=</span> obj1<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>以下方法可以处理一层的深拷贝，但是如果对象里又嵌套了对象，则内层的对象依旧只复制了地址（浅拷贝）</p>
-<ul>
-<li>Object.assign()</li>
-</ul>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span> <span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
-  age<span class="token punctuation">:</span><span class="token number">19</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>hd<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>展开表达式</li>
-</ul>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span> <span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
-  age<span class="token punctuation">:</span><span class="token number">19</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>hd<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>用for循环进行复制</li>
-</ul>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span><span class="token punctuation">{</span>
-    name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
-        age<span class="token punctuation">:</span> <span class="token number">19</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> hd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> hd<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-<h4 id="深拷贝的实现方法："><a href="#深拷贝的实现方法：" class="headerlink" title="深拷贝的实现方法："></a>深拷贝的实现方法：</h4><ol>
-<li><p>手动进行复制。</p>
-</li>
-<li><p>将js对象先转化成json中的字符串，然后再转成js，就可以实现深拷贝</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> json <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> js <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>可也将两行代码合并成一行：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> obj2 <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>优点：简单方便</p>
-<p>缺点：对象中的函数和正则表达式无法拷贝</p>
-</li>
-<li><p>递归</p>
-<pre><code>function deepClone(newObj, obj) &#123;
-    //遍历obj的每一个成员，赋值给newObj
-    for (var keys in obj) &#123;
-        if (obj[key] instanceof Array) &#123;
-            //数组，引用类型
-            newObj[key] = [];
-            deepClone(newObj[key], obj[key]);
-        &#125;
-        else if (obj[key] instanceof Object) &#123;
-            //对象：引用类型
-            newObj[key] = [];
-            deepClone(newObj[key], obj[key]);
-        &#125;
-        else &#123;
-            //值类型
-            newObj[key] = obj[key];
-        &#125;
-    &#125;
-&#125;
-</code></pre>
-</li>
-</ol>
-]]></content>
   </entry>
   <entry>
     <title>离散数学の笔记</title>
@@ -2451,6 +2351,106 @@ p&#39;r = p&#39;(q + q&#39;)r = p&#39;qr + p&#39;q&#39;r
       <tags>
         <tag>笔记</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>深拷贝与浅拷贝</title>
+    <url>/2022/03/26/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
+    <content><![CDATA[<h2 id="两种数据类型："><a href="#两种数据类型：" class="headerlink" title="两种数据类型："></a>两种数据类型：</h2><h3 id="基础类型：数值、字符串、布尔、null、undefined"><a href="#基础类型：数值、字符串、布尔、null、undefined" class="headerlink" title="基础类型：数值、字符串、布尔、null、undefined"></a>基础类型：数值、字符串、布尔、null、undefined</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> a<span class="token punctuation">;</span>
+a <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//100</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>基础类型，遇到 &#x3D; 时，就是值的复制，存储地方在栈中</p>
+<p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326185934901.png" alt="image-20220326185934901"></p>
+<h3 id="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"><a href="#引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。" class="headerlink" title="引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。"></a>引用类型：统称为Object类型，细分有Object类型，Array类型，Date类型，Function类型等。</h3><pre><code>var obj1=&#123;
+   a:1;
+&#125;
+var obj2 = obj1;
+obj2.a=2;
+console.log(obj1.a)
+</code></pre>
+<p>对象类型，遇到 &#x3D; 时，是内存地址的复制，所以改变obj2的值，obj1也会跟着该表</p>
+<p><img src="/../img/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/image-20220326203505155.png" alt="image-20220326203505155"></p>
+<h2 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h2><p><strong>浅拷贝</strong>：复制了地址，原来的变量和新建的变量指向了堆区的同一处地方，彼此会相互影响</p>
+<p><strong>深拷贝</strong>：在堆区中重新分配内存，原来的变量和新的变量指向不同的地址，虽然值现在相同，但是互不影响</p>
+<h4 id="浅拷贝的实现方法："><a href="#浅拷贝的实现方法：" class="headerlink" title="浅拷贝的实现方法："></a>浅拷贝的实现方法：</h4><ol>
+<li><p>对象之间直接用等号赋值</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> obj1<span class="token operator">=</span><span class="token punctuation">{</span>
+   a<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> obj1<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>以下方法可以处理一层的深拷贝，但是如果对象里又嵌套了对象，则内层的对象依旧只复制了地址（浅拷贝）</p>
+<ul>
+<li>Object.assign()</li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span><span class="token number">19</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>hd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>展开表达式</li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span><span class="token number">19</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>hd<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>用for循环进行复制</li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> hd <span class="token operator">=</span><span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span><span class="token string">"小周"</span><span class="token punctuation">,</span>
+        age<span class="token punctuation">:</span> <span class="token number">19</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> hd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> hd<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h4 id="深拷贝的实现方法："><a href="#深拷贝的实现方法：" class="headerlink" title="深拷贝的实现方法："></a>深拷贝的实现方法：</h4><ol>
+<li><p>手动进行复制。</p>
+</li>
+<li><p>将js对象先转化成json中的字符串，然后再转成js，就可以实现深拷贝</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> json <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> js <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>可也将两行代码合并成一行：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> obj2 <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>优点：简单方便</p>
+<p>缺点：对象中的函数和正则表达式无法拷贝</p>
+</li>
+<li><p>递归</p>
+<pre><code>function deepClone(newObj, obj) &#123;
+    //遍历obj的每一个成员，赋值给newObj
+    for (var keys in obj) &#123;
+        if (obj[key] instanceof Array) &#123;
+            //数组，引用类型
+            newObj[key] = [];
+            deepClone(newObj[key], obj[key]);
+        &#125;
+        else if (obj[key] instanceof Object) &#123;
+            //对象：引用类型
+            newObj[key] = [];
+            deepClone(newObj[key], obj[key]);
+        &#125;
+        else &#123;
+            //值类型
+            newObj[key] = obj[key];
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+</li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title>手把手教你写贪吃蛇👩‍🔧(原生JS)</title>
