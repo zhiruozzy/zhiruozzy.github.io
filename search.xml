@@ -2108,7 +2108,180 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <entry>
     <title>离散数学の笔记</title>
     <url>/2022/03/02/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h3 id="一些英译中"><a href="#一些英译中" class="headerlink" title="一些英译中"></a>一些英译中</h3><p>compound proposition :复合命题</p>
+    <content><![CDATA[<h3 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h3><ul>
+<li><strong>Let N(x) be the statement that “x has visited North Dakota,” where the domain consists of the students in</strong></li>
+</ul>
+<p><strong>your school. Express each of these quantifications in English.</strong> </p>
+<p>a) ∃ x N(x) </p>
+<p>Some student in the school has visited North Dakota. (Alternatively, there exists a student in the school who has </p>
+<p>visited North Dakota.) </p>
+<p>b) ∀ x N(x) </p>
+<p>Every student in the school has visited North Dakota. (Alternatively, all students in the school have visited </p>
+<p>North Dakota.) </p>
+<p>c) ¬∃ x N(x) </p>
+<p>This is the negation of part (a): No student in the school has visited North Dakota. (Alternatively, there does not </p>
+<p>exist a student in the school who has visited North Dakota.) </p>
+<p>d) ∃ x ¬N(x) </p>
+<p>Some student in the school has not visited North Dakota. (Alternatively, there exists a student in the school who </p>
+<p>has not visited North Dakota.) </p>
+<p>e) ¬∀ x N(x) </p>
+<p>This is the negation of part (b): It is not true that every student in the school has visited North Dakota. </p>
+<p>(Alternatively, not all students in the school have visited North Dakota.) </p>
+<p>f) ∀ x ¬N(x) </p>
+<p>All students in the school have not visited North Dakota. (Author: This is technically the correct answer, </p>
+<p>although common English usage takes this sentence to mean—incorrectly—the answer to part </p>
+<ul>
+<li><strong>Translate these statements into English, where R(x) is “x is a rabbit,” and H(x) is “x hops” and the domain</strong></li>
+</ul>
+<p><strong>consists of all animals.</strong> </p>
+<p>a) ∀ x (R(x) → H(x)) </p>
+<p>If an animal is a rabbit, then that animal hops. (Alternatively, every rabbit hops.) </p>
+<p>b) ∀ x (R(x) ^ H(x)) </p>
+<p>Every animal is a rabbit and hops (obviously not true). </p>
+<p>c) ∃ x (R(x) → H(x)) </p>
+<p>There exists an animal such that if it is a rabbit, then it hops. (Author: Note that this is trivially true, satisfied, </p>
+<p>for example, by lions, so it is not the sort of thing one would say.) </p>
+<p>d) ∃ x (R(x) ^ H(x)) </p>
+<p>There exists an animal that is a rabbit and hops</p>
+<ul>
+<li><strong>Suppose that the domain of the propositional function P(x) consists of the integers−2,−1, 0, 1, and 2. Write out each of these propositions using disjunctions, conjunctions, and negations. （析取，连词和否定）</strong></li>
+</ul>
+<p>a) ∃xP(x)         b)∀xP (x)           c) ∃x¬P(x) </p>
+<p>​     d) ∀x¬P(x)       e) ¬∃xP (x)         f) ¬∀xP (x) </p>
+<p>Answers: </p>
+<p>Existential quantifiers are like disjunctions, and universal quantifiers are like </p>
+<p>conjunctions. （存在量词类似于析取，普遍量词类似于合取）</p>
+<p>a)P (−2) ∨ P (−1) ∨ P (0) ∨ P (1) ∨ P (2) </p>
+<p>b) P (−2) ∧ P (−1) ∧ P (0) ∧ P (1) ∧ P (2) </p>
+<p>c) ¬P (−2) ∨ ¬P (−1) ∨ ¬P (0) ∨ ¬P (1) ∨ ¬P (2) </p>
+<p>d) ¬P (−2) ∧ ¬P (−1) ∧ ¬P (0) ∧ ¬P (1) ∧ ¬P (2) </p>
+<p>e)This is just the negation of part (a): ¬ ( P (−2) ∨ P (−1) ∨ P (0) ∨ P (1) ∨ P (2)) </p>
+<p>f)This is just the negation of part (b): ¬ ( P (−2) ∧ P (−1) ∧ P (0) ∧ P (1) ∧ P (2)) </p>
+<ul>
+<li><strong>Express each of these system speciﬁcations using predicates, quantiﬁers, and logical connectives</strong></li>
+</ul>
+<p>a) At least one mail message, among the nonempty set of messages, can be saved if there is a disk with more than 10 kilobytes of free space.</p>
+<p>&#x3D;&gt; (∃x F(x, 10)) →∃x S(x), where F(x, y) is “Disk x has more than y kilobytes of free space,” and S(x) is “Mail message x can be saved” </p>
+<p> b) Whenever there is an active alert, all queued messages are transmitted. </p>
+<p>&#x3D;&gt; (∃x A(x)) →∀x(Q(x) → T (x)), where A(x) is “Alert x is active,” Q(x) is “Message x is queued,” and T (x)is “Message x is transmitted”</p>
+<p>c) The diagnostic monitor tracks the status of all systems except the main console. </p>
+<p>&#x3D;&gt;∀x((x &#x3D; main console) → T (x)) , where T (x)is “The diagnostic monitor tracks the status of system x” </p>
+<p>d) Each participant on the conference call whom the host of the call did not put on a special list was billed.</p>
+<p>&#x3D;&gt;∀x(¬L(x) → B(x)), where L(x) is “The host of the conference call put participant x on a special list” and B(x)is “Participant x was billed” </p>
+<ul>
+<li><strong>Translate these speciﬁcations into English where F(p)is “Printer p is out of service,” B(p) is “Printer p is busy,” L(j) is “Print job j is lost,” and Q(j) is “Print job j is queued.”</strong></li>
+</ul>
+<p>a) ∃p(F(p)∧B(p))→∃jL(j) </p>
+<p>&#x3D;&gt;If there is a printer that is both out of service and busy, then some job has been lost. </p>
+<p>b) ∀pB(p) →∃jQ(j)</p>
+<p>&#x3D;&gt; If every printer is busy, then there is a job in the queue.</p>
+<p> c) ∃j(Q(j)∧L(j)) →∃pF(p) </p>
+<p>&#x3D;&gt;If there is a job that is both queued and lost, then some printer is out of service.</p>
+<p>d) (∀pB(p)∧∀jQ(j)) →∃jL(j) </p>
+<p>&#x3D;&gt;) If every printer is busy and every job is queued, then some job is lost. </p>
+<ul>
+<li><p><strong>Translate to Logic</strong></p>
+<p>Express each of these system specififications using predicate, quantififiers, and logical connectives.</p>
+<p>(a) Every user has access to an electronic mailbox.</p>
+<p><strong>Solution:</strong></p>
+<p>Let the domain be users and mailboxes. Let User(<em>x</em>) be “<em>x</em> is a user”, let Mailbox(<em>y</em>) be “<em>y</em> is a mailbox”,</p>
+<p>and let Access(<em>x, y</em>) be “<em>x</em> has access to <em>y</em>”.</p>
+<p><strong>∀  x (User(x) → ( ∃ y (Mailbox(<em>y</em>)  ∧ Access(x, y))))</strong></p>
+<p>(b) The system mailbox can be accessed by everyone in the group if the fifile system is locked.</p>
+<p><strong>Solution:</strong></p>
+<p>Let the domain be users and mailboxes. Let Access(<em>x, y</em>) be “<em>x</em> has access to <em>y</em>”. Let GroupMember(<em>x</em>)</p>
+<p>be “<em>x</em> is a member of the group.” Let FileSystemLocked be the proposition “the fifile system is locked.” Let</p>
+<p>SystemMailbox be the constant that is the system mailbox.</p>
+<p><strong>FileSystemLocked <em>→ ∀ x</em> (GroupMember(<em>x</em>) <em>→</em> Access(<em>x,</em> SystemMailbox))</strong></p>
+<p>(c) The fifirewall is in a diagnostic state only if the proxy server is in a diagnostic state.</p>
+<p><strong>Solution:</strong></p>
+<p>Let the domain be all applications. Let Firewall(<em>x</em>) be “<em>x</em> is the fifirewall”, and let ProxyServer(<em>x</em>) be “<em>x</em> is</p>
+<p>the proxy server.” Let Diagnostic(<em>x</em>) be “<em>x</em> is in a diagnostic state”.</p>
+<p><em>∀</em> <em>x</em> <em>∀  y</em> ((Firewall(<em>x</em>) <em>∧</em> Diagnostic(<em>x</em>)) <em>→</em> (ProxyServer(<em>y</em>) <em>→</em> Diagnostic(<em>y</em>))</p>
+<p>(d) At least one router is functioning normally if the throughput is between 100kbps and 500 kbps and the</p>
+<p>proxy server is not in diagnostic mode.</p>
+<p><strong>Solution:</strong></p>
+<p>Let the domain be all applications and routers. Let Router(<em>x</em>) be “<em>x</em> is a router”, and let ProxyServer(<em>x</em>)</p>
+<p>be “<em>x</em> is the proxy server.” Let Diagnostic(<em>x</em>) be “<em>x</em> is in a diagnostic state”. Let ThroughputNormal be</p>
+<p>“the throughput is between 100kbps and 500 kbps”. Let Functioning(<em>y</em>) be “y is functioning normally”.</p>
+<p><strong><em>∀</em> <em>x</em> (ThroughputNormal <em>∧</em> (ProxyServer(<em>x</em>) <em>∧ ¬</em>Diagnostic(<em>x</em>))) <em>→</em> (<em>∃</em> <em>y</em> Router(<em>y</em>) <em>∧</em> Functioning(<em>y</em>))</strong></p>
+</li>
+<li><p>Translate these system specififications into English where <em>F</em>(<em>p</em>) is “Printer <em>p</em> is out of service”, <em>B</em>(<em>p</em>) is “Printer <em>p</em></p>
+<p>is busy”, <em>L</em>(<em>j</em>) is “Print job <em>j</em> is lost,” and <em>Q</em>(<em>j</em>) is “Print job <em>j</em> is queued”. Let the domain be all printers together</p>
+<p>with all print jobs.</p>
+<p>(a) <em>∃</em> <em>p</em> (<em>F</em>(<em>p</em>) <em>∧</em> <em>B</em>(<em>p</em>)) <em>→ ∃</em> <em>j L</em>(<em>j</em>) </p>
+<p>1<strong>Solution:</strong></p>
+<p>If at least one printer is busy and out of service, then at least one job is lost.</p>
+<p>(b) (<em>∀</em> <em>p B</em>(<em>p</em>)) <em>→</em> (<em>∃</em> <em>j Q</em>(<em>j</em>))</p>
+<p><strong>Solution:</strong></p>
+<p>If all printers are busy, then there is a queued job.</p>
+<p>(c) <em>∃</em> <em>j</em> (<em>Q</em>(<em>j</em>) <em>∧</em> <em>L</em>(<em>j</em>)) <em>→ ∃</em> <em>p F</em>(<em>p</em>)</p>
+<p><strong>Solution:</strong></p>
+<p>If there is a queued job that is lost, then a printer is out of service.</p>
+<p>(d) (<em>∀</em> <em>p B</em>(<em>p</em>) <em>∧ ∀</em> <em>j Q</em>(<em>j</em>)) <em>→ ∃</em> <em>j L</em>(<em>j</em>)</p>
+<p><strong>Solution:</strong></p>
+<p>If all printers are busy and all jobs are queued, then there is some lost job.</p>
+</li>
+<li><p><strong>Express each of these system specififications using predicates, quantififiers, and logical connectives.</strong></p>
+<p><strong>a) Every user has access to an electronic mailbox.</strong></p>
+<p><strong>Solution</strong>: We can limit the domain to all users of the system, and introduce the <em>E</em> predicate:</p>
+<p><em>E</em>(<em>x, e</em>) :&#x3D; user <em>x</em> has access to electronic mailbox <em>e</em></p>
+<p>Therefore, we’re quantifying over two domains in the <em>E</em> predicate, the domain of system users and the domain of</p>
+<p>electronic mailboxes. This requires that we quantify over both domains:</p>
+<p>​                                                                       <em>∀</em> <em>x</em> <em>∃</em> <em>e M</em>(<em>x, e</em>)</p>
+<p><strong>b) The system mailbox can be accessed by everyone in the group if the fifile system is locked.</strong></p>
+<p><strong>Solution</strong>: You may be tempted to create a predicate quantifying over all fifile systems here, but we’re referring to</p>
+<p>a single fifile system, in the defifinite sense. It’s the fifile system state that is uncertain, and which therefore needs to</p>
+<p>be quantifified over. The states it can have are: locked, unlocked, . . . (possible further states of which we have no</p>
+<p>knowledge). So, we introduce the predicate</p>
+<blockquote>
+<p><em>F</em>(<em>s</em>) :&#x3D; the fifile system is in state <em>s</em></p>
+<p>For users in the group, we have the predicate</p>
+<p><em>G</em>(<em>x</em>) :&#x3D; user <em>x</em> is in the group</p>
+<p>and for system mailbox access, we have</p>
+<p><em>SM</em>(<em>x</em>) :&#x3D; user <em>x</em> can access the system mailbox</p>
+</blockquote>
+<p>Now to write the actual statement. We want to ensure that the user <em>x</em> is in the group, and we want the condition</p>
+<p>that the fifile system is locked to hold before we assert that users in the group can access the system mailbox. This</p>
+<p>leads us to</p>
+<p>​                                                           <em>∀**x G</em>(<em>x</em>) <em>∧</em> <em>F</em>(locked) <em>→</em> <em>SM</em>(<em>x</em>)</p>
+<p>Notice that “locked” is a constant, representing the “locked” state of the fifilesystem (indeed, there is no propositional</p>
+<p>variable named “locked” we’ve quantifified over! Any variable we introduce must be quantifified).</p>
+<p><strong>c) The fifirewall is in a diagnostic state only if the proxy server is in a diagnostic state.</strong></p>
+<p><strong>Solution</strong>: The tricky part here is that the fifirewall has any number of states, of which we know nothing, and several</p>
+<p>of them could be considered “diagnostic” states. Likewise with the proxy server. Again, we’re referring to the</p>
+<p>fifirewall and the proxy each in the defifinite sense, so they should not be quantifified over with variables. Instead, let’s  quantify over the domain of fifirewall and proxy states, and let’s introduce a predicate to identify diagnostic states:</p>
+<blockquote>
+<p><em>D</em>(<em>x</em>) :&#x3D; state <em>x</em> is a diagnostic state</p>
+<p>and let’s introduce the predicates <em>P</em> and <em>F</em>: </p>
+<p><em>F</em>(<em>x</em>) :&#x3D; the fifirewall is in state <em>x</em> </p>
+<p><em>P</em>(<em>x</em>) :&#x3D; the proxy is in state <em>x</em></p>
+</blockquote>
+<p>From this, I was immediately led to write</p>
+<p>​                                                                       <em>∀</em> <em>x D</em>(<em>x</em>) <em>∧</em> (<em>F</em>(<em>x</em>) <em>→</em> <em>P</em>(<em>x</em>))</p>
+<p>but this is wrong. Why? Because the original statement allows the fifirewall and the proxy server to be in distinct</p>
+<p>diagnostic states, and the implication should still hold. The use of the same variable means that the proxy server is</p>
+<p>in a diagnostic state if fifirewall is in that exact same diagnostic state. In other words, I succumbed to the mistake</p>
+<p>described in the fifinal part of question 2, above. We need distinct variables for these states, and they must both be</p>
+<p>diagnostic states:</p>
+<p>​                                                               <em>∀</em> <em>x</em> <em>∀</em> <em>y D</em>(<em>x</em>) <em>∧</em> <em>D</em>(<em>y</em>) <em>∧</em> (<em>F</em>(<em>x</em>) <em>→</em> <em>P</em>(<em>y</em>))</p>
+<p><strong>d) At least one router is functioning normally if the throughput is between 100 kbps and 500 kbps and the proxy service</strong></p>
+<p>is not in diagnostic mode.</p>
+<p><strong>Solution</strong>: Again, the proxy service can have a number of modes, and we create a predicate to assert that the proxy</p>
+<p>service is in mode <em>m</em>: </p>
+<blockquote>
+<p><em>P</em>(<em>m</em>) :&#x3D; the proxy server is in mode <em>m</em></p>
+<p>The remaining predicates we need are straightforward:</p>
+<p><em>R</em>(<em>r</em>) :&#x3D; router <em>r</em> is functioning normally</p>
+<p><em>T</em>(<em>m, n</em>) :&#x3D; the throughput is between <em>m</em> kbps and <em>n</em> kbps</p>
+<p><em>D</em>(<em>m</em>) :&#x3D; <em>m</em> is the diagnostic mode</p>
+</blockquote>
+<p>Since we are quantifying on at least one router that is functioning normally, the use of <em>∃</em> suffiffiffices over the domain of</p>
+<p>routers. Similarly to the previous question, then, the fifinal proposition is</p>
+<p>​                                                     <em>∀</em> <em>m</em> <em>∃</em> <em>r D</em>(<em>m</em>) <em>∧</em> [(<em>T</em>(100*,* 500) <em>∧ ¬</em> <em>P</em>(<em>m</em>)) <em>→</em> <em>R</em>(<em>r</em>)]</p>
+</li>
+</ul>
+<h3 id="一些英译中"><a href="#一些英译中" class="headerlink" title="一些英译中"></a>一些英译中</h3><p>compound proposition :复合命题</p>
 <p>negation of statements: 陈述句的否定</p>
 <p>De Morgan’s laws :德摩根定律</p>
 <p>truth tables：真值表</p>
@@ -3279,5 +3452,18 @@ int main() {
       <tags>
         <tag>作业</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>CSS3新特性</title>
+    <url>/2022/03/27/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><p>下面用E表示标签名（如input，button，hr，p，table)</p>
+<p>用att表示标签中的属性(如class，id，style)</p>
+<ol>
+<li><p>E[att] : 选择具有att属性的E元素</p>
+<pre class="line-numbers language-html"><code class="language-html"> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ol>
+]]></content>
   </entry>
 </search>
