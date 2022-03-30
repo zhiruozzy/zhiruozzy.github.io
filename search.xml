@@ -877,7 +877,7 @@ xmlhttp<span class="token punctuation">.</span><span class="token function">send
 <p>示例：<code>user=admin&amp;password=123456</code></p>
 <p>请求行 － 通用信息头 － 请求头 － 实体头 － 报文主体</p>
 <h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><p><strong>1. GET</strong></p>
-<pre><code>//请求行
+<pre class="line-numbers language-jsp"><code class="language-jsp">//请求行
 
 GET /hello/index.jsp HTTP/1.1
 
@@ -895,9 +895,9 @@ Cookie: JSESSIONID=369766FDF6220F7803433C0B2DE36D98
 //空行
 
 //因为GET没有正文，所以下面为空
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>2.POST</strong></p>
-<pre><code>// 请求行
+<pre class="line-numbers language-jsp"><code class="language-jsp">// 请求行
 
 POST /hello/index.jsp HTTP/1.1
 
@@ -920,7 +920,7 @@ Content-Length: 14
 //POST有请求正文
 
 username=hello
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h3><p>响应报文的的格式为:状态行 －  响应头 － 空行  -  响应正文</p>
 <h4 id="状态行"><a href="#状态行" class="headerlink" title="状态行"></a>状态行</h4><p>状态行由协议版本。状态码，原因短语构成，每个元素由空格分隔</p>
 <p>示例：<code>HTTP/1.1 200 OK</code></p>
