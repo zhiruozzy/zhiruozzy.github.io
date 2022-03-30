@@ -1299,7 +1299,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4f8e7a;
+  background: #ffc6ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2897,10 +2897,6 @@ body {
   height: 100%;
   background-size: 100% 100%;
   background-attachment: fixed;
-  color: var(--text-color);
-  font-family: 'Noto Serif SC', "Noto Serif SC", "Microsoft YaHei", sans-serif;
-  font-size: 0.9em;
-  line-height: 2;
 }
 .header-inner {
   opacity: 0.85;
@@ -2911,7 +2907,7 @@ body {
 }
 .content {
   padding-top: 15px;
-  opacity: 0.9;
+  opacity: 0.92;
 }
 .post-body h2,
 .post-body h3,
