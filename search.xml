@@ -1976,7 +1976,10 @@
   <entry>
     <title>文件操作</title>
     <url>/2022/04/01/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>文件分为文本文件(.txt)和二进制文件</p>
+    <content><![CDATA[<p>文件操作的相关知识点总结和程设中的演示程序的详解</p>
+<span id="more"></span>
+
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>文件分为文本文件(.txt)和二进制文件</p>
 <p>文本文件：保存的时候，每一个字符对应一个字节</p>
 <p>二进制文件：二进制编码保存的文件</p>
 <h3 id="设备文件"><a href="#设备文件" class="headerlink" title="设备文件"></a>设备文件</h3><p>当启动一个程序的时候，系统会打开3个设备文件</p>
