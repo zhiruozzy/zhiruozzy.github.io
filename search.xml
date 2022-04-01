@@ -281,17 +281,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>CSS3新特性</title>
-    <url>/2022/03/27/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/</url>
-    <content><![CDATA[<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><p>下面用E表示标签名（如input，button，hr，p，table)</p>
-<p>用att表示标签中的属性(如class，id，style)</p>
-<ol>
-<li><p>E[att] : 选择具有att属性的E元素</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">    </span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>HTTP</title>
     <url>/2022/03/27/HTTP/</url>
     <content><![CDATA[<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><p>协议规定了两部分的内容，分别是请求报文和响应报文</p>
@@ -544,6 +533,17 @@
 </li>
 <li><p>因为get是向URL中添加数据，而URL的长度是有限的（最大2048个字符），多以get的数据长度是有限的，而post的数据不限长度</p>
 </li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS3新特性</title>
+    <url>/2022/03/27/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><p>下面用E表示标签名（如input，button，hr，p，table)</p>
+<p>用att表示标签中的属性(如class，id，style)</p>
+<ol>
+<li><p>E[att] : 选择具有att属性的E元素</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">    </span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
   </entry>
@@ -986,6 +986,17 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2024/02/25/hello-world/</url>
+    <content><![CDATA[<p>这里芷若</p>
+<p>无论做什么事都喜欢和自己较劲</p>
+<p>身处这个快节奏的时代，强烈感觉自己的语言表达水平在不断的退化</p>
+<p>趁着寒假有时间 也是学校的一个活动 自己便搭建了这个博客</p>
+<p>以后不定期的会更新一些生活小记和学习笔记</p>
+<p>欢迎你的到访~</p>
+]]></content>
+  </entry>
+  <entry>
     <title>flex布局</title>
     <url>/2022/03/23/flex%E5%B8%83%E5%B1%80/</url>
     <content><![CDATA[<h2 id="布局原理"><a href="#布局原理" class="headerlink" title="布局原理"></a>布局原理</h2><p>flex是flexible Box 的缩写，是弹性布局的意思。</p>
@@ -1106,17 +1117,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2024/02/25/hello-world/</url>
-    <content><![CDATA[<p>这里芷若</p>
-<p>无论做什么事都喜欢和自己较劲</p>
-<p>身处这个快节奏的时代，强烈感觉自己的语言表达水平在不断的退化</p>
-<p>趁着寒假有时间 也是学校的一个活动 自己便搭建了这个博客</p>
-<p>以后不定期的会更新一些生活小记和学习笔记</p>
-<p>欢迎你的到访~</p>
-]]></content>
-  </entry>
-  <entry>
     <title>一些好用的网站</title>
     <url>/2022/02/28/%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</url>
     <content><![CDATA[<p>下面是自己最近冲浪看到的一些很好的网站，分享给你</p>
@@ -1187,6 +1187,173 @@
       </categories>
       <tags>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件操作</title>
+    <url>/2022/04/01/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>文件操作的相关知识点总结和程设中的演示程序的详解</p>
+<span id="more"></span>
+
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>文件分为文本文件(.txt)和二进制文件</p>
+<p>文本文件：保存的时候，每一个字符对应一个字节</p>
+<p>二进制文件：二进制编码保存的文件</p>
+<h3 id="设备文件"><a href="#设备文件" class="headerlink" title="设备文件"></a>设备文件</h3><p>当启动一个程序的时候，系统会打开3个设备文件</p>
+<p>stdin:标准输入文件(鼠标，键盘)</p>
+<p>stdout:标准输出文件（显示屏）</p>
+<p>stderr:标准错误文件</p>
+<h3 id="文件访问方式"><a href="#文件访问方式" class="headerlink" title="文件访问方式"></a>文件访问方式</h3><table>
+<thead>
+<tr>
+<th align="left">模式</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">r</td>
+<td align="left">只读的方式打开。不创建文件，如果文件不存在会报错</td>
+</tr>
+<tr>
+<td align="left">w</td>
+<td align="left">只写的方式打开。如果文件不存在，则会创建一个新文件。如果文件存在，则会先清空文件中原来的内容，在重新写入。</td>
+</tr>
+<tr>
+<td align="left">a</td>
+<td align="left">追加的方式打开。如果文件不存在，则会创建一个新文件。如果文件存在，会在已有的文件内容中追加内容。</td>
+</tr>
+<tr>
+<td align="left">r+</td>
+<td align="left">可读可写的方式打开，不创建新文件</td>
+</tr>
+<tr>
+<td align="left">w+</td>
+<td align="left">可读可写的方式打开。如果文件已存在，则文件会被截断为零长度，如果文件不存在，则会创建一个新文件。</td>
+</tr>
+<tr>
+<td align="left">a+</td>
+<td align="left">允许读写文件。如果文件不存在，则会创建一个新文件。读取会从文件的开头开始，写入则只能是追加模式。</td>
+</tr>
+</tbody></table>
+<p>如果处理的是二进制文件，则需要使用下面的访问方式：</p>
+<p><code>&quot;rb&quot;, &quot;wb&quot;, &quot;ab&quot;, &quot;rb+&quot;, &quot;r+b&quot;, &quot;wb+&quot;, &quot;w+b&quot;, &quot;ab+&quot;, &quot;a+b&quot;</code></p>
+<p>常用的就是“r”和“w”，r:不创建也不清空，w:会创建也会清空</p>
+<h3 id="打开文件：fopen"><a href="#打开文件：fopen" class="headerlink" title="打开文件：fopen"></a>打开文件：fopen</h3><p>语法：<code>FILE *fopen(const char *文件名,&quot;文件访问模式&quot;)</code></p>
+<p>返回值：成功：指向该文件的文件流的指针（即FILE结构体的地址）</p>
+<p>​              失败：NULL</p>
+<p>例子：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">FILE*fp=fopen(<span class="string">&quot;./a.txt&quot;</span>,<span class="string">&quot;r&quot;</span>);</span><br><span class="line"><span class="keyword">if</span>(fp==<span class="literal">NULL</span>)</span><br><span class="line">&#123;</span><br><span class="line">  perror(<span class="string">&quot;Error&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>perror() 函数：把错误消息输出到标准错误 stderr。</p>
+<p>语法：<code>void perror(const char *str)</code></p>
+<p>格式：输出字符串 <strong>str</strong>，后跟一个冒号，然后是一个空格,然后是错误信息</p>
+<p>如果此文件夹下没有a.txt的文件，则会输出<code>Error: No such file or directory</code></p>
+<h3 id="关闭文件：fclose"><a href="#关闭文件：fclose" class="headerlink" title="关闭文件：fclose"></a>关闭文件：fclose</h3><p>语法：<code>int  fclose (FILE * fp) ;</code> </p>
+<p>返回值：如果成功关闭文件，则返回0，如果关闭文件时发生错误，则返回EOF。</p>
+<h3 id="文件的顺序读写："><a href="#文件的顺序读写：" class="headerlink" title="文件的顺序读写："></a>文件的顺序读写：</h3><h4 id="按照字符读写文件：fputc-fgetc"><a href="#按照字符读写文件：fputc-fgetc" class="headerlink" title="按照字符读写文件：fputc,fgetc"></a>按照字符读写文件：fputc,fgetc</h4><ol>
+<li>读文件：fgetc（从给定输入流中读取下一个字符）</li>
+</ol>
+<ul>
+<li><p>语法：<code>int fgetc(FILE* stream) ;</code></p>
+</li>
+<li><p>返回值：成功时返回将读取到的字符转化为int类型的字符，失败时返回EOF</p>
+</li>
+</ul>
+<p>注意：fgetc常与feof配合使用，如下面这个例子实现了把fp1的内容拷贝到fp2中去，并在读取完成后时退出循环。</p>
+<p>补充：feof 的功能时检查本字符的下一个字符是否已经抵达给定文件流的结尾，如果抵达则返回非零，如果未抵达则返回0</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line"><span class="type">char</span> ch = fgetc(fp1);</span><br><span class="line"><span class="keyword">if</span>(feof(fp1))&#123;</span><br><span class="line"> <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">fputc(ch,fp2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>写文件：fputc(将一个字符写到文件中)</li>
+</ol>
+<ul>
+<li><p>语法：<code>int fputc(int ch,FILE*fp)</code></p>
+</li>
+<li><p>功能：将char转化为unsigned char后写入fp文件中</p>
+</li>
+<li><p>参数：ch:需要写入的文件的字符</p>
+<p>​           stream:文件指针（所以在此之前需要用fopen获得文件的指针）</p>
+</li>
+<li><p>返回值：成功：返回成功写入的字符</p>
+<p>​              失败：返回EOF</p>
+</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line"><span class="comment">//打开文件</span></span><br><span class="line">FILE*fp = fopen(<span class="string">&quot;./a.txt&quot;</span>,<span class="string">&quot;w&quot;</span>);</span><br><span class="line"><span class="type">char</span> s[]=<span class="string">&quot;abcd&quot;</span>;</span><br><span class="line"><span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="comment">//将字符串写入文件</span></span><br><span class="line"><span class="keyword">while</span>(s[i])&#123;</span><br><span class="line">  fputc(s[i],fp);<span class="comment">//后续都会按照次序依次“流入”文件流中，因为文件指针会默认后移，而不是每次循环的时候都从头</span></span><br><span class="line">  i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//关闭文件</span></span><br><span class="line">fclose(fp);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="按照行读写文件：fgets-fputs"><a href="#按照行读写文件：fgets-fputs" class="headerlink" title="按照行读写文件：fgets,fputs"></a>按照行读写文件：fgets,fputs</h4><ol>
+<li><p>读文件：fgets(只能操作字符串，泵操作二进制文件)</p>
+<ul>
+<li><p>语法：<code>char*fgets(char *str,int size,FILE *stream)</code></p>
+</li>
+<li><p>参数：str:指向字符串的指针，size:你指定的最大读取字符串的长度（会自动加”&#x2F;0”所以只能读n-1个）stream：文件指针</p>
+</li>
+<li><p>功能：从stream指向的文件中读取字符，保存到str所志昂的内存空间中，直到出现①换行符②读到文件结尾③读了size-1个字符为止</p>
+</li>
+<li><p>返回值：成功：成功读取的字符串首元素的地址</p>
+<p>​              失败：读到文件结尾或者出错：NULL(空指针)</p>
+</li>
+</ul>
+<p>示例：</p>
+<p>a.txt</p>
+<p>‘a’ ‘b’ ‘\n’</p>
+<p>‘c’ ‘\0’  ‘d’ ‘e’  ‘f’ ‘g’ ‘j’ ‘\n’</p>
+<p>‘\0’ ‘x’ ‘y’  ‘\n’</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> buf[<span class="number">5</span>];</span><br><span class="line">FILE*fp = fopen(<span class="string">&quot;a.txt&quot;</span>,<span class="string">&quot;r&quot;</span>);</span><br><span class="line">fgets(buf,<span class="number">5</span>,fp);</span><br></pre></td></tr></table></figure>
+
+<p>一共需要读4次，每次存放到buf中的内容如下：<br>第一次： a b ‘\n’ ‘\0’ [遇到换行符就终止，并且加上’\0’]</p>
+<p>第二次：c ‘\0’ d e ‘\0’ [size&#x3D;5，所以最多只能读取4个字符]</p>
+<p>第三次：f g j ‘\n’ ‘\0’ [遇到换行符]</p>
+<p>第四次：’\0’ x y ‘\n’ ‘\0’</p>
+</li>
+<li><p>写文件：fputs</p>
+<ul>
+<li><p>语法：int fputs(const char *str,FILE *stream)</p>
+</li>
+<li><p>功能：将str所指向的字符串写入到stream所指向的文件中，且字符串中的结束符’\0’不会写入文件</p>
+</li>
+<li><p>返回值：成功：非负值</p>
+<p>​              失败：EOF  ，遇到’\0’就结束了，所以中间有’\0’就终止读入了</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h3><p>绝对路径</p>
+<p>相对路径</p>
+<p>前置知识：</p>
+<ul>
+<li><p><code>int main(int argc,char* argv[ ])</code></p>
+<p>argc（argument counter）：是命令行总的参数个数</p>
+<p>argv[]（argument value）：指针数组，用来存放指向命令行参数（字符串）的指针，每个元素指向一个参数。</p>
+<p>argv[0] : 可编译程序（.exe）的在电脑中绝对路径</p>
+<p>argv[1]：</p>
+<p>argv[argc]：NULL</p>
+</li>
+<li><p><code>int fprintf( FILE *stream, const char *format, ... );</code></p>
+<p>类似与printf，format可以是%s，%d等等</p>
+<p>示例：</p>
+<p>a.txt 内容：小熊</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	FILE*fp=fopen(<span class="string">&quot;./a.txt&quot;</span>,<span class="string">&quot;a&quot;</span>);</span><br><span class="line">	<span class="built_in">fprintf</span>(fp,<span class="string">&quot;%s %s %s&quot;</span>,<span class="string">&quot;喜欢春天&quot;</span>,<span class="string">&quot; 我也喜欢春天&quot;</span>,<span class="string">&quot; 你呢&quot;</span>);</span><br><span class="line">	fclose(fp);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行后：</p>
+<p>a.txt内容：小熊喜欢春天 我也喜欢春天 你呢</p>
+<p>所以<code>fprintf(stderr, &quot;Usage: %s filename\n&quot;, argv[0]);</code>的意思是将错误信息写进stderr这个标准错误文件中。</p>
+</li>
+<li><p>exit（）</p>
+<p>exit(0)代表程序正常退出，其余都表示异常终止，可以通过返回的具体的数值来判断出错的根源在哪里</p>
+</li>
+<li><p>“&lt;” 输入重定向 </p>
+<p>“&gt;”输出重定向</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span>    <span class="comment">// for exit()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span>    <span class="comment">// for strcpy(), strcat()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LEN 40</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    FILE  *in, *out;   </span><br><span class="line">    <span class="type">int</span> ch;</span><br><span class="line">    <span class="type">char</span> name[LEN];    </span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 检查命令行参数 </span></span><br><span class="line"><span class="comment">//如果命令行的参数等于1，则不用压缩，因为本程序是将每三个字符压缩成1个字符，所以在标准错误输出中弹出错误提示信息</span></span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">         <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Usage: %s filename\n&quot;</span>, argv[<span class="number">0</span>]);</span><br><span class="line">         <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//argv[1]:作为输入流参数的文件的名字，如果文件打开失败，则在标准输出中弹出无法打开文件</span></span><br><span class="line">    <span class="keyword">if</span> ((in = fopen(argv[<span class="number">1</span>], <span class="string">&quot;r&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;I couldn&#x27;t open the file \&quot;%s\&quot;\n&quot;</span>,</span><br><span class="line">                argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将输入的文件名字字符串拷贝到name字符数组中</span></span><br><span class="line">    <span class="built_in">strcpy</span>(name,argv[<span class="number">1</span>]); </span><br><span class="line">    <span class="comment">//将name字符数组后面追加上后缀，即.red</span></span><br><span class="line">    <span class="built_in">strcat</span>(name,<span class="string">&quot;.red&quot;</span>);    </span><br><span class="line">    <span class="comment">//打开name这个文件夹，(如果你将a.txt作为输入流，那么这时候name字符串就是a.txt.red，打开的就是待压缩的文件),因为是以只写的方式打开，且之前并没有这个文件，所以会新建这个文件。</span></span><br><span class="line">    <span class="comment">//下面这个if是判断如果打开文件失败，则在标准错误输出中输出“不能创建output文件”，并exit(3)</span></span><br><span class="line">    <span class="keyword">if</span> ((out = fopen(name, <span class="string">&quot;w&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;                       <span class="comment">// open file for writing</span></span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Can&#x27;t create output file.\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//压缩文件，用getc(in)) != EOF判断是否读到了文件末尾，每隔三个字符将其中的第一个字符写入out所指向的文件中（也就是a.txt.red)</span></span><br><span class="line">    <span class="keyword">while</span> ((ch = getc(in)) != EOF)</span><br><span class="line">        <span class="keyword">if</span> (count++ % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">            putc(ch, out);  </span><br><span class="line"></span><br><span class="line"><span class="comment">//g</span></span><br><span class="line">    <span class="keyword">if</span> (fclose(in) != <span class="number">0</span> || fclose(out) != <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Error in closing files\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -1971,173 +2138,6 @@
 ]]></content>
       <tags>
         <tag>作业</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文件操作</title>
-    <url>/2022/04/01/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>文件操作的相关知识点总结和程设中的演示程序的详解</p>
-<span id="more"></span>
-
-<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>文件分为文本文件(.txt)和二进制文件</p>
-<p>文本文件：保存的时候，每一个字符对应一个字节</p>
-<p>二进制文件：二进制编码保存的文件</p>
-<h3 id="设备文件"><a href="#设备文件" class="headerlink" title="设备文件"></a>设备文件</h3><p>当启动一个程序的时候，系统会打开3个设备文件</p>
-<p>stdin:标准输入文件(鼠标，键盘)</p>
-<p>stdout:标准输出文件（显示屏）</p>
-<p>stderr:标准错误文件</p>
-<h3 id="文件访问方式"><a href="#文件访问方式" class="headerlink" title="文件访问方式"></a>文件访问方式</h3><table>
-<thead>
-<tr>
-<th align="left">模式</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">r</td>
-<td align="left">只读的方式打开。不创建文件，如果文件不存在会报错</td>
-</tr>
-<tr>
-<td align="left">w</td>
-<td align="left">只写的方式打开。如果文件不存在，则会创建一个新文件。如果文件存在，则会先清空文件中原来的内容，在重新写入。</td>
-</tr>
-<tr>
-<td align="left">a</td>
-<td align="left">追加的方式打开。如果文件不存在，则会创建一个新文件。如果文件存在，会在已有的文件内容中追加内容。</td>
-</tr>
-<tr>
-<td align="left">r+</td>
-<td align="left">可读可写的方式打开，不创建新文件</td>
-</tr>
-<tr>
-<td align="left">w+</td>
-<td align="left">可读可写的方式打开。如果文件已存在，则文件会被截断为零长度，如果文件不存在，则会创建一个新文件。</td>
-</tr>
-<tr>
-<td align="left">a+</td>
-<td align="left">允许读写文件。如果文件不存在，则会创建一个新文件。读取会从文件的开头开始，写入则只能是追加模式。</td>
-</tr>
-</tbody></table>
-<p>如果处理的是二进制文件，则需要使用下面的访问方式：</p>
-<p><code>&quot;rb&quot;, &quot;wb&quot;, &quot;ab&quot;, &quot;rb+&quot;, &quot;r+b&quot;, &quot;wb+&quot;, &quot;w+b&quot;, &quot;ab+&quot;, &quot;a+b&quot;</code></p>
-<p>常用的就是“r”和“w”，r:不创建也不清空，w:会创建也会清空</p>
-<h3 id="打开文件：fopen"><a href="#打开文件：fopen" class="headerlink" title="打开文件：fopen"></a>打开文件：fopen</h3><p>语法：<code>FILE *fopen(const char *文件名,&quot;文件访问模式&quot;)</code></p>
-<p>返回值：成功：指向该文件的文件流的指针（即FILE结构体的地址）</p>
-<p>​              失败：NULL</p>
-<p>例子：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">FILE*fp=fopen(<span class="string">&quot;./a.txt&quot;</span>,<span class="string">&quot;r&quot;</span>);</span><br><span class="line"><span class="keyword">if</span>(fp==<span class="literal">NULL</span>)</span><br><span class="line">&#123;</span><br><span class="line">  perror(<span class="string">&quot;Error&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>perror() 函数：把错误消息输出到标准错误 stderr。</p>
-<p>语法：<code>void perror(const char *str)</code></p>
-<p>格式：输出字符串 <strong>str</strong>，后跟一个冒号，然后是一个空格,然后是错误信息</p>
-<p>如果此文件夹下没有a.txt的文件，则会输出<code>Error: No such file or directory</code></p>
-<h3 id="关闭文件：fclose"><a href="#关闭文件：fclose" class="headerlink" title="关闭文件：fclose"></a>关闭文件：fclose</h3><p>语法：<code>int  fclose (FILE * fp) ;</code> </p>
-<p>返回值：如果成功关闭文件，则返回0，如果关闭文件时发生错误，则返回EOF。</p>
-<h3 id="文件的顺序读写："><a href="#文件的顺序读写：" class="headerlink" title="文件的顺序读写："></a>文件的顺序读写：</h3><h4 id="按照字符读写文件：fputc-fgetc"><a href="#按照字符读写文件：fputc-fgetc" class="headerlink" title="按照字符读写文件：fputc,fgetc"></a>按照字符读写文件：fputc,fgetc</h4><ol>
-<li>读文件：fgetc（从给定输入流中读取下一个字符）</li>
-</ol>
-<ul>
-<li><p>语法：<code>int fgetc(FILE* stream) ;</code></p>
-</li>
-<li><p>返回值：成功时返回将读取到的字符转化为int类型的字符，失败时返回EOF</p>
-</li>
-</ul>
-<p>注意：fgetc常与feof配合使用，如下面这个例子实现了把fp1的内容拷贝到fp2中去，并在读取完成后时退出循环。</p>
-<p>补充：feof 的功能时检查本字符的下一个字符是否已经抵达给定文件流的结尾，如果抵达则返回非零，如果未抵达则返回0</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line"><span class="type">char</span> ch = fgetc(fp1);</span><br><span class="line"><span class="keyword">if</span>(feof(fp1))&#123;</span><br><span class="line"> <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">fputc(ch,fp2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>写文件：fputc(将一个字符写到文件中)</li>
-</ol>
-<ul>
-<li><p>语法：<code>int fputc(int ch,FILE*fp)</code></p>
-</li>
-<li><p>功能：将char转化为unsigned char后写入fp文件中</p>
-</li>
-<li><p>参数：ch:需要写入的文件的字符</p>
-<p>​           stream:文件指针（所以在此之前需要用fopen获得文件的指针）</p>
-</li>
-<li><p>返回值：成功：返回成功写入的字符</p>
-<p>​              失败：返回EOF</p>
-</li>
-</ul>
-<p>示例：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line"><span class="comment">//打开文件</span></span><br><span class="line">FILE*fp = fopen(<span class="string">&quot;./a.txt&quot;</span>,<span class="string">&quot;w&quot;</span>);</span><br><span class="line"><span class="type">char</span> s[]=<span class="string">&quot;abcd&quot;</span>;</span><br><span class="line"><span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="comment">//将字符串写入文件</span></span><br><span class="line"><span class="keyword">while</span>(s[i])&#123;</span><br><span class="line">  fputc(s[i],fp);<span class="comment">//后续都会按照次序依次“流入”文件流中，因为文件指针会默认后移，而不是每次循环的时候都从头</span></span><br><span class="line">  i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//关闭文件</span></span><br><span class="line">fclose(fp);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="按照行读写文件：fgets-fputs"><a href="#按照行读写文件：fgets-fputs" class="headerlink" title="按照行读写文件：fgets,fputs"></a>按照行读写文件：fgets,fputs</h4><ol>
-<li><p>读文件：fgets(只能操作字符串，泵操作二进制文件)</p>
-<ul>
-<li><p>语法：<code>char*fgets(char *str,int size,FILE *stream)</code></p>
-</li>
-<li><p>参数：str:指向字符串的指针，size:你指定的最大读取字符串的长度（会自动加”&#x2F;0”所以只能读n-1个）stream：文件指针</p>
-</li>
-<li><p>功能：从stream指向的文件中读取字符，保存到str所志昂的内存空间中，直到出现①换行符②读到文件结尾③读了size-1个字符为止</p>
-</li>
-<li><p>返回值：成功：成功读取的字符串首元素的地址</p>
-<p>​              失败：读到文件结尾或者出错：NULL(空指针)</p>
-</li>
-</ul>
-<p>示例：</p>
-<p>a.txt</p>
-<p>‘a’ ‘b’ ‘\n’</p>
-<p>‘c’ ‘\0’  ‘d’ ‘e’  ‘f’ ‘g’ ‘j’ ‘\n’</p>
-<p>‘\0’ ‘x’ ‘y’  ‘\n’</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> buf[<span class="number">5</span>];</span><br><span class="line">FILE*fp = fopen(<span class="string">&quot;a.txt&quot;</span>,<span class="string">&quot;r&quot;</span>);</span><br><span class="line">fgets(buf,<span class="number">5</span>,fp);</span><br></pre></td></tr></table></figure>
-
-<p>一共需要读4次，每次存放到buf中的内容如下：<br>第一次： a b ‘\n’ ‘\0’ [遇到换行符就终止，并且加上’\0’]</p>
-<p>第二次：c ‘\0’ d e ‘\0’ [size&#x3D;5，所以最多只能读取4个字符]</p>
-<p>第三次：f g j ‘\n’ ‘\0’ [遇到换行符]</p>
-<p>第四次：’\0’ x y ‘\n’ ‘\0’</p>
-</li>
-<li><p>写文件：fputs</p>
-<ul>
-<li><p>语法：int fputs(const char *str,FILE *stream)</p>
-</li>
-<li><p>功能：将str所指向的字符串写入到stream所指向的文件中，且字符串中的结束符’\0’不会写入文件</p>
-</li>
-<li><p>返回值：成功：非负值</p>
-<p>​              失败：EOF  ，遇到’\0’就结束了，所以中间有’\0’就终止读入了</p>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h3><p>绝对路径</p>
-<p>相对路径</p>
-<p>前置知识：</p>
-<ul>
-<li><p><code>int main(int argc,char* argv[ ])</code></p>
-<p>argc（argument counter）：是命令行总的参数个数</p>
-<p>argv[]（argument value）：指针数组，用来存放指向命令行参数（字符串）的指针，每个元素指向一个参数。</p>
-<p>argv[0] : 可编译程序（.exe）的在电脑中绝对路径</p>
-<p>argv[1]：</p>
-<p>argv[argc]：NULL</p>
-</li>
-<li><p><code>int fprintf( FILE *stream, const char *format, ... );</code></p>
-<p>类似与printf，format可以是%s，%d等等</p>
-<p>示例：</p>
-<p>a.txt 内容：小熊</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	FILE*fp=fopen(<span class="string">&quot;./a.txt&quot;</span>,<span class="string">&quot;a&quot;</span>);</span><br><span class="line">	<span class="built_in">fprintf</span>(fp,<span class="string">&quot;%s %s %s&quot;</span>,<span class="string">&quot;喜欢春天&quot;</span>,<span class="string">&quot; 我也喜欢春天&quot;</span>,<span class="string">&quot; 你呢&quot;</span>);</span><br><span class="line">	fclose(fp);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运行后：</p>
-<p>a.txt内容：小熊喜欢春天 我也喜欢春天 你呢</p>
-<p>所以<code>fprintf(stderr, &quot;Usage: %s filename\n&quot;, argv[0]);</code>的意思是将错误信息写进stderr这个标准错误文件中。</p>
-</li>
-<li><p>exit（）</p>
-<p>exit(0)代表程序正常退出，其余都表示异常终止，可以通过返回的具体的数值来判断出错的根源在哪里</p>
-</li>
-<li><p>“&lt;” 输入重定向 </p>
-<p>“&gt;”输出重定向</p>
-</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span>    <span class="comment">// for exit()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span>    <span class="comment">// for strcpy(), strcat()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LEN 40</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    FILE  *in, *out;   </span><br><span class="line">    <span class="type">int</span> ch;</span><br><span class="line">    <span class="type">char</span> name[LEN];    </span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 检查命令行参数 </span></span><br><span class="line"><span class="comment">//如果命令行的参数等于1，则不用压缩，因为本程序是将每三个字符压缩成1个字符，所以在标准错误输出中弹出错误提示信息</span></span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">         <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Usage: %s filename\n&quot;</span>, argv[<span class="number">0</span>]);</span><br><span class="line">         <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//argv[1]:作为输入流参数的文件的名字，如果文件打开失败，则在标准输出中弹出无法打开文件</span></span><br><span class="line">    <span class="keyword">if</span> ((in = fopen(argv[<span class="number">1</span>], <span class="string">&quot;r&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;I couldn&#x27;t open the file \&quot;%s\&quot;\n&quot;</span>,</span><br><span class="line">                argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将输入的文件名字字符串拷贝到name字符数组中</span></span><br><span class="line">    <span class="built_in">strcpy</span>(name,argv[<span class="number">1</span>]); </span><br><span class="line">    <span class="comment">//将name字符数组后面追加上后缀，即.red</span></span><br><span class="line">    <span class="built_in">strcat</span>(name,<span class="string">&quot;.red&quot;</span>);    </span><br><span class="line">    <span class="comment">//打开name这个文件夹，(如果你将a.txt作为输入流，那么这时候name字符串就是a.txt.red，打开的就是待压缩的文件),因为是以只写的方式打开，且之前并没有这个文件，所以会新建这个文件。</span></span><br><span class="line">    <span class="comment">//下面这个if是判断如果打开文件失败，则在标准错误输出中输出“不能创建output文件”，并exit(3)</span></span><br><span class="line">    <span class="keyword">if</span> ((out = fopen(name, <span class="string">&quot;w&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;                       <span class="comment">// open file for writing</span></span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Can&#x27;t create output file.\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//压缩文件，用getc(in)) != EOF判断是否读到了文件末尾，每隔三个字符将其中的第一个字符写入out所指向的文件中（也就是a.txt.red)</span></span><br><span class="line">    <span class="keyword">while</span> ((ch = getc(in)) != EOF)</span><br><span class="line">        <span class="keyword">if</span> (count++ % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">            putc(ch, out);  </span><br><span class="line"></span><br><span class="line"><span class="comment">//g</span></span><br><span class="line">    <span class="keyword">if</span> (fclose(in) != <span class="number">0</span> || fclose(out) != <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Error in closing files\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
-      <tags>
-        <tag>C语言</tag>
       </tags>
   </entry>
 </search>
