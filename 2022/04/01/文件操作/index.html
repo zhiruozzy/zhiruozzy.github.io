@@ -29,11 +29,15 @@
 <meta property="og:site_name" content="芷若">
 <meta property="og:description" content="文件操作的相关知识点总结和程设中的演示程序的详解">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zhiruozzy.cn/img/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/image-20220401230356231.png">
+<meta property="og:image" content="http://zhiruozzy.cn/img/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/image-20220401230628109.png">
+<meta property="og:image" content="http://zhiruozzy.cn/img/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/image-20220402111008546.png">
 <meta property="article:published_time" content="2022-04-01T02:26:56.000Z">
-<meta property="article:modified_time" content="2022-04-01T14:46:56.809Z">
+<meta property="article:modified_time" content="2022-04-02T03:12:17.418Z">
 <meta property="article:author" content="芷若">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zhiruozzy.cn/img/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/image-20220401230356231.png">
 
 <link rel="canonical" href="http://zhiruozzy.cn/2022/04/01/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">
 
@@ -219,10 +223,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-04-01 10:26:56 / 修改时间：22:46:56" itemprop="dateCreated datePublished" datetime="2022-04-01T10:26:56+08:00">2022-04-01</time>
+              <time title="创建时间：2022-04-01 10:26:56" itemprop="dateCreated datePublished" datetime="2022-04-01T10:26:56+08:00">2022-04-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-02 11:12:17" itemprop="dateModified" datetime="2022-04-02T11:12:17+08:00">2022-04-02</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -230,14 +240,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.4k</span>
+              <span>5.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -252,13 +262,24 @@
         <p>文件操作的相关知识点总结和程设中的演示程序的详解</p>
 <span id="more"></span>
 
-<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>文件分为文本文件(.txt)和二进制文件</p>
+<h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>文件分为文本文件(.txt)和二进制文件</p>
 <p>文本文件：保存的时候，每一个字符对应一个字节</p>
 <p>二进制文件：二进制编码保存的文件</p>
 <h3 id="设备文件"><a href="#设备文件" class="headerlink" title="设备文件"></a>设备文件</h3><p>当启动一个程序的时候，系统会打开3个设备文件</p>
-<p>stdin:标准输入文件(鼠标，键盘)</p>
-<p>stdout:标准输出文件（显示屏）</p>
-<p>stderr:标准错误文件</p>
+<p>stdin:标准输入文件(鼠标，键盘)，默认情况下，标准输入设备是硬盘</p>
+<p>stdout:标准输出文件（显示器），默认情况下，标准输出设备是显示器</p>
+<p>stderr:标准错误文件，一般为显示器</p>
+<h3 id="文件的重定向"><a href="#文件的重定向" class="headerlink" title="文件的重定向"></a>文件的重定向</h3><p>重定向符号：</p>
+<p>“&lt;” 输入重定向 </p>
+<p>“&gt;”输出重定向</p>
+<p>以下面这个程序为例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">int</span> i;</span><br><span class="line">   <span class="type">int</span> a[<span class="number">5</span>];  </span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;input 5 numbers:\n&quot;</span>);   </span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">4</span>;i++)</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]);</span><br><span class="line"></span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;the 5 numbers are:\n&quot;</span>);     </span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">4</span>;i++)</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;%d,&quot;</span>,a[i]);    </span><br><span class="line">        </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这个程序就是只有标准输入输出，即我可以直接在编译器中运行，得到的结果是这样的：</p>
+<p><img src="/../img/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/image-20220401230356231.png" alt="image-20220401230356231"></p>
+<p>重定向：将标准输入换成文件输入输出，即输入流改为data1.txt这个文件，将结果输出到data2.txt中。</p>
+<p>方法：在放程序的这个文件夹中新建data1.txt，输入1，2，3，4，5并保存。在在文件资源管理器中找到本程序的exe文件所在的位置，在cmd中输入可执行程序的名字和重定向的位置，就可以在新建的data2.txt中得到输出结果</p>
+<p><img src="/../img/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/image-20220401230628109.png" alt="image-20220401230628109"></p>
 <h3 id="文件访问方式"><a href="#文件访问方式" class="headerlink" title="文件访问方式"></a>文件访问方式</h3><table>
 <thead>
 <tr>
@@ -374,15 +395,22 @@
 </ul>
 </li>
 </ol>
-<h3 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h3><p>绝对路径</p>
-<p>相对路径</p>
-<p>前置知识：</p>
+<h3 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h3><ol>
+<li><p>绝对路径：目标文件在磁盘上的真实路径，比如：D:\A\bupt\高数</p>
+</li>
+<li><p>相对路径：</p>
+<p>引用上级文件： ..&#x2F;1.jpg</p>
+<p>引用同级文件：1.jpg</p>
+<p>引用下级文件：picture&#x2F;1.jpg</p>
+<p>引用上上级文件：..&#x2F;..&#x2F;1.jpg</p>
+</li>
+</ol>
+<h3 id="简易文件压缩"><a href="#简易文件压缩" class="headerlink" title="简易文件压缩"></a>简易文件压缩</h3><p>前置知识：</p>
 <ul>
 <li><p><code>int main(int argc,char* argv[ ])</code></p>
 <p>argc（argument counter）：是命令行总的参数个数</p>
 <p>argv[]（argument value）：指针数组，用来存放指向命令行参数（字符串）的指针，每个元素指向一个参数。</p>
 <p>argv[0] : 可编译程序（.exe）的在电脑中绝对路径</p>
-<p>argv[1]：</p>
 <p>argv[argc]：NULL</p>
 </li>
 <li><p><code>int fprintf( FILE *stream, const char *format, ... );</code></p>
@@ -402,12 +430,11 @@
 <p>“&gt;”输出重定向</p>
 </li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span>    <span class="comment">// for exit()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span>    <span class="comment">// for strcpy(), strcat()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LEN 40</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    FILE  *in, *out;   </span><br><span class="line">    <span class="type">int</span> ch;</span><br><span class="line">    <span class="type">char</span> name[LEN];    </span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 检查命令行参数 </span></span><br><span class="line"><span class="comment">//如果命令行的参数等于1，则不用压缩，因为本程序是将每三个字符压缩成1个字符，所以在标准错误输出中弹出错误提示信息</span></span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">         <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Usage: %s filename\n&quot;</span>, argv[<span class="number">0</span>]);</span><br><span class="line">         <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//argv[1]:作为输入流参数的文件的名字，如果文件打开失败，则在标准输出中弹出无法打开文件</span></span><br><span class="line">    <span class="keyword">if</span> ((in = fopen(argv[<span class="number">1</span>], <span class="string">&quot;r&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;I couldn&#x27;t open the file \&quot;%s\&quot;\n&quot;</span>,</span><br><span class="line">                argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将输入的文件名字字符串拷贝到name字符数组中</span></span><br><span class="line">    <span class="built_in">strcpy</span>(name,argv[<span class="number">1</span>]); </span><br><span class="line">    <span class="comment">//将name字符数组后面追加上后缀，即.red</span></span><br><span class="line">    <span class="built_in">strcat</span>(name,<span class="string">&quot;.red&quot;</span>);    </span><br><span class="line">    <span class="comment">//打开name这个文件夹，(如果你将a.txt作为输入流，那么这时候name字符串就是a.txt.red，打开的就是待压缩的文件),因为是以只写的方式打开，且之前并没有这个文件，所以会新建这个文件。</span></span><br><span class="line">    <span class="comment">//下面这个if是判断如果打开文件失败，则在标准错误输出中输出“不能创建output文件”，并exit(3)</span></span><br><span class="line">    <span class="keyword">if</span> ((out = fopen(name, <span class="string">&quot;w&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;                       <span class="comment">// open file for writing</span></span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Can&#x27;t create output file.\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//压缩文件，用getc(in)) != EOF判断是否读到了文件末尾，每隔三个字符将其中的第一个字符写入out所指向的文件中（也就是a.txt.red)</span></span><br><span class="line">    <span class="keyword">while</span> ((ch = getc(in)) != EOF)</span><br><span class="line">        <span class="keyword">if</span> (count++ % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">            putc(ch, out);  </span><br><span class="line"></span><br><span class="line"><span class="comment">//g</span></span><br><span class="line">    <span class="keyword">if</span> (fclose(in) != <span class="number">0</span> || fclose(out) != <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Error in closing files\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>代码详解：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span>    <span class="comment">// for exit()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span>    <span class="comment">// for strcpy(), strcat()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LEN 40</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    FILE  *in, *out;   </span><br><span class="line">    <span class="type">int</span> ch;</span><br><span class="line">    <span class="type">char</span> name[LEN];    </span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 检查命令行参数 </span></span><br><span class="line"><span class="comment">//如果命令行的参数等于1，则不用压缩，因为本程序是将每三个字符压缩成1个字符，所以在标准错误输出中弹出错误提示信息</span></span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">         <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Usage: %s filename\n&quot;</span>, argv[<span class="number">0</span>]);</span><br><span class="line">         <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//argv[1]:作为输入流参数的文件的名字，如果文件打开失败，则在标准输出中弹出无法打开文件</span></span><br><span class="line">    <span class="keyword">if</span> ((in = fopen(argv[<span class="number">1</span>], <span class="string">&quot;r&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;I couldn&#x27;t open the file \&quot;%s\&quot;\n&quot;</span>,</span><br><span class="line">                argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将输入的文件名字字符串拷贝到name字符数组中</span></span><br><span class="line">    <span class="built_in">strcpy</span>(name,argv[<span class="number">1</span>]); </span><br><span class="line">    <span class="comment">//将name字符数组后面追加上后缀，即.red</span></span><br><span class="line">    <span class="built_in">strcat</span>(name,<span class="string">&quot;.red&quot;</span>);    </span><br><span class="line">    <span class="comment">//打开name这个文件夹，(如果你将a.txt作为输入流，那么这时候name字符串就是a.txt.red，打开的就是待压缩的文件),因为是以只写的方式打开，且之前并没有这个文件，所以会新建这个文件。</span></span><br><span class="line">    <span class="comment">//下面这个if是判断如果打开文件失败，则在标准错误输出中输出“不能创建output文件”，并exit(3)</span></span><br><span class="line">    <span class="keyword">if</span> ((out = fopen(name, <span class="string">&quot;w&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;                       <span class="comment">// open file for writing</span></span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Can&#x27;t create output file.\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//压缩文件，用getc(in)) != EOF判断是否读到了文件末尾，每隔三个字符将其中的第一个字符写入out所指向的文件中（也就是a.txt.red)</span></span><br><span class="line">    <span class="keyword">while</span> ((ch = getc(in)) != EOF)</span><br><span class="line">        <span class="keyword">if</span> (count++ % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">            putc(ch, out);  </span><br><span class="line"></span><br><span class="line"><span class="comment">//关闭文件</span></span><br><span class="line">    <span class="keyword">if</span> (fclose(in) != <span class="number">0</span> || fclose(out) != <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Error in closing files\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
-
-
-
-
+<h4 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h4><p>在程序同一个目录下创建一个a.txt，然后再命令行里输入<img src="/../img/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/image-20220402111008546.png" alt="image-20220402111008546"></p>
+<p>即程序名+空格+待压缩文件</p>
 
     </div>
 
@@ -430,8 +457,8 @@
       <i class="fa fa-chevron-left"></i> 离散数学の笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/2024/02/25/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
+    <a href="/2022/04/02/CSS/" rel="next" title="CSS">
+      CSS <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -491,7 +518,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">文件分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">设备文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">文件访问方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%EF%BC%9Afopen"><span class="nav-number">1.4.</span> <span class="nav-text">打开文件：fopen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6%EF%BC%9Afclose"><span class="nav-number">1.5.</span> <span class="nav-text">关闭文件：fclose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E9%A1%BA%E5%BA%8F%E8%AF%BB%E5%86%99%EF%BC%9A"><span class="nav-number">1.6.</span> <span class="nav-text">文件的顺序读写：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E7%85%A7%E5%AD%97%E7%AC%A6%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6%EF%BC%9Afputc-fgetc"><span class="nav-number">1.6.1.</span> <span class="nav-text">按照字符读写文件：fputc,fgetc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E7%85%A7%E8%A1%8C%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6%EF%BC%9Afgets-fputs"><span class="nav-number">1.6.2.</span> <span class="nav-text">按照行读写文件：fgets,fputs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84"><span class="nav-number">1.7.</span> <span class="nav-text">文件路径</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%88%86%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">文件分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">设备文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-number">3.</span> <span class="nav-text">文件的重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">文件访问方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%EF%BC%9Afopen"><span class="nav-number">5.</span> <span class="nav-text">打开文件：fopen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6%EF%BC%9Afclose"><span class="nav-number">6.</span> <span class="nav-text">关闭文件：fclose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E9%A1%BA%E5%BA%8F%E8%AF%BB%E5%86%99%EF%BC%9A"><span class="nav-number">7.</span> <span class="nav-text">文件的顺序读写：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E7%85%A7%E5%AD%97%E7%AC%A6%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6%EF%BC%9Afputc-fgetc"><span class="nav-number">7.1.</span> <span class="nav-text">按照字符读写文件：fputc,fgetc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E7%85%A7%E8%A1%8C%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6%EF%BC%9Afgets-fputs"><span class="nav-number">7.2.</span> <span class="nav-text">按照行读写文件：fgets,fputs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84"><span class="nav-number">8.</span> <span class="nav-text">文件路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E6%98%93%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9"><span class="nav-number">9.</span> <span class="nav-text">简易文件压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">9.1.</span> <span class="nav-text">方法：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -506,7 +533,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -517,7 +544,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -566,13 +593,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">75k</span>
+    <span title="站点总字数">77k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:08</span>
+    <span title="站点阅读时长">1:10</span>
 </div>
 
         

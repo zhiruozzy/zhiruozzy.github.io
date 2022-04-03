@@ -537,17 +537,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>CSS3新特性</title>
-    <url>/2022/03/27/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/</url>
-    <content><![CDATA[<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><p>下面用E表示标签名（如input，button，hr，p，table)</p>
-<p>用att表示标签中的属性(如class，id，style)</p>
-<ol>
-<li><p>E[att] : 选择具有att属性的E元素</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">    </span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>JS学习笔记</title>
     <url>/2022/03/05/JS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%87%AA%E7%94%A8%EF%BC%89/</url>
     <content><![CDATA[<p>自学的时候做的笔记，以供之后回来查阅，估计会有很多表述不准确甚至出错的地方，随着学习的加深会慢慢修正补充知识的。</p>
@@ -1195,13 +1184,24 @@
     <content><![CDATA[<p>文件操作的相关知识点总结和程设中的演示程序的详解</p>
 <span id="more"></span>
 
-<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>文件分为文本文件(.txt)和二进制文件</p>
+<h3 id="文件分类"><a href="#文件分类" class="headerlink" title="文件分类"></a>文件分类</h3><p>文件分为文本文件(.txt)和二进制文件</p>
 <p>文本文件：保存的时候，每一个字符对应一个字节</p>
 <p>二进制文件：二进制编码保存的文件</p>
 <h3 id="设备文件"><a href="#设备文件" class="headerlink" title="设备文件"></a>设备文件</h3><p>当启动一个程序的时候，系统会打开3个设备文件</p>
-<p>stdin:标准输入文件(鼠标，键盘)</p>
-<p>stdout:标准输出文件（显示屏）</p>
-<p>stderr:标准错误文件</p>
+<p>stdin:标准输入文件(鼠标，键盘)，默认情况下，标准输入设备是硬盘</p>
+<p>stdout:标准输出文件（显示器），默认情况下，标准输出设备是显示器</p>
+<p>stderr:标准错误文件，一般为显示器</p>
+<h3 id="文件的重定向"><a href="#文件的重定向" class="headerlink" title="文件的重定向"></a>文件的重定向</h3><p>重定向符号：</p>
+<p>“&lt;” 输入重定向 </p>
+<p>“&gt;”输出重定向</p>
+<p>以下面这个程序为例：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">int</span> i;</span><br><span class="line">   <span class="type">int</span> a[<span class="number">5</span>];  </span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;input 5 numbers:\n&quot;</span>);   </span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">4</span>;i++)</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]);</span><br><span class="line"></span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;the 5 numbers are:\n&quot;</span>);     </span><br><span class="line">   <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">4</span>;i++)</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;%d,&quot;</span>,a[i]);    </span><br><span class="line">        </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这个程序就是只有标准输入输出，即我可以直接在编译器中运行，得到的结果是这样的：</p>
+<p><img src="/../img/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/image-20220401230356231.png" alt="image-20220401230356231"></p>
+<p>重定向：将标准输入换成文件输入输出，即输入流改为data1.txt这个文件，将结果输出到data2.txt中。</p>
+<p>方法：在放程序的这个文件夹中新建data1.txt，输入1，2，3，4，5并保存。在在文件资源管理器中找到本程序的exe文件所在的位置，在cmd中输入可执行程序的名字和重定向的位置，就可以在新建的data2.txt中得到输出结果</p>
+<p><img src="/../img/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/image-20220401230628109.png" alt="image-20220401230628109"></p>
 <h3 id="文件访问方式"><a href="#文件访问方式" class="headerlink" title="文件访问方式"></a>文件访问方式</h3><table>
 <thead>
 <tr>
@@ -1317,15 +1317,22 @@
 </ul>
 </li>
 </ol>
-<h3 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h3><p>绝对路径</p>
-<p>相对路径</p>
-<p>前置知识：</p>
+<h3 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h3><ol>
+<li><p>绝对路径：目标文件在磁盘上的真实路径，比如：D:\A\bupt\高数</p>
+</li>
+<li><p>相对路径：</p>
+<p>引用上级文件： ..&#x2F;1.jpg</p>
+<p>引用同级文件：1.jpg</p>
+<p>引用下级文件：picture&#x2F;1.jpg</p>
+<p>引用上上级文件：..&#x2F;..&#x2F;1.jpg</p>
+</li>
+</ol>
+<h3 id="简易文件压缩"><a href="#简易文件压缩" class="headerlink" title="简易文件压缩"></a>简易文件压缩</h3><p>前置知识：</p>
 <ul>
 <li><p><code>int main(int argc,char* argv[ ])</code></p>
 <p>argc（argument counter）：是命令行总的参数个数</p>
 <p>argv[]（argument value）：指针数组，用来存放指向命令行参数（字符串）的指针，每个元素指向一个参数。</p>
 <p>argv[0] : 可编译程序（.exe）的在电脑中绝对路径</p>
-<p>argv[1]：</p>
 <p>argv[argc]：NULL</p>
 </li>
 <li><p><code>int fprintf( FILE *stream, const char *format, ... );</code></p>
@@ -1345,12 +1352,11 @@
 <p>“&gt;”输出重定向</p>
 </li>
 </ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span>    <span class="comment">// for exit()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span>    <span class="comment">// for strcpy(), strcat()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LEN 40</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    FILE  *in, *out;   </span><br><span class="line">    <span class="type">int</span> ch;</span><br><span class="line">    <span class="type">char</span> name[LEN];    </span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 检查命令行参数 </span></span><br><span class="line"><span class="comment">//如果命令行的参数等于1，则不用压缩，因为本程序是将每三个字符压缩成1个字符，所以在标准错误输出中弹出错误提示信息</span></span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">         <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Usage: %s filename\n&quot;</span>, argv[<span class="number">0</span>]);</span><br><span class="line">         <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//argv[1]:作为输入流参数的文件的名字，如果文件打开失败，则在标准输出中弹出无法打开文件</span></span><br><span class="line">    <span class="keyword">if</span> ((in = fopen(argv[<span class="number">1</span>], <span class="string">&quot;r&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;I couldn&#x27;t open the file \&quot;%s\&quot;\n&quot;</span>,</span><br><span class="line">                argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将输入的文件名字字符串拷贝到name字符数组中</span></span><br><span class="line">    <span class="built_in">strcpy</span>(name,argv[<span class="number">1</span>]); </span><br><span class="line">    <span class="comment">//将name字符数组后面追加上后缀，即.red</span></span><br><span class="line">    <span class="built_in">strcat</span>(name,<span class="string">&quot;.red&quot;</span>);    </span><br><span class="line">    <span class="comment">//打开name这个文件夹，(如果你将a.txt作为输入流，那么这时候name字符串就是a.txt.red，打开的就是待压缩的文件),因为是以只写的方式打开，且之前并没有这个文件，所以会新建这个文件。</span></span><br><span class="line">    <span class="comment">//下面这个if是判断如果打开文件失败，则在标准错误输出中输出“不能创建output文件”，并exit(3)</span></span><br><span class="line">    <span class="keyword">if</span> ((out = fopen(name, <span class="string">&quot;w&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;                       <span class="comment">// open file for writing</span></span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Can&#x27;t create output file.\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//压缩文件，用getc(in)) != EOF判断是否读到了文件末尾，每隔三个字符将其中的第一个字符写入out所指向的文件中（也就是a.txt.red)</span></span><br><span class="line">    <span class="keyword">while</span> ((ch = getc(in)) != EOF)</span><br><span class="line">        <span class="keyword">if</span> (count++ % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">            putc(ch, out);  </span><br><span class="line"></span><br><span class="line"><span class="comment">//g</span></span><br><span class="line">    <span class="keyword">if</span> (fclose(in) != <span class="number">0</span> || fclose(out) != <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Error in closing files\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>代码详解：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span>    <span class="comment">// for exit()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span>    <span class="comment">// for strcpy(), strcat()</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LEN 40</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    FILE  *in, *out;   </span><br><span class="line">    <span class="type">int</span> ch;</span><br><span class="line">    <span class="type">char</span> name[LEN];    </span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 检查命令行参数 </span></span><br><span class="line"><span class="comment">//如果命令行的参数等于1，则不用压缩，因为本程序是将每三个字符压缩成1个字符，所以在标准错误输出中弹出错误提示信息</span></span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">         <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;Usage: %s filename\n&quot;</span>, argv[<span class="number">0</span>]);</span><br><span class="line">         <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//argv[1]:作为输入流参数的文件的名字，如果文件打开失败，则在标准输出中弹出无法打开文件</span></span><br><span class="line">    <span class="keyword">if</span> ((in = fopen(argv[<span class="number">1</span>], <span class="string">&quot;r&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;I couldn&#x27;t open the file \&quot;%s\&quot;\n&quot;</span>,</span><br><span class="line">                argv[<span class="number">1</span>]);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将输入的文件名字字符串拷贝到name字符数组中</span></span><br><span class="line">    <span class="built_in">strcpy</span>(name,argv[<span class="number">1</span>]); </span><br><span class="line">    <span class="comment">//将name字符数组后面追加上后缀，即.red</span></span><br><span class="line">    <span class="built_in">strcat</span>(name,<span class="string">&quot;.red&quot;</span>);    </span><br><span class="line">    <span class="comment">//打开name这个文件夹，(如果你将a.txt作为输入流，那么这时候name字符串就是a.txt.red，打开的就是待压缩的文件),因为是以只写的方式打开，且之前并没有这个文件，所以会新建这个文件。</span></span><br><span class="line">    <span class="comment">//下面这个if是判断如果打开文件失败，则在标准错误输出中输出“不能创建output文件”，并exit(3)</span></span><br><span class="line">    <span class="keyword">if</span> ((out = fopen(name, <span class="string">&quot;w&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;                       <span class="comment">// open file for writing</span></span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Can&#x27;t create output file.\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//压缩文件，用getc(in)) != EOF判断是否读到了文件末尾，每隔三个字符将其中的第一个字符写入out所指向的文件中（也就是a.txt.red)</span></span><br><span class="line">    <span class="keyword">while</span> ((ch = getc(in)) != EOF)</span><br><span class="line">        <span class="keyword">if</span> (count++ % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">            putc(ch, out);  </span><br><span class="line"></span><br><span class="line"><span class="comment">//关闭文件</span></span><br><span class="line">    <span class="keyword">if</span> (fclose(in) != <span class="number">0</span> || fclose(out) != <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>,<span class="string">&quot;Error in closing files\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
-
-
-
-
+<h4 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h4><p>在程序同一个目录下创建一个a.txt，然后再命令行里输入<img src="/../img/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/image-20220402111008546.png" alt="image-20220402111008546"></p>
+<p>即程序名+空格+待压缩文件</p>
 ]]></content>
       <tags>
         <tag>C语言</tag>
@@ -2138,6 +2144,109 @@
 ]]></content>
       <tags>
         <tag>作业</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>轮播图</title>
+    <url>/2022/04/03/%E8%BD%AE%E6%92%AD%E5%9B%BE/</url>
+    <content><![CDATA[<h2 id="页面结构"><a href="#页面结构" class="headerlink" title="页面结构"></a>页面结构</h2><p><strong>首先需要一个大的div将所有元素装在里面</strong></p>
+<p><strong>左右按钮</strong></p>
+<p>用a标签包裹</p>
+<p><strong>轮播图片</strong></p>
+<p>用ul包含n个li构成</p>
+<p><strong>小圆圈</strong></p>
+<p>用ol包含n个li构成</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>CSS</title>
+    <url>/2022/04/02/CSS/</url>
+    <content><![CDATA[<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p>功能：实现对HTML中元素的一对一，一对多或者多对一的控制</p>
+<h3 id="元素选择器（element）："><a href="#元素选择器（element）：" class="headerlink" title="元素选择器（element）："></a>元素选择器（element）：</h3><ul>
+<li><p>语法：元素名称{属性：属性值;}</p>
+</li>
+<li><p>实例：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">   <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">   <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缺点：使用元素选择器时会对所有元素进行选择，所以操作的时候会不方便</p>
+</li>
+</ul>
+<h3 id="类选择器（class）："><a href="#类选择器（class）：" class="headerlink" title="类选择器（class）："></a>类选择器（class）：</h3><ul>
+<li><p>语法：**.**class名{属性：属性值；}</p>
+</li>
+<li><p>说明：一个class名可以给很多元素定义（一对多），通过class名来控制你想控制的一类元素。</p>
+</li>
+<li><p>示例：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;box&quot;&gt; &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">  <span class="selector-class">.box</span>&#123;</span><br><span class="line">     <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">     <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><ul>
+<li>语法：#id名{属性名：属性值}</li>
+<li>说明：一个id名只能对应HTML中一个具体的元素（唯一性），在css中不常用，通常在JS中用（getElementById)</li>
+</ul>
+<h3 id="选择器（通配符选择器）"><a href="#选择器（通配符选择器）" class="headerlink" title="*选择器（通配符选择器）"></a>*选择器（通配符选择器）</h3><p>一般用于最开始清除所有元素的默认页边距和填充值</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*&#123;</span><br><span class="line"><span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line"><span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="群组选择器"><a href="#群组选择器" class="headerlink" title="群组选择器"></a>群组选择器</h3><p>语法：选择符1，选择符2，选择符3..{属性：属性值}</p>
+<p>示例：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>,<span class="selector-tag">h2</span>,<span class="selector-tag">h3</span>,<span class="selector-tag">h4</span>&#123;</span><br><span class="line">   <span class="attribute">color</span>:<span class="number">#369</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="包含选择器（后代选择器）"><a href="#包含选择器（后代选择器）" class="headerlink" title="包含选择器（后代选择器）"></a>包含选择器（后代选择器）</h3><p>示例：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">span</span> <span class="selector-tag">p</span> <span class="selector-class">.box</span>&#123;</span><br><span class="line">   <span class="attribute">color</span>:<span class="number">#369</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用空格分开（没有逗号），选择的是span中的p标签中类名为box的元素</p>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>通过css中的<strong>position</strong>属性来设置</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static</td>
+<td>静态定位</td>
+</tr>
+<tr>
+<td>relative</td>
+<td>相对定位</td>
+</tr>
+<tr>
+<td>absolute</td>
+<td>绝对定位</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>固定定位</td>
+</tr>
+</tbody></table>
+<h3 id="边偏移"><a href="#边偏移" class="headerlink" title="边偏移"></a>边偏移</h3><p>边偏移用于对盒子的定位，可以设置<strong>top,bottom,left,right四个属性</strong>，分别代表<strong>距离父元素</strong>上下左右的边线的距离</p>
+<h3 id="相对定位（relative）"><a href="#相对定位（relative）" class="headerlink" title="相对定位（relative）"></a>相对定位（relative）</h3><p>特点：</p>
+<ul>
+<li>相对定位是相对于他原来的位置来说的（自恋型），即以原来盒子的左上角建系，设置的边偏移都是以这个坐标系移动</li>
+<li>相对定位相对自己移动了之后，原来的位置依旧保留，跟前的盒子不会挤占他的位置</li>
+</ul>
+<p>特点：</p>
+<h3 id="绝对定位（absolute）"><a href="#绝对定位（absolute）" class="headerlink" title="绝对定位（absolute）"></a>绝对定位（absolute）</h3><p>注意：绝对定位是相对于他的父元素来说的。（拼爹型）</p>
+<p>语法：<code>选择器&#123; position: absolute; &#125;</code></p>
+<p>特点：</p>
+<ul>
+<li>如果<strong>没有父元素</strong>或者<strong>父元素没有定位</strong>（是个标准流或者是个浮动的盒子），则以document浏览器为准来定位</li>
+<li>如果祖先元素有定位（绝对，相对，固定定位都行），则以最近一级的有定位的祖先元素为参考点移动位置</li>
+<li>绝对定位不再占用原来的位置（脱标）。（比如轮播图中的左右箭头不占有位置，不会挤到下面的轮播图片）</li>
+</ul>
+<h3 id="子绝父相"><a href="#子绝父相" class="headerlink" title="子绝父相"></a>子绝父相</h3><p>典型案例：轮播图</p>
+<p>首先一个大的div，包裹轮播图片，左右按钮和小圆点，用的是相对定位。而左右按键和下面的小圆点都是子元素，用的是绝对定位。</p>
+<p>特点：</p>
+<ul>
+<li>子级绝对定位，不会占有位置，可以放到父盒子里面的任何一个地方，不会影响其他的兄弟</li>
+<li>父级要定位，这样才能让子元素相对于父元素进行移动，而不是相对于浏览器移动。但不能也是绝对定位，因为如果也是绝对定位，那么父元素也不占有位置，他跟前的盒子就会补充他的位置，跑到他的下面去，造成结构混乱。所以只能是相对定位</li>
+</ul>
+<h3 id="固定定位（fixed）"><a href="#固定定位（fixed）" class="headerlink" title="固定定位（fixed）"></a>固定定位（fixed）</h3><p>作用：可以固定到浏览器可视区的一个固定位置，在页面滚动的时候元素的位置不会改变（比如看板娘）</p>
+<p>语法：<code>position：fixed</code></p>
+<p>注意：他的位置是参照浏览器的可视窗口</p>
+]]></content>
+      <tags>
+        <tag>前端</tag>
       </tags>
   </entry>
 </search>
