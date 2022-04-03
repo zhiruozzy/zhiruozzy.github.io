@@ -275,6 +275,108 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhiruozzy.cn/2022/04/03/%E9%93%BE%E8%A1%A8%E5%88%B7%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="芷若">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷若">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/03/%E9%93%BE%E8%A1%A8%E5%88%B7%E9%A2%98/" class="post-title-link" itemprop="url">链表刷题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-03 10:25:04 / 修改时间：11:59:39" itemprop="dateCreated datePublished" datetime="2022-04-03T10:25:04+08:00">2022-04-03</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h3><p>题解：</p>
+<ol>
+<li><p>一个前驱结点</p>
+</li>
+<li><p>比较l1和l2指向的val,谁更小谁就接在前驱结点的后面</p>
+</li>
+<li><p>图示：</p>
+<p><img src="/../img/%E9%93%BE%E8%A1%A8%E5%88%B7%E9%A2%98/image-20220403103303215.png" alt="image-20220403103303215"></p>
+</li>
+<li><p>代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* list1, ListNode* list2)</span></span>&#123;</span><br><span class="line">        <span class="comment">//判空情况</span></span><br><span class="line">        <span class="keyword">if</span>(list1==<span class="literal">nullptr</span>)</span><br><span class="line">         <span class="keyword">return</span> list2;</span><br><span class="line">         <span class="keyword">if</span>(list2==<span class="literal">nullptr</span>)</span><br><span class="line">         <span class="keyword">return</span> list1;</span><br><span class="line">       </span><br><span class="line">        ListNode*dummy=<span class="keyword">new</span> ListNode;</span><br><span class="line">        ListNode*cur=dummy;</span><br><span class="line">        ListNode*l1=list1;</span><br><span class="line">        ListNode*l2=list2;</span><br><span class="line">        <span class="keyword">while</span>(l1&amp;&amp;l2)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val&lt;=l2-&gt;val)&#123;</span><br><span class="line">                cur-&gt;next=l1;</span><br><span class="line">                l1=l1-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(l1-&gt;val&gt;l2-&gt;val)&#123;</span><br><span class="line">                cur-&gt;next=l2;</span><br><span class="line">                l2=l2-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            cur=cur-&gt;next;</span><br><span class="line">        &#125; </span><br><span class="line">        cur-&gt;next=l1==<span class="literal">nullptr</span>?l2:l1;</span><br><span class="line">        <span class="keyword">return</span> dummy-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="删除排序链表中的重复元素"><a href="#删除排序链表中的重复元素" class="headerlink" title="删除排序链表中的重复元素"></a>删除排序链表中的重复元素</h3><p>给定一个已排序的链表的头 <code>head</code> ， <em>删除所有重复的元素，使每个元素只出现一次</em> 。返回 <em>已排序的链表</em> 。</p>
+<p>题解：</p>
+<ol>
+<li><p>一个指针就行了，双指针就麻烦了（捂脸）</p>
+</li>
+<li><p>如果cur-&gt;val等于cur-&gt;next-&gt;val，就让next等于next-&gt;next，直到退出循环，如果不相等，让cur后移</p>
+</li>
+<li><p>代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function">ListNode* <span class="title">deleteDuplicates</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(head==<span class="literal">nullptr</span>||head-&gt;next==<span class="literal">nullptr</span>)</span><br><span class="line">				<span class="keyword">return</span> head;</span><br><span class="line">			ListNode*cur=head;</span><br><span class="line">			<span class="keyword">while</span>(cur) &#123;</span><br><span class="line">				<span class="keyword">while</span>(cur&amp;&amp;cur-&gt;next&amp;&amp;cur-&gt;val==cur-&gt;next-&gt;val) &#123;</span><br><span class="line">					cur-&gt;next=cur-&gt;next-&gt;next;</span><br><span class="line">				&#125;</span><br><span class="line">				cur=cur-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> head;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="环形链表"><a href="#环形链表" class="headerlink" title="环形链表"></a>环形链表</h3><p>方法一：哈希表：用unordered_set判断就行了</p>
+<p>代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="type">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(!head)</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">			unordered_set&lt;ListNode*&gt;set;</span><br><span class="line">			<span class="keyword">while</span>(head) &#123;</span><br><span class="line">				<span class="keyword">if</span>(set.<span class="built_in">count</span>(head)==<span class="number">0</span>) &#123;</span><br><span class="line">					set.<span class="built_in">insert</span>(head);</span><br><span class="line">					head=head-&gt;next;</span><br><span class="line">				&#125; <span class="keyword">else</span></span><br><span class="line">					<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>方法2：我又给忘了快慢指针了🤦‍♀️</p>
+<p>快指针一次走两步，慢指针一次走一步。如果没有环，则快指针会会走到空指针，如果有环，则快指针每次都比满指针多走一步，有环的话快指针会追上满指针的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="type">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">			<span class="comment">//没有节点或者只有一个节点时无法成环</span></span><br><span class="line">			<span class="keyword">if</span>(!head||head-&gt;next==<span class="literal">nullptr</span>)</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="comment">//注意这里初始时快指针要比慢指针多走一步，因为如果两者起点相同，一进入循环就相等返回true了，如果满指针比快指针初始时多走一步，会在第二次循环的时候两者就相遇返回true了，所以</span></span><br><span class="line">			ListNode*fast=head-&gt;next;</span><br><span class="line">			ListNode*slow=head;</span><br><span class="line">			<span class="keyword">while</span>(fast!=<span class="literal">nullptr</span>&amp;&amp;fast-&gt;next!=<span class="literal">nullptr</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(slow==fast) &#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				slow=slow-&gt;next;</span><br><span class="line">				fast=fast-&gt;next-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://zhiruozzy.cn/2022/04/03/%E8%BD%AE%E6%92%AD%E5%9B%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -385,7 +487,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-03 09:13:32" itemprop="dateModified" datetime="2022-04-03T09:13:32+08:00">2022-04-03</time>
+                <time title="修改时间：2022-04-03 11:24:04" itemprop="dateModified" datetime="2022-04-03T11:24:04+08:00">2022-04-03</time>
               </span>
 
           <br>
@@ -394,14 +496,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>2.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -413,90 +515,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p>功能：实现对HTML中元素的一对一，一对多或者多对一的控制</p>
-<h3 id="元素选择器（element）："><a href="#元素选择器（element）：" class="headerlink" title="元素选择器（element）："></a>元素选择器（element）：</h3><ul>
-<li><p>语法：元素名称{属性：属性值;}</p>
-</li>
-<li><p>实例：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">   <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">   <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>缺点：使用元素选择器时会对所有元素进行选择，所以操作的时候会不方便</p>
-</li>
-</ul>
-<h3 id="类选择器（class）："><a href="#类选择器（class）：" class="headerlink" title="类选择器（class）："></a>类选择器（class）：</h3><ul>
-<li><p>语法：**.**class名{属性：属性值；}</p>
-</li>
-<li><p>说明：一个class名可以给很多元素定义（一对多），通过class名来控制你想控制的一类元素。</p>
-</li>
-<li><p>示例：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=&quot;box&quot;&gt; &lt;/<span class="selector-tag">div</span>&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">  <span class="selector-class">.box</span>&#123;</span><br><span class="line">     <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">     <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><ul>
-<li>语法：#id名{属性名：属性值}</li>
-<li>说明：一个id名只能对应HTML中一个具体的元素（唯一性），在css中不常用，通常在JS中用（getElementById)</li>
-</ul>
-<h3 id="选择器（通配符选择器）"><a href="#选择器（通配符选择器）" class="headerlink" title="*选择器（通配符选择器）"></a>*选择器（通配符选择器）</h3><p>一般用于最开始清除所有元素的默认页边距和填充值</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line"><span class="attribute">padding</span>:<span class="number">0</span>;</span><br><span class="line"><span class="attribute">margin</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="群组选择器"><a href="#群组选择器" class="headerlink" title="群组选择器"></a>群组选择器</h3><p>语法：选择符1，选择符2，选择符3..{属性：属性值}</p>
-<p>示例：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>,<span class="selector-tag">h2</span>,<span class="selector-tag">h3</span>,<span class="selector-tag">h4</span>&#123;</span><br><span class="line">   <span class="attribute">color</span>:<span class="number">#369</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="包含选择器（后代选择器）"><a href="#包含选择器（后代选择器）" class="headerlink" title="包含选择器（后代选择器）"></a>包含选择器（后代选择器）</h3><p>示例：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span> <span class="selector-tag">p</span> <span class="selector-class">.box</span>&#123;</span><br><span class="line">   <span class="attribute">color</span>:<span class="number">#369</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>用空格分开（没有逗号），选择的是span中的p标签中类名为box的元素</p>
-<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>通过css中的<strong>position</strong>属性来设置</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>语义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>static</td>
-<td>静态定位</td>
-</tr>
-<tr>
-<td>relative</td>
-<td>相对定位</td>
-</tr>
-<tr>
-<td>absolute</td>
-<td>绝对定位</td>
-</tr>
-<tr>
-<td>fixed</td>
-<td>固定定位</td>
-</tr>
-</tbody></table>
-<h3 id="边偏移"><a href="#边偏移" class="headerlink" title="边偏移"></a>边偏移</h3><p>边偏移用于对盒子的定位，可以设置<strong>top,bottom,left,right四个属性</strong>，分别代表<strong>距离父元素</strong>上下左右的边线的距离</p>
-<h3 id="相对定位（relative）"><a href="#相对定位（relative）" class="headerlink" title="相对定位（relative）"></a>相对定位（relative）</h3><p>特点：</p>
-<ul>
-<li>相对定位是相对于他原来的位置来说的（自恋型），即以原来盒子的左上角建系，设置的边偏移都是以这个坐标系移动</li>
-<li>相对定位相对自己移动了之后，原来的位置依旧保留，跟前的盒子不会挤占他的位置</li>
-</ul>
-<p>特点：</p>
-<h3 id="绝对定位（absolute）"><a href="#绝对定位（absolute）" class="headerlink" title="绝对定位（absolute）"></a>绝对定位（absolute）</h3><p>注意：绝对定位是相对于他的父元素来说的。（拼爹型）</p>
-<p>语法：<code>选择器&#123; position: absolute; &#125;</code></p>
-<p>特点：</p>
-<ul>
-<li>如果<strong>没有父元素</strong>或者<strong>父元素没有定位</strong>（是个标准流或者是个浮动的盒子），则以document浏览器为准来定位</li>
-<li>如果祖先元素有定位（绝对，相对，固定定位都行），则以最近一级的有定位的祖先元素为参考点移动位置</li>
-<li>绝对定位不再占用原来的位置（脱标）。（比如轮播图中的左右箭头不占有位置，不会挤到下面的轮播图片）</li>
-</ul>
-<h3 id="子绝父相"><a href="#子绝父相" class="headerlink" title="子绝父相"></a>子绝父相</h3><p>典型案例：轮播图</p>
-<p>首先一个大的div，包裹轮播图片，左右按钮和小圆点，用的是相对定位。而左右按键和下面的小圆点都是子元素，用的是绝对定位。</p>
-<p>特点：</p>
-<ul>
-<li>子级绝对定位，不会占有位置，可以放到父盒子里面的任何一个地方，不会影响其他的兄弟</li>
-<li>父级要定位，这样才能让子元素相对于父元素进行移动，而不是相对于浏览器移动。但不能也是绝对定位，因为如果也是绝对定位，那么父元素也不占有位置，他跟前的盒子就会补充他的位置，跑到他的下面去，造成结构混乱。所以只能是相对定位</li>
-</ul>
-<h3 id="固定定位（fixed）"><a href="#固定定位（fixed）" class="headerlink" title="固定定位（fixed）"></a>固定定位（fixed）</h3><p>作用：可以固定到浏览器可视区的一个固定位置，在页面滚动的时候元素的位置不会改变（比如看板娘）</p>
-<p>语法：<code>position：fixed</code></p>
-<p>注意：他的位置是参照浏览器的可视窗口</p>
-
+          <p>CSS中的一些重点知识总结</p>
+<p>​                  ——选择器、行内元素和块级元素、定位</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/02/CSS/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -624,10 +652,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-03-30 13:15:52 / 修改时间：11:49:08" itemprop="dateCreated datePublished" datetime="2022-03-30T13:15:52+08:00">2022-03-30</time>
+              <time title="创建时间：2022-03-30 13:15:52" itemprop="dateCreated datePublished" datetime="2022-03-30T13:15:52+08:00">2022-03-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-03 11:26:01" itemprop="dateModified" datetime="2022-04-03T11:26:01+08:00">2022-04-03</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -663,10 +697,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h3><ul>
-<li><strong>Let N(x) be the statement that “x has visited North Dakota,” where the domain consists of the students in</strong></li>
-</ul>
-<p><strong>your school. Express each of these quantifications in English.</strong> </p>
+          <p>离散的一些习题和我的笔记（可恶的逻辑学，咬牙切齿</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/03/30/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E3%81%AE%E7%AC%94%E8%AE%B0/#more" rel="contents">
@@ -1069,7 +1100,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-30 11:51:25" itemprop="dateModified" datetime="2022-03-30T11:51:25+08:00">2022-03-30</time>
+                <time title="修改时间：2022-04-03 11:25:01" itemprop="dateModified" datetime="2022-04-03T11:25:01+08:00">2022-04-03</time>
               </span>
 
           <br>
@@ -1097,7 +1128,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>计导的第一次作业——链表（C++写的）</p>
+          <p>计导的第一次作业——链表（C++）</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/03/18/%E9%93%BE%E8%A1%A8%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%9C%E4%B8%9A/#more" rel="contents">
@@ -1155,7 +1186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-30 15:34:43" itemprop="dateModified" datetime="2022-03-30T15:34:43+08:00">2022-03-30</time>
+                <time title="修改时间：2022-04-03 11:24:34" itemprop="dateModified" datetime="2022-04-03T11:24:34+08:00">2022-04-03</time>
               </span>
 
           <br>
@@ -1183,106 +1214,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="手把手教你写贪吃蛇👩‍🔧"><a href="#手把手教你写贪吃蛇👩‍🔧" class="headerlink" title="手把手教你写贪吃蛇👩‍🔧"></a>手把手教你写贪吃蛇👩‍🔧</h2><p>超详细的教程~</p>
+          <h2 id="手把手教你写贪吃蛇👩‍🔧"><a href="#手把手教你写贪吃蛇👩‍🔧" class="headerlink" title="手把手教你写贪吃蛇👩‍🔧"></a>手把手教你写贪吃蛇👩‍🔧</h2><p>超详细的教程，一步一步和我来，你一定会学会的~</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/03/16/%E8%B4%AA%E5%90%83%E8%9B%87/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://zhiruozzy.cn/2022/03/05/JS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%87%AA%E7%94%A8%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.jpg">
-      <meta itemprop="name" content="芷若">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="芷若">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/05/JS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%87%AA%E7%94%A8%EF%BC%89/" class="post-title-link" itemprop="url">JS学习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-05 14:19:10" itemprop="dateCreated datePublished" datetime="2022-03-05T14:19:10+08:00">2022-03-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-31 19:24:11" itemprop="dateModified" datetime="2022-03-31T19:24:11+08:00">2022-03-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">计算机笔记</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>13k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>12 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>自学的时候做的笔记，以供之后回来查阅，估计会有很多表述不准确甚至出错的地方，随着学习的加深会慢慢修正补充知识的。</p>
-<p>​                                                     ——2022.03.05</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/05/JS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E8%87%AA%E7%94%A8%EF%BC%89/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1372,7 +1307,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
