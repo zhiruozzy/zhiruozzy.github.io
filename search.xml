@@ -2123,7 +2123,9 @@
   <entry>
     <title>轮播图</title>
     <url>/2022/04/03/%E8%BD%AE%E6%92%AD%E5%9B%BE/</url>
-    <content><![CDATA[<h2 id="页面布局（HTML）"><a href="#页面布局（HTML）" class="headerlink" title="页面布局（HTML）"></a>页面布局（HTML）</h2><p><strong>首先需要一个大的div将所有元素装在里</strong></p>
+    <content><![CDATA[<h2 id="网易云音乐的轮播图自制"><a href="#网易云音乐的轮播图自制" class="headerlink" title="网易云音乐的轮播图自制~"></a>网易云音乐的轮播图自制~</h2><span id="more"></span>
+
+<h2 id="页面布局（HTML）"><a href="#页面布局（HTML）" class="headerlink" title="页面布局（HTML）"></a>页面布局（HTML）</h2><p><strong>首先需要一个大的div将所有元素装在里</strong></p>
 <p><strong>左右按钮</strong></p>
 <p>用a标签包裹</p>
 <p><strong>轮播图片</strong></p>
@@ -2135,6 +2137,33 @@
 <h3 id="样式-CSS"><a href="#样式-CSS" class="headerlink" title="样式(CSS)"></a>样式(CSS)</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">      *&#123;</span><br><span class="line">          <span class="attribute">margin</span>:<span class="number">0px</span>;</span><br><span class="line">          <span class="attribute">padding</span>:<span class="number">0px</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="selector-class">.ad</span>&#123;</span><br><span class="line">          <span class="attribute">position</span>: relative;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">420px</span>;</span><br><span class="line">          <span class="attribute">width</span>: <span class="number">1090px</span>;</span><br><span class="line">          <span class="attribute">background-color</span>: pink;</span><br><span class="line">          <span class="comment">/* 相对定位可以通过margin: xx auto来水平居中 */</span></span><br><span class="line">          <span class="attribute">margin</span>: <span class="number">50px</span> auto;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="selector-class">.left</span>,<span class="selector-class">.right</span>&#123;</span><br><span class="line">          <span class="comment">/* 因为左右箭头不能挤占照片的位置，所以应该为绝对定位（脱标） */</span></span><br><span class="line">          <span class="attribute">position</span>:absolute;</span><br><span class="line">          <span class="attribute">text-decoration</span>: none;</span><br><span class="line">          <span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">          <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.5</span>);</span><br><span class="line">          <span class="comment">/* 绝对定位的盒子的水平居中 */</span></span><br><span class="line">          <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">          <span class="attribute">margin-top</span>: -<span class="number">10px</span>;</span><br><span class="line">          <span class="comment">/* 让里面的符号水平居中垂直居中于小盒子中 */</span></span><br><span class="line">           <span class="attribute">text-align</span>: center;</span><br><span class="line">           <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">           <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="selector-class">.left</span>&#123;</span><br><span class="line">          <span class="comment">/* 设置圆角 */</span></span><br><span class="line">           <span class="attribute">border-radius</span>: <span class="number">0</span> <span class="number">15px</span> <span class="number">15px</span> <span class="number">0</span>;</span><br><span class="line">           <span class="comment">/* 靠左 */</span></span><br><span class="line">           <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="selector-class">.right</span>&#123;</span><br><span class="line">          <span class="comment">/* 设置圆角 */</span></span><br><span class="line">          <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">15px</span>;</span><br><span class="line">          <span class="comment">/* 靠右 */</span></span><br><span class="line">          <span class="attribute">left</span>:<span class="number">1070px</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="selector-tag">ul</span>,<span class="selector-tag">ol</span>&#123;</span><br><span class="line">         <span class="attribute">list-style-type</span>: none;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="selector-class">.nav</span>&#123;</span><br><span class="line">          <span class="comment">/* 绝对定位*/</span></span><br><span class="line">          <span class="attribute">position</span>: absolute;</span><br><span class="line">          <span class="attribute">bottom</span>:<span class="number">15px</span>;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">14px</span>;</span><br><span class="line">          <span class="attribute">width</span>:<span class="number">70px</span>;</span><br><span class="line">          <span class="comment">/* 水平居中 */</span></span><br><span class="line">          <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">          <span class="attribute">margin-left</span>:-<span class="number">35px</span>;</span><br><span class="line">          <span class="comment">/* 白色半透明 */</span></span><br><span class="line">          <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,.<span class="number">4</span>);</span><br><span class="line">          <span class="comment">/* 圆角 */</span></span><br><span class="line">          <span class="attribute">border-radius</span>: <span class="number">7px</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="selector-class">.nav</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">          <span class="comment">/* 让所有的小圆点浮动起来，都在一排 */</span></span><br><span class="line">          <span class="attribute">float</span>: left;</span><br><span class="line">          <span class="attribute">width</span>:<span class="number">8px</span>;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">8px</span>;</span><br><span class="line">          <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">          <span class="comment">/* 变成圆形 */</span></span><br><span class="line">          <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">          <span class="comment">/* 间隔开 :上下左右外边距都是3px*/</span></span><br><span class="line">          <span class="attribute">margin</span>:<span class="number">3px</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/* 让选中的小圆点变成红色 */</span></span><br><span class="line">      <span class="selector-class">.nav</span> <span class="selector-class">.selected</span>&#123;</span><br><span class="line">          <span class="attribute">background-color</span>: red;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="selector-tag">ul</span>&#123;</span><br><span class="line">          <span class="comment">/* 让宽度装得下4个li */</span></span><br><span class="line">          <span class="attribute">width</span>: <span class="number">400%</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="selector-class">.pic</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">          <span class="comment">/* 让所有的li都在一行 */</span></span><br><span class="line">          <span class="attribute">float</span>: left;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">420px</span>;</span><br><span class="line">          <span class="attribute">width</span>: <span class="number">1090px</span>;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><p>当鼠标经过轮播图时，左右按钮显示，当鼠标离开时，隐藏左右按钮。</p>
+<p>动态生成小圆圈：有几张图，就有几个小圆圈</p>
+<p>即ul中多少个li，就在ol中生成相同个数的li（利用for循环插入到ol中）</p>
+<p>统计ul中的li:ul.children.length</p>
+<p>创建结点：createElement(“li”);</p>
+<p>给ol添加li：ol.appendChild(li);</p>
+<h3 id="点击小圆圈的时候小圆圈就会变成红色"><a href="#点击小圆圈的时候小圆圈就会变成红色" class="headerlink" title="点击小圆圈的时候小圆圈就会变成红色"></a>点击小圆圈的时候小圆圈就会变成红色</h3><p>排他思想：干掉其他人，留下我自己</p>
+<p>点击当前小圆圈，就用for循环将所有小圆圈的类名移出，然后给当前小圆圈绑定current的类名</p>
+<p>放置位置：在动态插入li的时候就可以给每个li绑定一个单击响应函数</p>
+<p>点击可以实现滑动的效果</p>
+<h3 id="点击小圆圈实现图片滑动效果"><a href="#点击小圆圈实现图片滑动效果" class="headerlink" title="点击小圆圈实现图片滑动效果"></a>点击小圆圈实现图片滑动效果</h3><p>要实现滑动，可以用动画函数，因此要给ul加绝对定位（移动的是ul，而不是li，因为如果是li在动，那剩下的li没办法安排)，既然给ul加了绝对定位，而在之前就已经给左右按钮加了绝对定位，要使左右按钮在ul上面，就要加大左右按钮的z-index</p>
+<p>ul滚动距离：（-1）*小圆圈的索引号乘以图片的宽度</p>
+<p>小圆圈的索引号：给li添加一个自定义属性</p>
+<p>放置位置：因为是在点击小圆圈后实现的，所以应该在小圆圈的单击相应函数中写</p>
+<h3 id="点击左右按钮实现图片滑动效果"><a href="#点击左右按钮实现图片滑动效果" class="headerlink" title="点击左右按钮实现图片滑动效果"></a>点击左右按钮实现图片滑动效果</h3><p>声明一个变量num,点击右侧按钮，就自增一，ul的滚动距离就是num乘以图片的宽度</p>
+<h3 id="无缝滚动"><a href="#无缝滚动" class="headerlink" title="无缝滚动"></a>无缝滚动</h3><p>把第一张图片复制一份放在最后一个li的后面</p>
+<p>cloneNode(),加true是深克隆，会拷贝里面的子节点，如果是false就是浅克隆，不会拷贝里面的子节点</p>
+<p>不管有没有到最后一张都执行的是：num++, animate滚动ul,距离是num乘以图片的宽度</p>
+<p>如果到了最后一个，即n个(其实就是拷贝的第一个），则将ul不做动画的跳到最左侧，即left&#x3D;0,并把num改成0；</p>
+<h3 id="点击右侧按钮时小圆点和右侧按钮一起变化"><a href="#点击右侧按钮时小圆点和右侧按钮一起变化" class="headerlink" title="点击右侧按钮时小圆点和右侧按钮一起变化"></a>点击右侧按钮时小圆点和右侧按钮一起变化</h3><p>再声明一个circle，每次点击右侧按钮自增1（不能用num,因为num因为图片克隆的原因会出现n的情况，而小圆点的索引只是[0,n-1]。</p>
+<p>并且，当circle&#x3D;&#x3D;4的时候，应该将circle改成0</p>
+<h3 id="统一变量"><a href="#统一变量" class="headerlink" title="统一变量"></a>统一变量</h3><p>circle:控制小圆点的current</p>
+<p>num：控制左右按钮计数器</p>
+<p>因为左右控制按钮时是通过num来控制的，但我们点击li来移动的时候并没有改变num，也没有改变current,则会导致在点击小圆点移动后再点击左右按钮时出现错误（因为左右按钮操控的时候是用num来控制是移动的距离，用circle来控制小圆点的current）。所以需要在li的单击响应函数中，加入将this.index赋值给num和circle</p>
+<h3 id="自动播放"><a href="#自动播放" class="headerlink" title="自动播放"></a>自动播放</h3><p>相当于点击右侧按钮，即使用right.click()【调用这个函数就相当于我们手动点击右侧按钮】</p>
+<p>在全局中添加一个定时器，使得页面一加载就开始自动播放</p>
+<p>鼠标放上的时候的监听函数增添：停止定时器timer</p>
+<p>鼠标经过的时候的监听函数增添：开启定时器timer</p>
 ]]></content>
   </entry>
   <entry>
@@ -2388,6 +2417,28 @@
 <p>快指针一次走两步，慢指针一次走一步。如果没有环，则快指针会会走到空指针，如果有环，则快指针每次都比满指针多走一步，有环的话快指针会追上满指针的。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="type">bool</span> <span class="title">hasCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">			<span class="comment">//没有节点或者只有一个节点时无法成环</span></span><br><span class="line">			<span class="keyword">if</span>(!head||head-&gt;next==<span class="literal">nullptr</span>)</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="comment">//注意这里初始时快指针要比慢指针多走一步，因为如果两者起点相同，一进入循环就相等返回true了，如果满指针比快指针初始时多走一步，会在第二次循环的时候两者就相遇返回true了，所以</span></span><br><span class="line">			ListNode*fast=head-&gt;next;</span><br><span class="line">			ListNode*slow=head;</span><br><span class="line">			<span class="keyword">while</span>(fast!=<span class="literal">nullptr</span>&amp;&amp;fast-&gt;next!=<span class="literal">nullptr</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(slow==fast) &#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				slow=slow-&gt;next;</span><br><span class="line">				fast=fast-&gt;next-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+]]></content>
+  </entry>
+  <entry>
+    <title>文件操作习题</title>
+    <url>/2022/04/04/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[<p>task2思路：</p>
+<p>用一个prev记录之前的字符，用cur记录当前的字符</p>
+<p>先读入一个字符</p>
+<ul>
+<li>如果这个字符是换行，则line++，将换行符赋值给prev，再读取一个字符赋值给cur.</li>
+<li>如果这个字符不是换行，则count++，并把cur赋值给prev，再读取一个字符赋值给cur。</li>
+</ul>
+<p>进入循环</p>
+<p>如果cur不是换行符，则count++，并把cur赋值给prev,再读入一个字符</p>
+<p>如果cur是换行符，</p>
+<ul>
+<li><p>如果prev也是换行符，则说明本行是空行，则minline&#x3D;0。</p>
+</li>
+<li><p>如果prev不是换行符，则说明换行了，则比较count与minline，count与maxline。</p>
+</li>
+</ul>
+<p>line++，count置零，将换行符赋值给prev，再读取一个字符赋值给cur</p>
 ]]></content>
   </entry>
 </search>
