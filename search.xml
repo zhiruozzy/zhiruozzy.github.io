@@ -2309,4 +2309,205 @@
 <p> %module xx 定义了将由SWIG创建的模块的名称。%</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>HTML表单验证</title>
+    <url>/2022/04/05/HTML%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/</url>
+    <content><![CDATA[<p>归纳了html中的表单相关知识（包含HTML5新增表单属性），并做了一个表单案例练手。</p>
+<span id="more"></span>
+
+<h2 id="表单的属性"><a href="#表单的属性" class="headerlink" title="表单的属性"></a>表单的属性</h2><h3 id="form属性1：action属性"><a href="#form属性1：action属性" class="headerlink" title="form属性1：action属性"></a>form属性1：action属性</h3><p><strong>用法：</strong>定义了提交表单要执行的操作。即用户点击提交按钮的时候，表单数据会发送到服务器上的哪个地址(URL)中。</p>
+<p><strong>默认：</strong>如果没有写action属性，则会默认将action设置为当前页。</p>
+<p><strong>示例：</strong>下面这个表单提交后会发送到”action_page.php”：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/action_page.php&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;fname&quot;</span>&gt;</span>First name:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;fname&quot;</span> <span class="attr">name</span>=<span class="string">&quot;fname&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Bill&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;lname&quot;</span>&gt;</span>Last name:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;lname&quot;</span> <span class="attr">name</span>=<span class="string">&quot;lname&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Gates&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Submit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="form属性2：target属性"><a href="#form属性2：target属性" class="headerlink" title="form属性2：target属性"></a>form属性2：target属性</h3><p>用法：规定了表单在提交中地址的目标</p>
+<p>默认：为_self，即响应在当前窗口中打开</p>
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">_blank</td>
+<td align="left">响应显示在新窗口或选项卡中。</td>
+</tr>
+<tr>
+<td align="left">_self</td>
+<td align="left">响应显示在当前窗口中。</td>
+</tr>
+<tr>
+<td align="left">_parent</td>
+<td align="left">响应显示在父框架中。</td>
+</tr>
+<tr>
+<td align="left">_top</td>
+<td align="left">响应显示在窗口的整个 body 中。</td>
+</tr>
+<tr>
+<td align="left">framename</td>
+<td align="left">响应显示在命名的 iframe 中。</td>
+</tr>
+</tbody></table>
+<p>示例：下面的提交结果将在新的浏览器标签页中打开：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/action_page.php&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="form属性3：method属性"><a href="#form属性3：method属性" class="headerlink" title="form属性3：method属性"></a>form属性3：method属性</h3><p>用法：规定了提交表单时用到的HTTP方法（post&#x2F;get)</p>
+<p>默认：get(不要用get发送敏感数据，比如密码)</p>
+<p>示例：提交表单时用get</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/action_page.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="form属性4：autocomplete属性"><a href="#form属性4：autocomplete属性" class="headerlink" title="form属性4：autocomplete属性"></a>form属性4：autocomplete属性</h3><p>用法：输入文本框，输入一次，下一次再输入会自动提示，该属性规定了表单是否会自动完成的功能。这个属性input也有</p>
+<p>示例：启用自动填写的表单：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/action_page.php&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;on&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../img/HTML%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/image-20220405085012594.png" alt="image-20220405085012594"></p>
+<h3 id="input属性1：placeholder属性"><a href="#input属性1：placeholder属性" class="headerlink" title="input属性1：placeholder属性"></a>input属性1：placeholder属性</h3><p>用法：注册界面的这个灰色的提示信息</p>
+<p><img src="/../img/HTML%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/image-20220405084740890.png" alt="image-20220405084740890"></p>
+<h3 id="input-属性2：-autofocus"><a href="#input-属性2：-autofocus" class="headerlink" title="input 属性2： autofocus"></a>input 属性2： autofocus</h3><h2 id="表单元素"><a href="#表单元素" class="headerlink" title="表单元素"></a>表单元素</h2><h3 id="form元素"><a href="#form元素" class="headerlink" title="form元素"></a>form元素</h3><p>用法：收集用户的输入</p>
+<p>示例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line"> .</span><br><span class="line">form elements</span><br><span class="line"> .</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>form元素可以是input 元素、复选框、单选按钮、提交按钮等等。</p>
+<h3 id="input元素"><a href="#input元素" class="headerlink" title="input元素"></a>input元素</h3><p>input元素会根据不同的type属性变换各种形态</p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">描述</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/button">button</a></td>
+<td align="left">没有默认行为的按钮，上面显示 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#attr-value">value</a> 属性的值，默认为空。</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/radio">radio</a></td>
+<td align="left">单选按钮，允许在多个拥有相同 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#attr-name">name</a> 值的选项中选中其中一个。</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/checkbox">checkbox</a></td>
+<td align="left">复选框，可设为选中或未选中。默认选中：在该复选框中加入checked&#x3D;”checked”</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/color">color</a></td>
+<td align="left">用于指定颜色的控件；在支持的浏览器中，激活时会打开取色器。</td>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5">HTML5</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/date">date</a></td>
+<td align="left">输入日期的控件（年、月、日，不包括时间）。在支持的浏览器激活时打开日期选择器或年月日的数字滚轮。</td>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5">HTML5</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/datetime-local">datetime-local</a></td>
+<td align="left">输入日期和时间的控件，不包括时区。在支持的浏览器激活时打开日期选择器或年月日的数字滚轮。</td>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5">HTML5</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/file">file</a></td>
+<td align="left">让用户选择文件的控件。使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#attr-accept">accept</a> 属性规定控件能选择的文件类型。</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/number">number</a></td>
+<td align="left">用于输入数字的控件。如果支持的话，会显示滚动按钮并提供缺省验证（即只能输入数字）。拥有动态键盘的设备上会显示数字键盘。</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/password">password</a></td>
+<td align="left">单行的文本区域，其值会被遮盖。如果站点不安全，会警告用户。</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/search">search</a></td>
+<td align="left">用于搜索字符串的单行文字区域。输入文本中的换行会被自动去除。在支持的浏览器中可能有一个删除按钮，用于清除整个区域。</td>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/HTML/HTML5">HTML5</a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/submit">submit</a></td>
+<td align="left">用于提交表单的按钮。更改里面的值只需更改value即可</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>示例1 选择文件：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;search&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../img/HTML%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/image-20220405093733724.png" alt="image-20220405093733724"></p>
+<p>示例2 纯文本表单：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">value</span>=<span class="string">&quot;这里有文本&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../img/HTML%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/image-20220405093908211.png" alt="image-20220405093908211"></p>
+<p>示例3 提交表单：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Submit&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../img/HTML%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/image-20220405093954069.png" alt="image-20220405093954069"></p>
+<h3 id="select元素（下拉列表）"><a href="#select元素（下拉列表）" class="headerlink" title="select元素（下拉列表）"></a>select元素（下拉列表）</h3><p>示例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/demo/demo_form.asp&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">&quot;A-soul&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;贝拉&quot;</span>&gt;</span>贝拉<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;嘉然&quot;</span>&gt;</span>嘉然<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;嘉然&quot;</span>&gt;</span>嘉然<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;乃琳&quot;</span>&gt;</span>乃琳<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;珈乐&quot;</span>&gt;</span>珈乐<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../img/HTML%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/image-20220405094850510.png" alt="image-20220405094850510"></p>
+<p>option这个元素中定义了待选择的选项，默认会将首选项显示为被选选项，可以添加selected属性来定义被选选项，比如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;嘉然&quot;</span> <span class="attr">selected</span> &gt;</span>嘉然<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="datalist元素（控件可选值）"><a href="#datalist元素（控件可选值）" class="headerlink" title="datalist元素（控件可选值）"></a>datalist元素（控件可选值）</h3><p>图片中的效果是怎么做出来的呢?</p>
+<p><img src="/../img/HTML%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/image-20220405085632278.png" alt="image-20220405085632278"></p>
+<p>使用了<code>datalist</code>的元素。datalist元素为input元素规定预定义选项的列表，用来定义input可能的值，datalist和他的选项如果不点击表单的话并不会被显示出来，仅仅是合法的输入值列表。用户会在他们输入数据的时候看到预定义选项的下拉列表</p>
+<p>用法：在input元素中的list属性来绑定datalist的id值</p>
+<p>示例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;myCar&quot;</span> <span class="attr">list</span>=<span class="string">&quot;cars&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">&quot;cars&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;BMW&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;Ford&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;Volvo&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="label标签"><a href="#label标签" class="headerlink" title="label标签"></a>label标签</h3><p>作用：让表单更具人性化，即在label包裹的元素内点击文本，就会触发它绑定其他元素。</p>
+<p>语法：label的for属性要和与其相绑定的元素的id属性相同</p>
+<p>示例：<img src="../img/HTML表单验证/image-20220405110843394.png" alt="image-20220405110843394" style="zoom: 67%;" />像这个表单，要做到点击“男”和图片也能勾选单选按钮，则需要这样写：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">id</span>=<span class="string">&quot;nan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;nan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;man.jpg&quot;</span>&gt;</span> 男<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">id</span>=<span class="string">&quot;nv&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;nv&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;women.jpg&quot;</span>&gt;</span> 女<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="textarea多行文本域"><a href="#textarea多行文本域" class="headerlink" title="textarea多行文本域"></a>textarea多行文本域</h3><p>作用：定义多行的文本输入框</p>
+<p>语法：</p>
+<ol>
+<li>通过rows规定行数，cols规定列数.</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">&quot;3&quot;</span> <span class="attr">cols</span>=<span class="string">&quot;20&quot;</span>&gt;</span></span><br><span class="line">在w3school，你可以找到你所需要的所有的网站建设教程。</span><br><span class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="../img/HTML表单验证/image-20220405112401543.png" alt="image-20220405112401543" style="zoom:67%;" />
+
+<ol start="2">
+<li>在css中通过width和height规定宽高</li>
+</ol>
+<h2 id="表单验证的两种方式"><a href="#表单验证的两种方式" class="headerlink" title="表单验证的两种方式"></a>表单验证的两种方式</h2><ol>
+<li><p>form表单提交到后台</p>
+</li>
+<li><p>无刷新的Ajax提交</p>
+</li>
+</ol>
+<h2 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h2><h3 id="页面布局"><a href="#页面布局" class="headerlink" title="页面布局"></a>页面布局</h3><h3 id="总体"><a href="#总体" class="headerlink" title="总体"></a><strong>总体</strong></h3><p><img src="/../img/HTML%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/image-20220405104630818.png" alt="image-20220405104630818"></p>
+<p>table标签定义HTML的表格，一个表格由table元素以及多个tr,td,th元素组成</p>
+<p>tr:表格的行数 td:表格单元（列数） th:表头</p>
+<p>首先是一个大的table标签包含所有内容，里面是tr的行标签，tr里面再包含td左右两个单元格</p>
+<h3 id="局部"><a href="#局部" class="headerlink" title="局部"></a><strong>局部</strong></h3><p>性别：input单选框radio+小图片+人性化label</p>
+<p>生日：input时间框date</p>
+<p>所在地区：input文本框+value：北京思密达</p>
+<p>婚姻状况：input单选框</p>
+<p>学历：selected下拉选择框+option选项</p>
+<p>喜欢的类型：input多选框checkbox</p>
+<p>自我介绍：多行文本框textarea</p>
+<p>免费注册：input提交框submit+value免费注册</p>
+<p>我同意注册条款：input多选框+checked&#x3D;”checked”</p>
+<p>我是会员立即登录：a标签</p>
+<p>我承诺+承诺内容：h3标题   +ul中套三个li</p>
+<h3 id="成品（纯html"><a href="#成品（纯html" class="headerlink" title="成品（纯html)"></a>成品（纯html)</h3><img src="../img/HTML表单验证/image-20220405113800799.png" alt="image-20220405113800799" style="zoom: 50%;" />
+
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>表单综合案例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>青春不常在，抓紧谈恋爱<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">width</span>=<span class="string">&quot;500px&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">id</span>=<span class="string">&quot;nan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;nan&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;man.jpg&quot;</span>&gt;</span> 男<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">id</span>=<span class="string">&quot;nv&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;nv&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;women.jpg&quot;</span>&gt;</span> 女<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>生日<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;date&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>所在地区<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">value</span>=<span class="string">&quot;北京思密达&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>婚姻状况<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;marriage&quot;</span> <span class="attr">id</span>=<span class="string">&quot;hunyin&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;hunyin&quot;</span>&gt;</span>未婚<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;marriage&quot;</span> <span class="attr">id</span>=<span class="string">&quot;hunyin&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;hunyin&quot;</span>&gt;</span>离婚<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;marriage&quot;</span> <span class="attr">id</span>=<span class="string">&quot;hunyin&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;hunyin&quot;</span>&gt;</span>已婚<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>学历<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span>&gt;</span>幼儿园<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span>&gt;</span>小学<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span>&gt;</span>中学<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">selected</span>&gt;</span>本科<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span>&gt;</span>研究生<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span>&gt;</span>博士<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span>&gt;</span>神！<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>喜欢的类型<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span>甜妹</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span>辣妹</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span>御姐</span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>自我介绍<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">cols</span>=<span class="string">&quot;30&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;5&quot;</span>&gt;</span>你不嫁，我不嫁，养老院里蹦恰恰<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;免费注册&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;checked&quot;</span>&gt;</span>我同意注册条款</span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>我是会员，立即登录<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">h3</span>&gt;</span>我承诺🙋‍♀️<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>年满18岁<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>抱着严肃的态度<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>真诚寻找另一半<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>完结撒花★★</p>
+]]></content>
+  </entry>
 </search>
