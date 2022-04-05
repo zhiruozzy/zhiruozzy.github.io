@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zhiruozzy.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":"truw","sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="内容转载自B站技术胖up主，我只是为了方便自己自查，侵删。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端学习路线">
+<meta property="og:url" content="http://zhiruozzy.cn/2022/04/05/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/index.html">
+<meta property="og:site_name" content="芷若">
+<meta property="og:description" content="内容转载自B站技术胖up主，我只是为了方便自己自查，侵删。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zhiruozzy.cn/img/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/web_atlas.jpg">
+<meta property="article:published_time" content="2022-04-05T06:33:28.000Z">
+<meta property="article:modified_time" content="2022-04-05T06:39:53.393Z">
+<meta property="article:author" content="芷若">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zhiruozzy.cn/img/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/web_atlas.jpg">
+
+<link rel="canonical" href="http://zhiruozzy.cn/2022/04/05/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>前端学习路线 | 芷若</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">芷若</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-主页">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-标签">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-目录">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>目录</a>
+
+  </li>
+        <li class="menu-item menu-item-归档">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+      
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/zhiruozzy" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhiruozzy.cn/2022/04/05/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="芷若">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷若">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端学习路线
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-05 14:33:28 / 修改时间：14:39:53" itemprop="dateCreated datePublished" datetime="2022-04-05T14:33:28+08:00">2022-04-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>内容转载自B站技术胖up主，我只是为了方便自己自查，侵删。</p>
+<span id="more"></span>
+
+<p>| up主视频说明：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ub4y1h7ZY">https://www.bilibili.com/video/BV1ub4y1h7ZY</a></p>
+<h2 id="前端学习路线思维导图"><a href="#前端学习路线思维导图" class="headerlink" title="前端学习路线思维导图"></a>前端学习路线思维导图</h2><p><img src="/../img/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/web_atlas.jpg" alt="web_atlas"></p>
+<h2 id="网络知识"><a href="#网络知识" class="headerlink" title="网络知识"></a>网络知识</h2><p>（Internet）</p>
+<ul>
+<li><ol>
+<li>网络工作原理</li>
+</ol>
+</li>
+<li>计算机网络原理：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xJ41137Q3">https://www.bilibili.com/video/BV1xJ41137Q3</a></li>
+<li><ol start="2">
+<li>什么是HTTP</li>
+</ol>
+</li>
+<li>HTTP协议详解：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1js411g7Fw">https://www.bilibili.com/video/BV1js411g7Fw</a></li>
+<li><ol start="3">
+<li>浏览器及工作方式</li>
+</ol>
+</li>
+<li>浏览器是如何运作的？：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1x54y1B7RE">https://www.bilibili.com/video/BV1x54y1B7RE</a></li>
+<li><ol start="4">
+<li>DNS 及其工作原理</li>
+</ol>
+</li>
+<li>DNS基本工作原理：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GW411j7Ts">https://www.bilibili.com/video/BV1GW411j7Ts</a></li>
+<li>直观DNS科普：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1F54y1R7BC">https://www.bilibili.com/video/BV1F54y1R7BC</a></li>
+<li><ol start="5">
+<li>域名相关知识</li>
+</ol>
+</li>
+<li>域名解析完整讲解：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1zA411x7Pj">https://www.bilibili.com/video/BV1zA411x7Pj</a></li>
+<li><ol start="6">
+<li>云服务相关知识</li>
+</ol>
+</li>
+<li>揭秘阿里云服务器：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Rt411u7k4">https://www.bilibili.com/video/BV1Rt411u7k4</a></li>
+</ul>
+<h2 id="超文本标记语言"><a href="#超文本标记语言" class="headerlink" title="超文本标记语言"></a>超文本标记语言</h2><p>（HTML）</p>
+<ul>
+<li><ol>
+<li>HTML基础知识学习</li>
+</ol>
+</li>
+<li>HTML全套基础教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11t411K74Q">https://www.bilibili.com/video/BV11t411K74Q</a></li>
+<li><ol start="2">
+<li>HTML 编写规则 和语义化写法</li>
+</ol>
+</li>
+<li>HTML 速成：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vs411M7aT">https://www.bilibili.com/video/BV1vs411M7aT</a></li>
+<li><ol start="3">
+<li>表单和验证</li>
+</ol>
+</li>
+<li>html5表单验证：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16K4y1Z7Gb">https://www.bilibili.com/video/BV16K4y1Z7Gb</a></li>
+<li><ol start="4">
+<li>公约和最佳实践方法</li>
+</ol>
+</li>
+<li>前端代码规范秘籍：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19P4y147Jz">https://www.bilibili.com/video/BV19P4y147Jz</a></li>
+<li><ol start="5">
+<li>SEO 基础知识</li>
+</ol>
+</li>
+<li>SEO优化学习教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1fE411J7ya">https://www.bilibili.com/video/BV1fE411J7ya</a></li>
+</ul>
+<h2 id="层叠样式表"><a href="#层叠样式表" class="headerlink" title="层叠样式表"></a>层叠样式表</h2><p>（CSS)</p>
+<ul>
+<li><ol>
+<li>CSS 基础知识学习</li>
+</ol>
+</li>
+<li>CSS3基础教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Bx411u7cS">https://www.bilibili.com/video/BV1Bx411u7cS</a></li>
+<li>CSS3全套教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1et411q74F">https://www.bilibili.com/video/BV1et411q74F</a></li>
+<li><ol start="2">
+<li>页面切图和布局实现</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>浮动布局</li>
+<li>浮动布局：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Zs411j7Z3">https://www.bilibili.com/video/BV1Zs411j7Z3</a></li>
+<li>定位布局</li>
+<li>CSS定位布局：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ni4y1g7tc">https://www.bilibili.com/video/BV1ni4y1g7tc</a></li>
+<li>Display</li>
+<li>display&amp;visibility：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1HJ411M7CM">https://www.bilibili.com/video/BV1HJ411M7CM</a></li>
+<li>盒子模型</li>
+<li>CSS盒子模型与定位：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1P7411G7BW">https://www.bilibili.com/video/BV1P7411G7BW</a></li>
+<li>Grid 布局</li>
+<li>如何用grid：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14C4y1W7oA">https://www.bilibili.com/video/BV14C4y1W7oA</a></li>
+<li>Flex 布局</li>
+<li>Flex伸缩布局：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1BJ41197XE">https://www.bilibili.com/video/BV1BJ41197XE</a></li>
+</ul>
+<ul>
+<li><ol start="3">
+<li>页面响应式布局设计</li>
+</ol>
+</li>
+<li>六个案例学会响应式布局：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ov411k7sm">https://www.bilibili.com/video/BV1ov411k7sm</a></li>
+</ul>
+<h2 id="浏览器脚本语言"><a href="#浏览器脚本语言" class="headerlink" title="浏览器脚本语言"></a>浏览器脚本语言</h2><p>(JavaScript)</p>
+<ul>
+<li><ol>
+<li>JavaScript基础语法和知识</li>
+</ol>
+</li>
+<li>JavaScript基础语法：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sy4y1C7ha">https://www.bilibili.com/video/BV1Sy4y1C7ha</a></li>
+<li><ol start="2">
+<li>使用JavaScript 操作 DOM元素</li>
+</ol>
+</li>
+<li>JS必会的DOM BOM操作：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1k4411w7sV">https://www.bilibili.com/video/BV1k4411w7sV</a></li>
+<li><ol start="3">
+<li>Ajax 异步请求相关知识学习</li>
+</ol>
+</li>
+<li>Ajax入门到精通：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1WC4y1b78y">https://www.bilibili.com/video/BV1WC4y1b78y</a></li>
+<li><ol start="4">
+<li>ES6 以上版本 的JavaScript</li>
+</ol>
+</li>
+<li>ES6-ES11新特性：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1uK411H7on">https://www.bilibili.com/video/BV1uK411H7on</a></li>
+</ul>
+<h2 id="版本控制管理系统"><a href="#版本控制管理系统" class="headerlink" title="版本控制管理系统"></a>版本控制管理系统</h2><p>Version Control System</p>
+<ul>
+<li><ol>
+<li>Git的基本用法</li>
+</ol>
+</li>
+<li>Git最新教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1FE411P7B3">https://www.bilibili.com/video/BV1FE411P7B3</a></li>
+<li><ol start="2">
+<li>相关平台&#x2F;软件的使用</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>GitHub</li>
+<li>十分钟学会Github：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1yo4y1d7UK">https://www.bilibili.com/video/BV1yo4y1d7UK</a></li>
+<li>GitLab</li>
+<li>gitlab使用说明：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11E411x7Uv">https://www.bilibili.com/video/BV11E411x7Uv</a></li>
+<li>Gitee</li>
+<li>这个看中文网址就可以了，目前B站还没有很好的视频介绍</li>
+</ul>
+<h2 id="网络安全相关知识"><a href="#网络安全相关知识" class="headerlink" title="网络安全相关知识"></a>网络安全相关知识</h2><p>Web Security Knowledge</p>
+<ul>
+<li><ol>
+<li>HTTPS 原理和使用</li>
+</ol>
+</li>
+<li>你连HTTPS原理都不懂：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Up4y1i7PG">https://www.bilibili.com/video/BV1Up4y1i7PG</a></li>
+<li><ol start="2">
+<li>CORS 跨域请求和安全知识</li>
+</ol>
+</li>
+<li>什么是CORS：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Kt411E76z">https://www.bilibili.com/video/BV1Kt411E76z</a></li>
+<li><ol start="3">
+<li>内容安全策略</li>
+</ol>
+</li>
+<li>网络渗透：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kh411W7Vv">https://www.bilibili.com/video/BV1kh411W7Vv</a></li>
+<li><ol start="4">
+<li>OWASP 安全风险知识</li>
+</ol>
+</li>
+<li>OWASP  TOP10：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ey4y1V7Jj">https://www.bilibili.com/video/BV1ey4y1V7Jj</a></li>
+</ul>
+<h2 id="包管理工具"><a href="#包管理工具" class="headerlink" title="包管理工具"></a>包管理工具</h2><p>Package Managers</p>
+<ul>
+<li><ol>
+<li>npm</li>
+</ol>
+</li>
+<li>包管理工具：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Dv411W7XP">https://www.bilibili.com/video/BV1Dv411W7XP</a></li>
+<li><ol start="2">
+<li>yarn</li>
+</ol>
+</li>
+<li>Yarn入门：<a target="_blank" rel="noopener" href="https://www.imooc.com/learn/766">https://www.imooc.com/learn/766</a>  (B站没有，推荐这个免费)</li>
+</ul>
+<h2 id="CSS-预处理-语言"><a href="#CSS-预处理-语言" class="headerlink" title="CSS 预处理 语言"></a>CSS 预处理 语言</h2><p>CSS Preprocessors</p>
+<ul>
+<li><ol>
+<li>Sass</li>
+</ol>
+</li>
+<li>SCSS从入门到实战：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Zg4y1v75U">https://www.bilibili.com/video/BV1Zg4y1v75U</a></li>
+<li><ol start="2">
+<li>PostCSS</li>
+</ol>
+</li>
+<li>B站没太好的视频，建议买书《深入PostCSS Web设计》</li>
+<li><ol start="3">
+<li>Less</li>
+</ol>
+</li>
+<li>前端less教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1YW411T7vd">https://www.bilibili.com/video/BV1YW411T7vd</a></li>
+</ul>
+<h2 id="构建工具"><a href="#构建工具" class="headerlink" title="构建工具"></a>构建工具</h2><p>Build Tools</p>
+<ul>
+<li><ol>
+<li>任务执行命令<br>[Task Runners]</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>npm scripts</li>
+<li>npm包管理应用：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Dv411W7XP">https://www.bilibili.com/video/BV1Dv411W7XP</a></li>
+<li>Gulp</li>
+<li>Gulp入门：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1yA411s72G">https://www.bilibili.com/video/BV1yA411s72G</a></li>
+</ul>
+<ul>
+<li><ol start="2">
+<li>打包工具</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>Webpack</li>
+<li>Webpack从入门到精通：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1e7411j7T5">https://www.bilibili.com/video/BV1e7411j7T5</a></li>
+<li>Parcel</li>
+<li>Parcel初体验：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Pa4y147Kf">https://www.bilibili.com/video/BV1Pa4y147Kf</a></li>
+</ul>
+<ul>
+<li><ol start="3">
+<li>代码格式化工具</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>Prettier</li>
+<li>Prettier和ESLint使用：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV183411r7YK">https://www.bilibili.com/video/BV183411r7YK</a></li>
+<li>ESLint</li>
+<li>ESLint基础入门：<a target="_blank" rel="noopener" href="https://space.bilibili.com/390120104/search/video?keyword=ESLint">https://space.bilibili.com/390120104/search/video?keyword=ESLint</a></li>
+</ul>
+<h2 id="三大前端框架"><a href="#三大前端框架" class="headerlink" title="三大前端框架"></a>三大前端框架</h2><p>Web Framework</p>
+<ul>
+<li>React.js</li>
+<li>React基础视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g4411i7po">https://www.bilibili.com/video/BV1g4411i7po</a></li>
+<li>React全家桶：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wy4y1D7JT">https://www.bilibili.com/video/BV1wy4y1D7JT</a></li>
+<li>React实战博客：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1CJ411377B">https://www.bilibili.com/video/BV1CJ411377B</a></li>
+<li>React商城实战：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i5411c7xp">https://www.bilibili.com/video/BV1i5411c7xp</a></li>
+<li>Vue.js</li>
+<li>Vue2全家桶：<a target="_blank" rel="noopener" href="https://www.jspang.com/detailed?id=57">https://www.jspang.com/detailed?id=57</a></li>
+<li>Vue3全家桶：<a target="_blank" rel="noopener" href="https://www.jspang.com/detailed?id=67">https://www.jspang.com/detailed?id=67</a></li>
+<li>vuejs从入门到精通：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Zy4y1K7SH">https://www.bilibili.com/video/BV1Zy4y1K7SH</a></li>
+<li>Angular</li>
+<li>Angular基础：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Wx411R7qt">https://www.bilibili.com/video/BV1Wx411R7qt</a></li>
+</ul>
+<h2 id="Web-组件化编程"><a href="#Web-组件化编程" class="headerlink" title="Web 组件化编程"></a>Web 组件化编程</h2><p>Web Components</p>
+<ul>
+<li>HTML Templates</li>
+<li>Custom Elements</li>
+<li>Shadow DOM</li>
+<li>概要: 此部分内容没有找到合适视频</li>
+</ul>
+<h2 id="CSS-相关框架"><a href="#CSS-相关框架" class="headerlink" title="CSS 相关框架"></a>CSS 相关框架</h2><p>CSS Frameworks</p>
+<ul>
+<li>BootStrap</li>
+<li>一周学会BootStrap：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Lx411v73k">https://www.bilibili.com/video/BV1Lx411v73k</a></li>
+<li>Material UI</li>
+<li>Material  UI入门教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12J411s75b">https://www.bilibili.com/video/BV12J411s75b</a></li>
+<li>Materialize CSS</li>
+<li>Materialize CSS Crash Course：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1gx411h7Y5">https://www.bilibili.com/video/BV1gx411h7Y5</a></li>
+<li>ReactStrap</li>
+</ul>
+<h2 id="JavaScript-语法糖"><a href="#JavaScript-语法糖" class="headerlink" title="JavaScript 语法糖"></a>JavaScript 语法糖</h2><p>Type Checkers</p>
+<ul>
+<li>TypeScript</li>
+<li>TypeScript从入门到精通：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1qV41167VD">https://www.bilibili.com/video/BV1qV41167VD</a></li>
+<li>Flow</li>
+</ul>
+<h2 id="服务端渲染"><a href="#服务端渲染" class="headerlink" title="服务端渲染"></a>服务端渲染</h2><p>Server Side  Rendering （SSR）</p>
+<ul>
+<li>React.js</li>
+</ul>
+<ul>
+<li>Next.js</li>
+<li>Next.js入门教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV13441117KK">https://www.bilibili.com/video/BV13441117KK</a></li>
+<li>GatsbyJS</li>
+<li>GatsbyJS 实战：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i4411T7AR">https://www.bilibili.com/video/BV1i4411T7AR</a> （英文）</li>
+</ul>
+<ul>
+<li>Vue.js</li>
+</ul>
+<ul>
+<li>Nuxt.js</li>
+<li>Nuxt.js入门：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Xt41117Kg">https://www.bilibili.com/video/BV1Xt41117Kg</a></li>
+</ul>
+<ul>
+<li>Angular</li>
+</ul>
+<ul>
+<li>Universal</li>
+</ul>
+<h2 id="图形化编程"><a href="#图形化编程" class="headerlink" title="图形化编程"></a>图形化编程</h2><p>GraphQL</p>
+<ul>
+<li>Cocos Creator</li>
+<li>Cocos 图形游戏开发：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1sA411Y7x4">https://www.bilibili.com/video/BV1sA411Y7x4</a></li>
+<li>Three.js </li>
+<li>Three.js基础教程-英文：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ks411W78i">https://www.bilibili.com/video/BV1ks411W78i</a></li>
+<li>Three.js教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1va4y1p7QB">https://www.bilibili.com/video/BV1va4y1p7QB</a></li>
+</ul>
+<h2 id="静态站点生成器"><a href="#静态站点生成器" class="headerlink" title="静态站点生成器"></a>静态站点生成器</h2><p>Static Site Generators</p>
+<ul>
+<li>Next.js</li>
+<li>Next.js入门教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV13441117KK">https://www.bilibili.com/video/BV13441117KK</a></li>
+<li>GatsbyJS</li>
+<li>GatsbyJS 实战：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1i4411T7AR">https://www.bilibili.com/video/BV1i4411T7AR</a> （英文）</li>
+<li>Nuxt.js</li>
+<li>Nuxt.js入门：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Xt41117Kg">https://www.bilibili.com/video/BV1Xt41117Kg</a></li>
+<li>Vuepress</li>
+<li>Vuepress入门到精通：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1vb411m7NY">https://www.bilibili.com/video/BV1vb411m7NY</a></li>
+<li>Hugo</li>
+<li>10分钟搭建个人网站：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1x64y117PX">https://www.bilibili.com/video/BV1x64y117PX</a></li>
+</ul>
+<h2 id="移动App开发"><a href="#移动App开发" class="headerlink" title="移动App开发"></a>移动App开发</h2><p>Mobile Applications</p>
+<ul>
+<li>React  Native</li>
+<li>ReactNatvie基础：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eg4y16735">https://www.bilibili.com/video/BV1Eg4y16735</a></li>
+<li>ReactNatvie实战：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15K411s75p">https://www.bilibili.com/video/BV15K411s75p</a></li>
+<li>UniApp</li>
+<li>Uni-App从入门到实战：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1BJ411W7pX">https://www.bilibili.com/video/BV1BJ411W7pX</a></li>
+<li>Uni-App美团外卖：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Zt4y117RR">https://www.bilibili.com/video/BV1Zt4y117RR</a></li>
+<li>Flutter</li>
+<li>Flutter基础：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15t411U7yf">https://www.bilibili.com/video/BV15t411U7yf</a></li>
+<li>Flutter实战：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kt411B7mu">https://www.bilibili.com/video/BV1kt411B7mu</a></li>
+<li>Ionic</li>
+<li>Ionic入门：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ub41117q5">https://www.bilibili.com/video/BV1Ub41117q5</a></li>
+</ul>
+<h2 id="桌面应用开发"><a href="#桌面应用开发" class="headerlink" title="桌面应用开发"></a>桌面应用开发</h2><p>Desktop Applications</p>
+<ul>
+<li>Electron</li>
+<li>Electron入门：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1QB4y1F722">https://www.bilibili.com/video/BV1QB4y1F722</a></li>
+<li>Electron基础：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV177411s7Lt">https://www.bilibili.com/video/BV177411s7Lt</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/05/HTML%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/" rel="prev" title="HTML表单验证">
+      <i class="fa fa-chevron-left"></i> HTML表单验证
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/02/25/hello-world/" rel="next" title="Hello World">
+      Hello World <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE"><span class="nav-number">1.</span> <span class="nav-text">前端学习路线思维导图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86"><span class="nav-number">2.</span> <span class="nav-text">网络知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80"><span class="nav-number">3.</span> <span class="nav-text">超文本标记语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%82%E5%8F%A0%E6%A0%B7%E5%BC%8F%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text">层叠样式表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80"><span class="nav-number">5.</span> <span class="nav-text">浏览器脚本语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">6.</span> <span class="nav-text">版本控制管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="nav-number">7.</span> <span class="nav-text">网络安全相关知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-number">8.</span> <span class="nav-text">包管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E9%A2%84%E5%A4%84%E7%90%86-%E8%AF%AD%E8%A8%80"><span class="nav-number">9.</span> <span class="nav-text">CSS 预处理 语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7"><span class="nav-number">10.</span> <span class="nav-text">构建工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6"><span class="nav-number">11.</span> <span class="nav-text">三大前端框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-%E7%BB%84%E4%BB%B6%E5%8C%96%E7%BC%96%E7%A8%8B"><span class="nav-number">12.</span> <span class="nav-text">Web 组件化编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E7%9B%B8%E5%85%B3%E6%A1%86%E6%9E%B6"><span class="nav-number">13.</span> <span class="nav-text">CSS 相关框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-%E8%AF%AD%E6%B3%95%E7%B3%96"><span class="nav-number">14.</span> <span class="nav-text">JavaScript 语法糖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93"><span class="nav-number">15.</span> <span class="nav-text">服务端渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%BC%96%E7%A8%8B"><span class="nav-number">16.</span> <span class="nav-text">图形化编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-number">17.</span> <span class="nav-text">静态站点生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8App%E5%BC%80%E5%8F%91"><span class="nav-number">18.</span> <span class="nav-text">移动App开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"><span class="nav-number">19.</span> <span class="nav-text">桌面应用开发</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="芷若"
+      src="/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">芷若</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhiruo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhiruo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">陕ICP备2022001874号 </a>
+      <img src="http://www.beian.gov.cn/portal/download" style="display: inline-block;">
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="芷若"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">芷若</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">87k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:19</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/koharu.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>
