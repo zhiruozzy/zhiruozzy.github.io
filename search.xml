@@ -1080,7 +1080,8 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">display</span>: flex; </span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>:<span class="number">800px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: <span class="number">#74c0fc</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    </span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">div</span> <span class="selector-tag">span</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">150px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: <span class="number">#1c7ed6</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>初始界面：</strong></p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323213110551.png" alt="image-20220323213110551"></p>
+<img src="../img/flex布局/image-20220323213110551.png" alt="image-20220323213110551" style="zoom: 25%;" />
+
 <ul>
 <li><p>设置主轴方向：flex-direction</p>
 <table>
@@ -1141,46 +1142,64 @@
 </ul>
 <h2 id="父项属性"><a href="#父项属性" class="headerlink" title="父项属性"></a>父项属性</h2><h3 id="设置主轴的方向：flex-direction"><a href="#设置主轴的方向：flex-direction" class="headerlink" title="设置主轴的方向：flex-direction"></a>设置主轴的方向：flex-direction</h3><p>子元素跟着主轴来排列</p>
 <p><code>flex-direction:row; </code> 默认，子元素从左到右排列</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323213728101.png" alt="image-20220323213728101"></p>
+<img src="../img/flex布局/image-20220323213728101.png" alt="image-20220323213728101" style="zoom: 25%;" />
+
 <p><code>flex-direction:row-reverse;</code>   子元素从右到左排列</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323213753046.png" alt="image-20220323213753046"></p>
+<img src="../img/flex布局/image-20220323213753046.png" alt="image-20220323213753046" style="zoom:25%;" />
+
 <p><code>flex-direction:column; </code> 子元素从上到下排列</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323213813801.png" alt="image-20220323213813801"><code>flex-direction:column-reverse；</code>子元素从下向上排列</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323213905360.png" alt="image-20220323213905360"></p>
+<img src="../img/flex布局/image-20220323213813801.png" alt="image-20220323213813801" style="zoom:25%;" />
+
+<p><code>flex-direction:column-reverse；</code>子元素从下向上排列</p>
+<img src="../img/flex布局/image-20220323213905360.png" alt="image-20220323213905360" style="zoom:25%;" />
+
 <h3 id="设置主轴上子元素的排列方式-justify-content"><a href="#设置主轴上子元素的排列方式-justify-content" class="headerlink" title="设置主轴上子元素的排列方式: justify-content"></a>设置主轴上子元素的排列方式: justify-content</h3><p><code>justify-content ：flex-start</code></p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323214852302.png" alt="image-20220323214852302"><code>justify-content ：flex-end</code></p>
+<img src="../img/flex布局/image-20220323214852302.png" alt="image-20220323214852302" style="zoom:25%;" />
+
+<p><code>justify-content ：flex-end</code></p>
 <p>这里注意区分与<code>flex-direction:row-reverse;</code>的区别，这个的元素依旧是从左向右的方向的，只不过靠右紧贴</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323215031321.png" alt="image-20220323215031321"></p>
+<img src="../img/flex布局/image-20220323215031321.png" alt="image-20220323215031321" style="zoom:25%;" />
+
 <p><code>justify-content :center</code></p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323215241090.png" alt="image-20220323215241090"></p>
+<img src="../img/flex布局/image-20220323215241090.png" alt="image-20220323215241090" style="zoom:25%;" />
+
 <p><code>justify-content ：space-around</code></p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323215351121.png" alt="image-20220323215351121"></p>
+<img src="../img/flex布局/image-20220323215351121.png" alt="image-20220323215351121" style="zoom:25%;" />
+
 <p><code>justify-content ：space-between</code></p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323215414603.png" alt="image-20220323215414603"></p>
+<img src="../img/flex布局/image-20220323215414603.png" alt="image-20220323215414603" style="zoom:25%;" />
+
 <h3 id="设置侧轴上的子元素的排列方式：align-items（单行）"><a href="#设置侧轴上的子元素的排列方式：align-items（单行）" class="headerlink" title="设置侧轴上的子元素的排列方式：align-items（单行）"></a>设置侧轴上的子元素的排列方式：align-items（单行）</h3><p><strong>注意</strong>，该属性只能在子元素只有单行的时候才可以</p>
 <p>控制子元素在侧轴（默认是y轴）上的排列方式</p>
 <p><code>align-items:flex-start</code>:默认值，从上到下排列</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323220839174.png" alt="image-20220323220839174"></p>
+<img src="../img/flex布局/image-20220323220839174.png" alt="image-20220323220839174" style="zoom:25%;" />
+
 <p><code>align-items:center</code>:居中</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323221003410.png" alt="image-20220323221003410"></p>
+<img src="../img/flex布局/image-20220323221003410.png" alt="image-20220323221003410" style="zoom:25%;" />
+
 <p><code>align-items:flex-end</code>:从下到上排列</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323221028283.png" alt="image-20220323221028283"></p>
+<img src="../img/flex布局/image-20220323221028283.png" alt="image-20220323221028283" style="zoom:25%;" />
+
 <h3 id="设置侧轴上的子元素的排列方式：align-content（多行）"><a href="#设置侧轴上的子元素的排列方式：align-content（多行）" class="headerlink" title="设置侧轴上的子元素的排列方式：align-content（多行）"></a>设置侧轴上的子元素的排列方式：align-content（多行）</h3><p><strong>注意</strong>：该属性只有在子元素换行的时候才可以使用，即使用该属性首先要<code>flex-wrap:wrap</code>.</p>
 <p><code>align-content:flex-start;</code>默认值，从侧轴的头部开始排列</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323222102413.png" alt="image-20220323222102413"></p>
+<img src="../img/flex布局/image-20220323222102413.png" alt="image-20220323222102413" style="zoom:33%;" />
+
 <p><code>align-content:center;</code>默认值，从侧轴的中间显示</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323222144296.png" alt="image-20220323222144296"></p>
+<img src="../img/flex布局/image-20220323222144296.png" alt="image-20220323222144296" style="zoom: 33%;" />
+
 <p><code>align-content:space-around;</code>子元素在侧轴评分剩余元素</p>
 <p><code>align-content:space-between;</code>子元素在侧轴先分布在两头，在平分剩余空间</p>
 <p><code>align-content:stretch</code>:子元素不设置高度，子严肃的高度评分父元素高度</p>
 <h3 id="设置子元素是否换行-：flex-wrap"><a href="#设置子元素是否换行-：flex-wrap" class="headerlink" title="设置子元素是否换行 ：flex-wrap"></a>设置子元素是否换行 ：flex-wrap</h3><p>在演示这个属性，为了清楚，我给子元素增加了左外边距</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323215951913.png" alt="image-20220323215951913"></p>
+<img src="../img/flex布局/image-20220323215951913.png" alt="image-20220323215951913" style="zoom:25%;" />
+
 <p>我又增加了3个子元素</p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323220019157.png" alt="image-20220323220019157"></p>
+<img src="../img/flex布局/image-20220323220019157.png" alt="image-20220323220019157" style="zoom:25%;" />
+
 <p><code>flex-wrap:nowrap</code>(默认不换行，如果父元素一行内子元素放不下，会自动缩小子元素的宽度)</p>
 <p>可以发现，增加了子元素之后一行明显放不下了，所以系统默认将子元素的宽度缩小了。</p>
 <p><code>flex-wrap:wrap</code></p>
-<p><img src="/../img/flex%E5%B8%83%E5%B1%80/image-20220323220132789.png" alt="image-20220323220132789"></p>
+<img src="../img/flex布局/image-20220323220132789.png" alt="image-20220323220132789" style="zoom:33%;" />
 ]]></content>
   </entry>
   <entry>
