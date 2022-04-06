@@ -1185,21 +1185,21 @@
 <img src="../img/flex布局/image-20220323222102413.png" alt="image-20220323222102413" style="zoom:33%;" />
 
 <p><code>align-content:center;</code>默认值，从侧轴的中间显示</p>
-<img src="../img/flex布局/image-20220323222144296.png" alt="image-20220323222144296" style="zoom: 33%;" />
+<img src="../img/flex布局/image-20220323222144296.png" alt="image-20220323222144296" style="zoom: 50%;" />
 
 <p><code>align-content:space-around;</code>子元素在侧轴评分剩余元素</p>
 <p><code>align-content:space-between;</code>子元素在侧轴先分布在两头，在平分剩余空间</p>
 <p><code>align-content:stretch</code>:子元素不设置高度，子严肃的高度评分父元素高度</p>
 <h3 id="设置子元素是否换行-：flex-wrap"><a href="#设置子元素是否换行-：flex-wrap" class="headerlink" title="设置子元素是否换行 ：flex-wrap"></a>设置子元素是否换行 ：flex-wrap</h3><p>在演示这个属性，为了清楚，我给子元素增加了左外边距</p>
-<img src="../img/flex布局/image-20220323215951913.png" alt="image-20220323215951913" style="zoom:25%;" />
+<img src="../img/flex布局/image-20220323215951913.png" alt="image-20220323215951913" style="zoom: 50%;" />
 
 <p>我又增加了3个子元素</p>
-<img src="../img/flex布局/image-20220323220019157.png" alt="image-20220323220019157" style="zoom:25%;" />
+<img src="../img/flex布局/image-20220323220019157.png" alt="image-20220323220019157" style="zoom: 50%;" />
 
 <p><code>flex-wrap:nowrap</code>(默认不换行，如果父元素一行内子元素放不下，会自动缩小子元素的宽度)</p>
 <p>可以发现，增加了子元素之后一行明显放不下了，所以系统默认将子元素的宽度缩小了。</p>
 <p><code>flex-wrap:wrap</code></p>
-<img src="../img/flex布局/image-20220323220132789.png" alt="image-20220323220132789" style="zoom:33%;" />
+<img src="../img/flex布局/image-20220323220132789.png" alt="image-20220323220132789" style="zoom: 50%;" />
 ]]></content>
   </entry>
   <entry>
