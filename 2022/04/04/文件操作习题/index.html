@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"zhiruozzy.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":"truw","sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="task2思路： 用一个prev记录之前的字符，用cur记录当前的字符 先读入一个字符  如果这个字符是换行，则line++，将换行符赋值给prev，再读取一个字符赋值给cur. 如果这个字符不是换行，则count++，并把cur赋值给prev，再读取一个字符赋值给cur。  进入循环 如果cur不是换行符，则count++，并把cur赋值给prev,再读入一个字符 如果cur是换行符，  如">
+  <meta name="description" content="文件操作小作业解答，真就是敲代码两小时，测试一整天😓">
 <meta property="og:type" content="article">
-<meta property="og:title" content="文件操作习题">
+<meta property="og:title" content="文件操作小作业">
 <meta property="og:url" content="http://zhiruozzy.cn/2022/04/04/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B9%A0%E9%A2%98/index.html">
 <meta property="og:site_name" content="芷若">
-<meta property="og:description" content="task2思路： 用一个prev记录之前的字符，用cur记录当前的字符 先读入一个字符  如果这个字符是换行，则line++，将换行符赋值给prev，再读取一个字符赋值给cur. 如果这个字符不是换行，则count++，并把cur赋值给prev，再读取一个字符赋值给cur。  进入循环 如果cur不是换行符，则count++，并把cur赋值给prev,再读入一个字符 如果cur是换行符，  如">
+<meta property="og:description" content="文件操作小作业解答，真就是敲代码两小时，测试一整天😓">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-04T02:07:14.000Z">
-<meta property="article:modified_time" content="2022-04-05T03:53:55.269Z">
+<meta property="article:modified_time" content="2022-04-10T11:08:16.030Z">
 <meta property="article:author" content="芷若">
 <meta name="twitter:card" content="summary">
 
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>文件操作习题 | 芷若</title>
+  <title>文件操作小作业 | 芷若</title>
   
 
 
@@ -209,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          文件操作习题
+          文件操作小作业
         </h1>
 
         <div class="post-meta">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-05 11:53:55" itemprop="dateModified" datetime="2022-04-05T11:53:55+08:00">2022-04-05</time>
+                <time title="修改时间：2022-04-10 19:08:16" itemprop="dateModified" datetime="2022-04-10T19:08:16+08:00">2022-04-10</time>
               </span>
 
           <br>
@@ -235,14 +235,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>313</span>
+              <span>4.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -254,25 +254,161 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
+        <p>文件操作小作业解答，真就是敲代码两小时，测试一整天😓</p>
+<span id="more"></span>
 
-<p>task2思路：</p>
-<p>用一个prev记录之前的字符，用cur记录当前的字符</p>
-<p>先读入一个字符</p>
+<h3 id="商品管理系统题目"><a href="#商品管理系统题目" class="headerlink" title="商品管理系统题目"></a>商品管理系统题目</h3><p><strong>练习目的</strong>：随机存取文件的建立、读取、记录删除和更新操作。</p>
+<p><strong>问题描述：</strong>有一家商店，为了查看店里有些什么商品、数量有多少以及每件商品的价格如何，需要编制一份商品目录。每种商品都包括4种属性：商品ID、商品名、数量与价格。商品ID为0—99之间的整数，每种商品的ID号互不相同，所以这里默认只有100种商品；商品名只包含大小写字母与空格，长度不超过35个字符；商品数量的范围是0—99999；商品的价格为一个非负的浮点数。</p>
+<p>你要帮助商店设计一个二进制文件，存储该商店的所有商品情况。下表为该商店商品清单的样例。</p>
+<table>
+<thead>
+<tr>
+<th>记录号（商品ID）</th>
+<th>商品名</th>
+<th>数量</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5</td>
+<td>Lamp</td>
+<td>23</td>
+<td>5.99</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Screwdriver</td>
+<td>9</td>
+<td>7.99</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Hammer</td>
+<td>10</td>
+<td>12.00</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Bicycle</td>
+<td>5</td>
+<td>100.99</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Optical mouse</td>
+<td>21</td>
+<td>11.50</td>
+</tr>
+<tr>
+<td>25</td>
+<td>keyboard</td>
+<td>32</td>
+<td>59.99</td>
+</tr>
+</tbody></table>
+<p>要求：</p>
+<p>1.设计一个结构，来表示一件商品。</p>
+<p>2.创建名为“commodity.dat”的二进制文件，存储该商店商品信息，初始化为100条空记录，用商品ID作为记录号。</p>
+<p>3.实现对“commodity.dat”中商品信息的初始化录入。</p>
+<p>4.根据商品记录号，实现对“commodity.dat”中商品信息的更新，其中记录号不可以更新，其他三项信息均可更新。</p>
+<p>5.根据商品记录号，实现对“commodity.dat”中商品信息的删除。</p>
+<p>6.实现对“commodity.dat”中全部商品信息的输出。</p>
+<p>7.上述2~6项中对文件的初始化、单条商品记录的删除和更新、文件信息的输出这些功能，都分别定义成单独的函数。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>我把容易出错的地方写了出来，就不附完整代码了，学术诚信哈~</p>
+<h3 id="变量的设置"><a href="#变量的设置" class="headerlink" title="变量的设置"></a>变量的设置</h3><p>因为我想将（数组置零，将文件中的内容拷贝到数组中，移动文件指针）这一系列的操作封装成一个函数，因为每个操作前面都要用到，而在该函数内的操作可以让其他函数也受到影响，所以我将arr,brr，fp文件指针都设成了全局变量，会好操作一点。免得传参很麻烦。</p>
+<h3 id="打开文件（在每次选择之后都要调用这个函数）"><a href="#打开文件（在每次选择之后都要调用这个函数）" class="headerlink" title="打开文件（在每次选择之后都要调用这个函数）"></a>打开文件（在每次选择之后都要调用这个函数）</h3><p>参数num：记录是选择的哪一个</p>
 <ul>
-<li>如果这个字符是换行，则line++，将换行符赋值给prev，再读取一个字符赋值给cur.</li>
-<li>如果这个字符不是换行，则count++，并把cur赋值给prev，再读取一个字符赋值给cur。</li>
+<li>如果num&#x3D;&#x3D;1，即为创建一百条空记录<ol>
+<li>如果没有commodity.dat文件，即rb+返回的是NULL，则以wb+的方式创建一个</li>
+<li>如果有，那就没啥事了</li>
+</ol>
+</li>
+<li>如果num！&#x3D;1,则是对商品信息进行管理<ol>
+<li>如果commodity.dat文件，即rb+返回的是NULL，则强制退出</li>
+<li>如果有，那就操作就行了</li>
+</ol>
+</li>
 </ul>
-<p>进入循环</p>
-<p>如果cur不是换行符，则count++，并把cur赋值给prev,再读入一个字符</p>
-<p>如果cur是换行符，</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="type">void</span> <span class="title function_">open</span><span class="params">(<span class="type">int</span> num)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ((fp = fopen(<span class="string">&quot;commodity.dat&quot;</span>, <span class="string">&quot;rb+&quot;</span>)) == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            fp = fopen(<span class="string">&quot;commodity.dat&quot;</span>, <span class="string">&quot;wb +&quot;</span>);</span><br><span class="line">            fp = fopen(<span class="string">&quot;commodity.dat&quot;</span>, <span class="string">&quot;rb+&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;无法打开文件。(请先创建文件再处理商品信息)&quot;</span>);</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">0</span>); <span class="comment">//退出程序</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="前置操作"><a href="#前置操作" class="headerlink" title="前置操作"></a>前置操作</h3><ul>
+<li>结构体数组arr置零</li>
+<li>rewind将指针指向开头</li>
+<li>用fread将文件中的内容读入到arr中</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">prev</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//数组置零</span></span><br><span class="line">    <span class="built_in">memset</span>(arr, <span class="number">0</span>, <span class="keyword">sizeof</span>(arr));</span><br><span class="line">    <span class="comment">//文件指针回到开头</span></span><br><span class="line">    rewind(fp);</span><br><span class="line">    <span class="comment">//将文件中的内容读取到数组中去</span></span><br><span class="line">    fread(arr, <span class="keyword">sizeof</span>(product), <span class="number">100</span>, fp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建一百条空记录"><a href="#创建一百条空记录" class="headerlink" title="创建一百条空记录"></a>创建一百条空记录</h3><ul>
+<li><p>arr数组置零</p>
+</li>
+<li><p>for循环遍历将arr[i].id赋值，即初始化序号id</p>
+</li>
+<li><p>rewind将fp文件指针指向文件开头</p>
+</li>
+<li><p>fwrite将arr的内容写入文件</p>
+</li>
+<li><p>fwrite函数</p>
+<blockquote>
+<p>size_t <code> </code>fwrite<code>(</code>const<code> </code>void<code> </code>*ptr, <code>size_t  size, </code>size_t<code> </code>nmemb, <code>FILE</code> stream)</p>
+<p>第一个参数是要写入数据的头指针</p>
+<p>第二个参数是每一个写入元素的大小</p>
+<p>第三个是写入这样的元素的个数</p>
+<p>第四个是文件指针，即你要往哪里写</p>
+<p>所以针对本题我们应该是，头指针也就是数组名，写入元素的大小是sizeof(product),写入的个数是100，文件指针就是fp</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">init</span><span class="params">(FILE* fp)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">memset</span>(arr, <span class="number">0</span>, <span class="keyword">sizeof</span>(arr));</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        arr[i].id = i;</span><br><span class="line">    &#125;</span><br><span class="line">    rewind(fp);</span><br><span class="line">    fwrite(arr, <span class="keyword">sizeof</span>(product), <span class="number">100</span>, fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;100条空记录创建完毕\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="清屏操作"><a href="#清屏操作" class="headerlink" title="清屏操作"></a>清屏操作</h3><p><code>system(&quot;pause&quot;);</code>：可以让屏幕显示“请按任意键继续…”</p>
+<p><code>system(&quot;cls&quot;);</code>：清屏</p>
+<p>该函数用于两个功能之间切换的过渡</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">refresh</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    system(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出所有已经录入的商品"><a href="#输出所有已经录入的商品" class="headerlink" title="输出所有已经录入的商品"></a>输出所有已经录入的商品</h3><p>注意点：</p>
 <ul>
-<li><p>如果prev也是换行符，则说明本行是空行，则minline&#x3D;0。</p>
+<li>这里就不能将文件中的信息读入arr中了，因为这样会让arr原来存储的内容丢失，所以这里用brr数组代替，然后遍历数组即可。</li>
+<li>如何判断本id号有没有存储信息呢？我用的是strlen判断是否长度为0，如果长度为0，则说明没有存储信息。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">showAll</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">memset</span>(brr, <span class="number">0</span>, <span class="keyword">sizeof</span>(brr));</span><br><span class="line">    rewind(fp);</span><br><span class="line">    fread(brr, <span class="keyword">sizeof</span>(product), <span class="number">100</span>, fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;商品信息如下：\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;记录号（商品ID）  商品名\t\t\t\t数量\t价格\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">strlen</span>(brr[i].name) != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%-10d\t  %-35s\t%-4d\t%-4.2lf\n&quot;</span>,</span><br><span class="line">                brr[i].id, brr[i].name, brr[i].num, brr[i].price);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出指定id号的商品"><a href="#输出指定id号的商品" class="headerlink" title="输出指定id号的商品"></a>输出指定id号的商品</h3><p>这个没啥注意的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">showPart</span><span class="params">(<span class="type">int</span> id)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;记录号（商品ID）  商品名\t\t\t\t数量\t价格\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%-10d\t  %-35s\t%-4d\t%-4.2lf\n&quot;</span>,</span><br><span class="line">        id, arr[id].name, arr[id].num, arr[id].price);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="增添商品信息"><a href="#增添商品信息" class="headerlink" title="增添商品信息"></a>增添商品信息</h3><ul>
+<li>前置操作</li>
+<li>用while（1）死循环，直到用户输入-1即可break退出循环</li>
+<li>循环内部重点处理id的内容，由于用户有可能输入一串字母，或是不在1-100范围内的数字，所以这里我先以字符串的形式读入，在用atoi函数将其转化为整数，再进行判断。</li>
+<li>fewind将文件指针指向开头</li>
+<li>fwrite将arr写入文件中</li>
+<li>输出商品的信息（showAll）</li>
+<li>refresh刷新界面</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">add</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    prev();</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    A:</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入商品信息[ID为-1代表输入结束]：\n商品ID:&quot;</span>);</span><br><span class="line">        <span class="type">char</span> ch[<span class="number">10000</span>];</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot; %s&quot;</span>, ch);</span><br><span class="line">        <span class="type">int</span> id = atoi(ch);</span><br><span class="line">        <span class="keyword">if</span> (id == <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            system(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (id &gt; <span class="number">100</span> || id &lt;= <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;ID的取值范围是1-100，请输入合法的ID值!\n\n&quot;</span>);</span><br><span class="line">            <span class="keyword">goto</span> A;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;商品名：&quot;</span>);</span><br><span class="line">        getchar();</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%[^\n]&quot;</span>, arr[id].name);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;数量：&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;arr[id].num);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;价格：&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>, &amp;arr[id].price);</span><br><span class="line">    &#125;</span><br><span class="line">    rewind(fp);</span><br><span class="line">    fwrite(arr, <span class="keyword">sizeof</span>(product), <span class="number">100</span>, fp);</span><br><span class="line">    <span class="comment">//输出刚刚记录的商品</span></span><br><span class="line">    showAll();</span><br><span class="line">    refresh();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新商品信息"><a href="#更新商品信息" class="headerlink" title="更新商品信息"></a>更新商品信息</h3><ul>
+<li><p>前置操作</p>
 </li>
-<li><p>如果prev不是换行符，则说明换行了，则比较count与minline，count与maxline。</p>
+<li><p>用while死循环，直到用户-1</p>
+<ul>
+<li><p>循环里要注意的：1.id号的读入方式（和add里面是一样的）2。当更新的时候，如果输入的是回车，就表示该项不更新，跳过.核心的代码就是下面这点</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;商品名：&quot;</span>);</span><br><span class="line">getchar();</span><br><span class="line"><span class="type">char</span> str[<span class="number">1000</span>];</span><br><span class="line">gets(str);</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">strcmp</span>(str, <span class="string">&quot;\0&quot;</span>) == <span class="number">0</span>);</span><br><span class="line"><span class="keyword">else</span> <span class="built_in">strcpy</span>(arr[id].name, str);</span><br><span class="line">    </span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;数量:&quot;</span>);</span><br><span class="line">gets(str);</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">strcmp</span>(str, <span class="string">&quot;\0&quot;</span>) == <span class="number">0</span>);</span><br><span class="line"><span class="keyword">else</span> arr[id].num = atoi(str);</span><br><span class="line">    </span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;价格:&quot;</span>);</span><br><span class="line">gets(str);</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">strcmp</span>(str, <span class="string">&quot;\0&quot;</span>) == <span class="number">0</span>);</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    arr[id].price = atof(str);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>fewind将文件指针指向开头</p>
+</li>
+<li><p>fwrite将arr写入文件中</p>
 </li>
 </ul>
-<p>line++，count置零，将换行符赋值给prev，再读取一个字符赋值给cur</p>
+<h3 id="删除商品记录"><a href="#删除商品记录" class="headerlink" title="删除商品记录"></a>删除商品记录</h3><ul>
+<li><p>前置操作</p>
+</li>
+<li><p>用while死循环，直到用户-1</p>
+<ul>
+<li>循环里需要注意的是就是处理删除的那点，先将那一项的所有置零，用fseek函数将文件指针移到指定的那一项，再用fwrite将从指定一项开始覆盖掉后面的</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> ch;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot; %c&quot;</span>, &amp;ch);</span><br><span class="line"><span class="keyword">if</span> (ch == <span class="string">&#x27;Y&#x27;</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">memset</span>(arr[id].name, <span class="number">0</span>, <span class="keyword">sizeof</span>(arr[id].name));</span><br><span class="line">    arr[id].num = <span class="number">0</span>;</span><br><span class="line">    arr[id].price = <span class="number">0</span>;</span><br><span class="line">    fseek(fp, id * <span class="keyword">sizeof</span>(product), <span class="number">0</span>);</span><br><span class="line">    fwrite(&amp;arr[id], <span class="keyword">sizeof</span>(product), <span class="number">1</span>, fp);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;记录号为%d的商品成功删除\n&quot;</span>, id);</span><br><span class="line">  </span><br></pre></td></tr></table></figure></li>
+</ul>
 
     </div>
 
@@ -292,8 +428,8 @@
       <i class="fa fa-chevron-left"></i> 链表刷题
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/04/04/SWIG/" rel="next" title="SWIG">
-      SWIG <i class="fa fa-chevron-right"></i>
+    <a href="/2022/04/05/HTML%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/" rel="next" title="HTML表单验证">
+      HTML表单验证 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -353,6 +489,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%86%E5%93%81%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">商品管理系统题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">变量的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%EF%BC%88%E5%9C%A8%E6%AF%8F%E6%AC%A1%E9%80%89%E6%8B%A9%E4%B9%8B%E5%90%8E%E9%83%BD%E8%A6%81%E8%B0%83%E7%94%A8%E8%BF%99%E4%B8%AA%E5%87%BD%E6%95%B0%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">打开文件（在每次选择之后都要调用这个函数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E6%93%8D%E4%BD%9C"><span class="nav-number">5.</span> <span class="nav-text">前置操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E7%99%BE%E6%9D%A1%E7%A9%BA%E8%AE%B0%E5%BD%95"><span class="nav-number">6.</span> <span class="nav-text">创建一百条空记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%85%E5%B1%8F%E6%93%8D%E4%BD%9C"><span class="nav-number">7.</span> <span class="nav-text">清屏操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%89%80%E6%9C%89%E5%B7%B2%E7%BB%8F%E5%BD%95%E5%85%A5%E7%9A%84%E5%95%86%E5%93%81"><span class="nav-number">8.</span> <span class="nav-text">输出所有已经录入的商品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9Aid%E5%8F%B7%E7%9A%84%E5%95%86%E5%93%81"><span class="nav-number">9.</span> <span class="nav-text">输出指定id号的商品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E6%B7%BB%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF"><span class="nav-number">10.</span> <span class="nav-text">增添商品信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%95%86%E5%93%81%E4%BF%A1%E6%81%AF"><span class="nav-number">11.</span> <span class="nav-text">更新商品信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%95%86%E5%93%81%E8%AE%B0%E5%BD%95"><span class="nav-number">12.</span> <span class="nav-text">删除商品记录</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -427,13 +564,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">106k</span>
+    <span title="站点总字数">105k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:37</span>
+    <span title="站点阅读时长">1:35</span>
 </div>
 
         
